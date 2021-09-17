@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9GP-7s-djL">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search Detail View Controller-->
+        <scene sceneID="06n-L4-mzl">
+            <objects>
+                <viewController id="9GP-7s-djL" customClass="SearchDetailViewController" customModule="nviro" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3PE-Wh-gPS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mra-7Q-WHG">
+                                <rect key="frame" x="20" y="64" width="374" height="369"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KzC-Ii-EJ7">
+                                        <rect key="frame" x="10" y="10" width="354" height="349"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="2Vo-9n-zh1">
+                                            <size key="itemSize" width="128" height="150"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <activityIndicatorView key="backgroundView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" id="4SO-jN-Me9">
+                                            <rect key="frame" x="0.0" y="0.0" width="354" height="349"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </activityIndicatorView>
+                                        <cells/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="9GP-7s-djL" id="2Q8-nZ-Kef"/>
+                                            <outlet property="delegate" destination="9GP-7s-djL" id="m2v-4f-maH"/>
+                                        </connections>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                <constraints>
+                                    <constraint firstItem="KzC-Ii-EJ7" firstAttribute="top" secondItem="mra-7Q-WHG" secondAttribute="top" constant="10" id="5mk-qo-lgL"/>
+                                    <constraint firstAttribute="bottom" secondItem="KzC-Ii-EJ7" secondAttribute="bottom" constant="10" id="Kc5-SY-A0M"/>
+                                    <constraint firstAttribute="trailing" secondItem="KzC-Ii-EJ7" secondAttribute="trailing" constant="10" id="c14-eu-ksT"/>
+                                    <constraint firstItem="KzC-Ii-EJ7" firstAttribute="leading" secondItem="mra-7Q-WHG" secondAttribute="leading" constant="10" id="r79-KS-Zr9"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QUq-UA-izT">
+                                <rect key="frame" x="20" y="453" width="374" height="269"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="JfS-uD-CAd">
+                                        <rect key="frame" x="20" y="20" width="334" height="229"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Pjc-ZW-SW6">
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="52.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" text="Air Quality" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fw6-iq-6tS">
+                                                        <rect key="frame" x="0.0" y="0.0" width="71.5" height="22.5"/>
+                                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="YFX-iP-Xe9">
+                                                        <rect key="frame" x="0.0" y="30.5" width="200" height="22"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" text="Measurement on" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HL3-OE-xiD">
+                                                                <rect key="frame" x="0.0" y="1.5" width="112.5" height="18.5"/>
+                                                                <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" text="09/09/2021" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHC-ne-pY2">
+                                                                <rect key="frame" x="116.5" y="2" width="83.5" height="17.5"/>
+                                                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="13"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="412-eC-B8N">
+                                                <rect key="frame" x="0.0" y="64.5" width="334" height="46"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="nCi-io-hSy">
+                                                        <rect key="frame" x="0.0" y="0.0" width="334" height="23"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Tw-mQ-tnh">
+                                                                <rect key="frame" x="0.0" y="0.0" width="51" height="23"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LPw-fB-pxD">
+                                                                        <rect key="frame" x="15.5" y="0.5" width="20" height="22"/>
+                                                                        <state key="normal" image="arrow.down.circle.fill" catalog="system"/>
+                                                                    </button>
+                                                                </subviews>
+                                                                <color key="tintColor" red="0.61568629740000003" green="0.3058823645" blue="0.63137257099999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="LPw-fB-pxD" firstAttribute="centerY" secondItem="7Tw-mQ-tnh" secondAttribute="centerY" id="Nkl-GW-wrt"/>
+                                                                    <constraint firstItem="LPw-fB-pxD" firstAttribute="centerX" secondItem="7Tw-mQ-tnh" secondAttribute="centerX" id="ReU-9U-RG9"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W82-zG-oHw">
+                                                                <rect key="frame" x="71" y="0.0" width="50.5" height="23"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1pQ-jZ-Ddc">
+                                                                        <rect key="frame" x="15" y="0.5" width="20" height="22"/>
+                                                                        <color key="tintColor" red="0.88235294819999999" green="0.26274511220000002" blue="0.2588235438" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                        <state key="normal" image="arrow.down.circle.fill" catalog="system"/>
+                                                                    </button>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="1pQ-jZ-Ddc" firstAttribute="centerY" secondItem="W82-zG-oHw" secondAttribute="centerY" id="DYi-HQ-J6V"/>
+                                                                    <constraint firstItem="1pQ-jZ-Ddc" firstAttribute="centerX" secondItem="W82-zG-oHw" secondAttribute="centerX" id="Jkh-D6-SgN"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9K6-1v-Y5T">
+                                                                <rect key="frame" x="141.5" y="0.0" width="51" height="23"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4s5-ga-ItP">
+                                                                        <rect key="frame" x="15.5" y="0.5" width="20" height="22"/>
+                                                                        <color key="tintColor" red="0.78431367870000002" green="0.55294120309999995" blue="0.2352941036" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                        <state key="normal" image="arrow.down.circle.fill" catalog="system"/>
+                                                                    </button>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="4s5-ga-ItP" firstAttribute="centerX" secondItem="9K6-1v-Y5T" secondAttribute="centerX" id="vc4-2A-ewS"/>
+                                                                    <constraint firstItem="4s5-ga-ItP" firstAttribute="centerY" secondItem="9K6-1v-Y5T" secondAttribute="centerY" id="yTE-Iz-6fb"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lj3-WD-bsX">
+                                                                <rect key="frame" x="212.5" y="0.0" width="50.5" height="23"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWD-Q2-6IW">
+                                                                        <rect key="frame" x="15.5" y="0.5" width="20" height="22"/>
+                                                                        <color key="tintColor" red="0.231372565" green="0.78431367870000002" blue="0.2352941036" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                        <state key="normal" image="arrow.down.circle.fill" catalog="system"/>
+                                                                    </button>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="cWD-Q2-6IW" firstAttribute="centerX" secondItem="Lj3-WD-bsX" secondAttribute="centerX" id="1qR-B3-U5e"/>
+                                                                    <constraint firstItem="cWD-Q2-6IW" firstAttribute="centerY" secondItem="Lj3-WD-bsX" secondAttribute="centerY" id="Tve-1o-cSI"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GQZ-z1-Byn">
+                                                                <rect key="frame" x="283" y="0.0" width="51" height="23"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="maa-bb-Uiy">
+                                                                        <rect key="frame" x="15.5" y="0.5" width="20" height="22"/>
+                                                                        <color key="tintColor" red="0.4196078479" green="0.66666668650000005" blue="0.64313727620000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                        <state key="normal" image="arrow.down.circle.fill" catalog="system"/>
+                                                                    </button>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="maa-bb-Uiy" firstAttribute="centerY" secondItem="GQZ-z1-Byn" secondAttribute="centerY" id="sLG-0K-3zC"/>
+                                                                    <constraint firstItem="maa-bb-Uiy" firstAttribute="centerX" secondItem="GQZ-z1-Byn" secondAttribute="centerX" id="vTu-Ol-h4j"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="colorIndex" translatesAutoresizingMaskIntoConstraints="NO" id="U5L-K4-Fe1">
+                                                        <rect key="frame" x="0.0" y="23" width="334" height="23"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </imageView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="nCi-io-hSy" firstAttribute="height" secondItem="412-eC-B8N" secondAttribute="height" multiplier="0.5" id="2KT-Fy-saC"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="gXE-2a-lWx">
+                                                <rect key="frame" x="0.0" y="122.5" width="263.5" height="106.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Polluting gases concentration (μg/m3)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJy-Hl-Ow7">
+                                                        <rect key="frame" x="0.0" y="0.0" width="263.5" height="18.5"/>
+                                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="RUm-jU-qMF">
+                                                        <rect key="frame" x="0.0" y="26.5" width="193.5" height="80"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="mhc-7C-Tpl">
+                                                                <rect key="frame" x="0.0" y="0.0" width="109.5" height="80"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Carbon monoxide" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4vG-SW-wDx">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="109.5" height="16"/>
+                                                                        <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="12"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Nitrogen monoxide" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iid-LK-n37">
+                                                                        <rect key="frame" x="0.0" y="16" width="109.5" height="16"/>
+                                                                        <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="12"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Nitrogen dioxide" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X3Q-4j-xrm">
+                                                                        <rect key="frame" x="0.0" y="32" width="109.5" height="16"/>
+                                                                        <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="12"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Ozone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YMi-dV-NHN">
+                                                                        <rect key="frame" x="0.0" y="48" width="109.5" height="16"/>
+                                                                        <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="12"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="249" text="Sulphur dioxide" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uht-b7-HvD">
+                                                                        <rect key="frame" x="0.0" y="64" width="109.5" height="16"/>
+                                                                        <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="12"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="OP9-rj-9P5">
+                                                                <rect key="frame" x="125.5" y="0.0" width="68" height="80"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="0.6407499" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2i5-qY-RFa">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="68" height="16"/>
+                                                                        <fontDescription key="fontDescription" name="Thonburi-Light" family="Thonburi" pointSize="12"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="0.6407499" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Soo-5R-kbp">
+                                                                        <rect key="frame" x="0.0" y="16" width="68" height="16"/>
+                                                                        <fontDescription key="fontDescription" name="Thonburi-Light" family="Thonburi" pointSize="12"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="0.6407499" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPG-7r-4Da">
+                                                                        <rect key="frame" x="0.0" y="32" width="68" height="16"/>
+                                                                        <fontDescription key="fontDescription" name="Thonburi-Light" family="Thonburi" pointSize="12"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" text="0.6407499" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JI6-5q-rQF">
+                                                                        <rect key="frame" x="0.0" y="48" width="68" height="16"/>
+                                                                        <fontDescription key="fontDescription" name="Thonburi-Light" family="Thonburi" pointSize="12"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="0.6407499" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G23-Mt-zNE">
+                                                                        <rect key="frame" x="0.0" y="64" width="68" height="16"/>
+                                                                        <fontDescription key="fontDescription" name="Thonburi-Light" family="Thonburi" pointSize="12"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="412-eC-B8N" firstAttribute="height" secondItem="JfS-uD-CAd" secondAttribute="height" multiplier="0.2" id="0pT-Ki-rMk"/>
+                                            <constraint firstItem="412-eC-B8N" firstAttribute="width" secondItem="JfS-uD-CAd" secondAttribute="width" id="YCm-VA-6ja"/>
+                                            <constraint firstItem="Pjc-ZW-SW6" firstAttribute="height" secondItem="JfS-uD-CAd" secondAttribute="height" multiplier="0.229" id="vW1-OL-ZNC"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="JfS-uD-CAd" secondAttribute="bottom" constant="20" id="Lzx-eq-AtD"/>
+                                    <constraint firstAttribute="trailing" secondItem="JfS-uD-CAd" secondAttribute="trailing" constant="20" id="ZvD-ff-17O"/>
+                                    <constraint firstItem="JfS-uD-CAd" firstAttribute="top" secondItem="QUq-UA-izT" secondAttribute="top" constant="20" id="aht-kr-v2I"/>
+                                    <constraint firstItem="JfS-uD-CAd" firstAttribute="leading" secondItem="QUq-UA-izT" secondAttribute="leading" constant="20" id="eL8-Ns-PUt"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zP4-gq-txU">
+                                <rect key="frame" x="20" y="742" width="374" height="100"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="-100" translatesAutoresizingMaskIntoConstraints="NO" id="1RZ-8v-Psr">
+                                        <rect key="frame" x="20" y="20" width="334" height="60"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" text="Calculate carbon emission for your flight. Decide before you go..." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcl-Rn-lqK">
+                                                <rect key="frame" x="0.0" y="0.0" width="217" height="60"/>
+                                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fi3-Dv-gwE">
+                                                <rect key="frame" x="274" y="0.0" width="60" height="60"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cHg-FN-Iye">
+                                                        <rect key="frame" x="10" y="10" width="40" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="cHg-FN-Iye" secondAttribute="height" id="Ved-Mx-OcY"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <state key="normal" image="plane">
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="10" scale="small"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="cHg-FN-Iye" secondAttribute="trailing" constant="10" id="8HC-6H-5jT"/>
+                                                    <constraint firstAttribute="bottom" secondItem="cHg-FN-Iye" secondAttribute="bottom" constant="10" id="KtD-a5-6MP"/>
+                                                    <constraint firstItem="cHg-FN-Iye" firstAttribute="top" secondItem="Fi3-Dv-gwE" secondAttribute="top" constant="10" id="aMD-hw-UeY"/>
+                                                    <constraint firstItem="cHg-FN-Iye" firstAttribute="leading" secondItem="Fi3-Dv-gwE" secondAttribute="leading" constant="10" id="gTD-4Y-pw4"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="1RZ-8v-Psr" secondAttribute="bottom" constant="20" id="D9A-3l-C0M"/>
+                                    <constraint firstItem="1RZ-8v-Psr" firstAttribute="leading" secondItem="zP4-gq-txU" secondAttribute="leading" constant="20" id="RYT-1L-QXy"/>
+                                    <constraint firstItem="Fi3-Dv-gwE" firstAttribute="height" secondItem="zP4-gq-txU" secondAttribute="height" multiplier="0.6" id="aoA-G1-CQd"/>
+                                    <constraint firstItem="1RZ-8v-Psr" firstAttribute="top" secondItem="zP4-gq-txU" secondAttribute="top" constant="20" id="lKa-yf-tam"/>
+                                    <constraint firstAttribute="trailing" secondItem="1RZ-8v-Psr" secondAttribute="trailing" constant="20" id="nLl-ib-Jko"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Hfb-ze-0WA"/>
+                        <color key="backgroundColor" name="Background"/>
+                        <constraints>
+                            <constraint firstItem="mra-7Q-WHG" firstAttribute="top" secondItem="Hfb-ze-0WA" secondAttribute="top" constant="20" id="594-B7-KGK"/>
+                            <constraint firstItem="QUq-UA-izT" firstAttribute="top" secondItem="mra-7Q-WHG" secondAttribute="bottom" constant="20" id="RGe-XR-WLD"/>
+                            <constraint firstItem="Hfb-ze-0WA" firstAttribute="bottom" secondItem="zP4-gq-txU" secondAttribute="bottom" constant="20" id="TAg-8x-FRr"/>
+                            <constraint firstItem="mra-7Q-WHG" firstAttribute="leading" secondItem="Hfb-ze-0WA" secondAttribute="leading" constant="20" id="ZYx-Yj-SkT"/>
+                            <constraint firstItem="Hfb-ze-0WA" firstAttribute="trailing" secondItem="QUq-UA-izT" secondAttribute="trailing" constant="20" id="buH-ps-pLN"/>
+                            <constraint firstItem="QUq-UA-izT" firstAttribute="leading" secondItem="Hfb-ze-0WA" secondAttribute="leading" constant="20" id="iIS-yq-sGM"/>
+                            <constraint firstItem="zP4-gq-txU" firstAttribute="leading" secondItem="Hfb-ze-0WA" secondAttribute="leading" constant="20" id="jug-5J-pUd"/>
+                            <constraint firstItem="mra-7Q-WHG" firstAttribute="centerX" secondItem="3PE-Wh-gPS" secondAttribute="centerX" id="qVe-8F-yaZ"/>
+                            <constraint firstItem="Hfb-ze-0WA" firstAttribute="trailing" secondItem="zP4-gq-txU" secondAttribute="trailing" constant="20" id="qkz-G9-81O"/>
+                            <constraint firstItem="QUq-UA-izT" firstAttribute="height" secondItem="3PE-Wh-gPS" secondAttribute="height" multiplier="0.3" id="roW-7l-MlE"/>
+                            <constraint firstItem="zP4-gq-txU" firstAttribute="top" secondItem="QUq-UA-izT" secondAttribute="bottom" constant="20" id="xEL-DU-at1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="K3Q-qS-P7g">
+                        <barButtonItem key="backBarButtonItem" title="city details" id="uRS-FY-W0J"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="airQDetailBackgroundView" destination="QUq-UA-izT" id="oLq-fK-KfP"/>
+                        <outlet property="carbonCalculateMessageView" destination="zP4-gq-txU" id="796-H0-RWS"/>
+                        <outlet property="cityImagesBackgroundView" destination="mra-7Q-WHG" id="VRj-bj-69R"/>
+                        <outlet property="coLabel" destination="2i5-qY-RFa" id="euv-tC-OJr"/>
+                        <outlet property="collectionView" destination="KzC-Ii-EJ7" id="IMZ-Ed-1zq"/>
+                        <outlet property="colorIndexImageView" destination="U5L-K4-Fe1" id="0i6-j2-ZaT"/>
+                        <outlet property="indicator" destination="4SO-jN-Me9" id="rL7-xl-Rsf"/>
+                        <outlet property="measurementDate" destination="YHC-ne-pY2" id="vei-zu-bxo"/>
+                        <outlet property="no2Label" destination="TPG-7r-4Da" id="rAy-tY-y57"/>
+                        <outlet property="noLabel" destination="Soo-5R-kbp" id="mWQ-FA-jWl"/>
+                        <outlet property="oLabel" destination="JI6-5q-rQF" id="zgs-Pp-hwA"/>
+                        <outlet property="planeButton" destination="cHg-FN-Iye" id="u8M-yO-yws"/>
+                        <outlet property="so2Label" destination="G23-Mt-zNE" id="teh-6H-hqq"/>
+                        <outlet property="statusFairButton" destination="cWD-Q2-6IW" id="ibc-YI-Hjt"/>
+                        <outlet property="statusFairView" destination="Lj3-WD-bsX" id="2je-5c-kpr"/>
+                        <outlet property="statusGoodButton" destination="maa-bb-Uiy" id="iP5-JB-qNO"/>
+                        <outlet property="statusGoodView" destination="GQZ-z1-Byn" id="cC8-ku-SVl"/>
+                        <outlet property="statusModerateButton" destination="4s5-ga-ItP" id="BbP-gM-p0F"/>
+                        <outlet property="statusModerateView" destination="9K6-1v-Y5T" id="COe-me-m1O"/>
+                        <outlet property="statusPoorButton" destination="1pQ-jZ-Ddc" id="Ax5-PB-2iY"/>
+                        <outlet property="statusPoorView" destination="W82-zG-oHw" id="BDN-zV-tU1"/>
+                        <outlet property="statusVeryPoorButton" destination="LPw-fB-pxD" id="FDJ-41-QJ0"/>
+                        <outlet property="statusVeryPoorView" destination="7Tw-mQ-tnh" id="lZZ-a0-gJJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sw1-Qh-f9p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calculate flight emission" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dIW-ax-7aA">
+                    <rect key="frame" x="0.0" y="0.0" width="264.33333333333331" height="65.5"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </objects>
+            <point key="canvasLocation" x="2818.4615384615386" y="-46.208530805687204"/>
+        </scene>
+        <!--Popup Image View Controller-->
+        <scene sceneID="0uv-l3-44v">
+            <objects>
+                <viewController storyboardIdentifier="PopupImageVC" id="Ubf-Au-yFH" customClass="PopupImageViewController" customModule="nviro" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HXA-qr-bqz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d1t-Fk-diA">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3hK-A1-tr5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="d1t-Fk-diA" secondAttribute="bottom" id="5IJ-WB-e2B"/>
+                            <constraint firstItem="3hK-A1-tr5" firstAttribute="trailing" secondItem="d1t-Fk-diA" secondAttribute="trailing" id="O0w-xF-F5m"/>
+                            <constraint firstItem="d1t-Fk-diA" firstAttribute="leading" secondItem="3hK-A1-tr5" secondAttribute="leading" id="egm-Yi-pa4"/>
+                            <constraint firstItem="d1t-Fk-diA" firstAttribute="top" secondItem="HXA-qr-bqz" secondAttribute="top" id="mfm-sn-yh4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="popupImageView" destination="d1t-Fk-diA" id="m7F-6c-2Bd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ihp-2k-hcL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3646" y="-47"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" systemColor="labelColor"/>
+    <resources>
+        <image name="arrow.down.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="colorIndex" width="1404" height="74"/>
+        <image name="plane" width="512" height="512"/>
+        <namedColor name="Background">
+            <color red="0.94900000095367432" green="0.94099998474121094" blue="0.94099998474121094" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

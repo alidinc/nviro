@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="restaurantCell" rowHeight="119" id="KGk-i7-Jjw" customClass="RestaurantTableViewCell" customModule="nviro" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="479" height="108"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="479" height="108"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cyv-MC-h02">
+                        <rect key="frame" x="0.0" y="10" width="479" height="88"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xBa-al-aC8">
+                                <rect key="frame" x="0.0" y="0.0" width="434" height="88"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="254" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LLz-3a-uZj">
+                                        <rect key="frame" x="0.0" y="0.0" width="72" height="88"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="jAD-FC-Av3">
+                                        <rect key="frame" x="72" y="0.0" width="362" height="88"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="tu1-Sa-DcZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="362" height="58.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venue name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAS-sJ-BsF">
+                                                        <rect key="frame" x="0.0" y="0.0" width="362" height="29.5"/>
+                                                        <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venue category" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otv-kQ-VyW">
+                                                        <rect key="frame" x="0.0" y="29.5" width="362" height="29"/>
+                                                        <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="12"/>
+                                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venue address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qal-7D-jyL">
+                                                <rect key="frame" x="0.0" y="58.5" width="362" height="29.5"/>
+                                                <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0vr-OI-Xb5">
+                                <rect key="frame" x="434" y="0.0" width="45" height="88"/>
+                                <color key="tintColor" name="SearchBarColor"/>
+                                <buttonConfiguration key="configuration" style="plain" image="map" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large" weight="regular"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="openInMapsButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="JSX-SC-E1I"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="Background"/>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Cyv-MC-h02" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="XdF-IE-UNT"/>
+                    <constraint firstItem="Cyv-MC-h02" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="cyz-VW-zpf"/>
+                    <constraint firstAttribute="bottom" secondItem="Cyv-MC-h02" secondAttribute="bottom" constant="10" id="kY2-eJ-W1t"/>
+                    <constraint firstAttribute="trailing" secondItem="Cyv-MC-h02" secondAttribute="trailing" id="uEb-Ga-jJK"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <constraints>
+                <constraint firstItem="LLz-3a-uZj" firstAttribute="width" secondItem="KGk-i7-Jjw" secondAttribute="width" multiplier="0.15" id="OXV-BZ-4sx"/>
+            </constraints>
+            <connections>
+                <outlet property="cellStackView" destination="Cyv-MC-h02" id="r20-QU-5k7"/>
+                <outlet property="openInMapsButton" destination="0vr-OI-Xb5" id="bva-fH-yZ4"/>
+                <outlet property="restaurantImageView" destination="LLz-3a-uZj" id="LTP-cj-uoR"/>
+                <outlet property="venueAddressLabel" destination="Qal-7D-jyL" id="NGg-Pa-RNx"/>
+                <outlet property="venueCategoryLabel" destination="otv-kQ-VyW" id="zb4-St-Dcq"/>
+                <outlet property="venueNameLabel" destination="XAS-sJ-BsF" id="fOD-K7-YEr"/>
+            </connections>
+            <point key="canvasLocation" x="54.347826086956523" y="111.16071428571428"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="map" catalog="system" width="128" height="110"/>
+        <namedColor name="Background">
+            <color red="0.94900000095367432" green="0.94099998474121094" blue="0.94099998474121094" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="SearchBarColor">
+            <color red="0.79199999570846558" green="0.81599998474121094" blue="0.81599998474121094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

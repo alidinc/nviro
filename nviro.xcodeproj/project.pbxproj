@@ -9,41 +9,45 @@
 /* Begin PBXBuildFile section */
 		38CA352E77E97820ECF3C68D /* Pods_nviro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D84B10577540C5C16707BB31 /* Pods_nviro.framework */; };
 		DA04C2A026EAB82B00FDF49B /* SearchDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA04C29F26EAB82B00FDF49B /* SearchDetail.storyboard */; };
-		DA04C2A626EAF01100FDF49B /* Airports.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA04C2A526EAF01100FDF49B /* Airports.swift */; };
 		DA04C2A826EB00D400FDF49B /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA04C2A726EB00D400FDF49B /* Date+Extension.swift */; };
+		DA0A81FB26F953ED00BF7684 /* Airports.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0A81FA26F953ED00BF7684 /* Airports.swift */; };
+		DA1B7983270038DB00EC92B8 /* RestaurantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1B7982270038DB00EC92B8 /* RestaurantsViewController.swift */; };
+		DA1B79852700390600EC92B8 /* RestaurantsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA1B79842700390600EC92B8 /* RestaurantsList.storyboard */; };
+		DA1B798727004B3800EC92B8 /* Restaurants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1B798627004B3800EC92B8 /* Restaurants.swift */; };
 		DA4AB63D26E3195400C280F3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA4AB63C26E3195400C280F3 /* GoogleService-Info.plist */; };
-		DA4AB64726E340DD00C280F3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4AB64626E340DD00C280F3 /* SignUpViewController.swift */; };
 		DA4AB64926E3420900C280F3 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4AB64826E3420900C280F3 /* UIViewController+Extension.swift */; };
 		DA4AB64D26E4E4D900C280F3 /* SavedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4AB64C26E4E4D900C280F3 /* SavedCollectionViewCell.swift */; };
-		DA4AB64F26E4E66800C280F3 /* CollectionDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4AB64E26E4E66800C280F3 /* CollectionDataModel.swift */; };
+		DA4AB64F26E4E66800C280F3 /* SavedPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4AB64E26E4E66800C280F3 /* SavedPlace.swift */; };
 		DA4AB65126E65EFC00C280F3 /* CarbonCalculateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4AB65026E65EFC00C280F3 /* CarbonCalculateViewController.swift */; };
 		DA4AB65626E67D6200C280F3 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4AB65526E67D6200C280F3 /* SearchTableViewCell.swift */; };
-		DA4AB65A26E6FC3B00C280F3 /* TravelRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4AB65926E6FC3B00C280F3 /* TravelRequest.swift */; };
 		DA4AB66226E703B600C280F3 /* SavedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA4AB66026E703B600C280F3 /* SavedCollectionViewCell.xib */; };
 		DA4AB66626E7042100C280F3 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA4AB66426E7042100C280F3 /* SearchTableViewCell.xib */; };
 		DA4AB66A26E7A4F600C280F3 /* AirQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4AB66926E7A4F600C280F3 /* AirQ.swift */; };
 		DA4AB66D26E8092700C280F3 /* CityImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4AB66B26E8092700C280F3 /* CityImageCollectionViewCell.swift */; };
 		DA4AB66E26E8092700C280F3 /* CityImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA4AB66C26E8092700C280F3 /* CityImageCollectionViewCell.xib */; };
 		DA4AB67026E8137100C280F3 /* CityImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4AB66F26E8137100C280F3 /* CityImage.swift */; };
+		DA52012B26FAEC4A00E0C591 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA52012A26FAEC4A00E0C591 /* News.swift */; };
+		DA52012E26FB538500E0C591 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA52012C26FB538500E0C591 /* NewsTableViewCell.swift */; };
+		DA52012F26FB538500E0C591 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA52012D26FB538500E0C591 /* NewsTableViewCell.xib */; };
 		DA60A04326DD3AF2004143FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA60A04226DD3AF2004143FC /* AppDelegate.swift */; };
 		DA60A04526DD3AF2004143FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA60A04426DD3AF2004143FC /* SceneDelegate.swift */; };
-		DA60A04726DD3AF2004143FC /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA60A04626DD3AF2004143FC /* SignInViewController.swift */; };
 		DA60A04A26DD3AF2004143FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA60A04826DD3AF2004143FC /* Main.storyboard */; };
 		DA60A04F26DD3AF4004143FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA60A04E26DD3AF4004143FC /* Assets.xcassets */; };
 		DA60A05226DD3AF4004143FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA60A05026DD3AF4004143FC /* LaunchScreen.storyboard */; };
 		DA60A07726DD5E89004143FC /* SearchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA60A07626DD5E89004143FC /* SearchDetailViewController.swift */; };
 		DA60A07926DD5E91004143FC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA60A07826DD5E91004143FC /* SearchViewController.swift */; };
 		DA60A07B26DD5EBC004143FC /* SavedPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA60A07A26DD5EBC004143FC /* SavedPlacesViewController.swift */; };
-		DA60A07D26DD5EC5004143FC /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA60A07C26DD5EC5004143FC /* InfoViewController.swift */; };
+		DA60A07D26DD5EC5004143FC /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA60A07C26DD5EC5004143FC /* NewsViewController.swift */; };
 		DA60A08C26DD81B7004143FC /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA60A08B26DD81B7004143FC /* NetworkService.swift */; };
 		DA60A08F26DD81F5004143FC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA60A08E26DD81F5004143FC /* Constants.swift */; };
 		DA60A09126DD83A2004143FC /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA60A09026DD83A2004143FC /* NetworkError.swift */; };
-		DA6D9B1626DED45B0004EBE3 /* CarbonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6D9B1526DED45B0004EBE3 /* CarbonData.swift */; };
-		DA9E38A926E1066A006B0CBF /* AirportData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9E38A826E1066A006B0CBF /* AirportData.swift */; };
+		DA61F37A26FA3D8B0000C251 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA61F37926FA3D8B0000C251 /* UIView+Extension.swift */; };
 		DA9E38AB26E115BA006B0CBF /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9E38AA26E115BA006B0CBF /* Endpoints.swift */; };
-		DA9E38AF26E190FF006B0CBF /* CityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9E38AE26E190FF006B0CBF /* CityData.swift */; };
 		DAA84F2026F19E7000CC2CB7 /* FlightOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA84F1F26F19E7000CC2CB7 /* FlightOffset.swift */; };
 		DAA84F2226F19EAE00CC2CB7 /* FlightOffsetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA84F2126F19EAE00CC2CB7 /* FlightOffsetRequest.swift */; };
+		DAB9CEDD2702320000DD2F99 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB9CEDC2702320000DD2F99 /* Venue.swift */; };
+		DAE3E22D270103B700DBEEBA /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE3E22B270103B700DBEEBA /* RestaurantTableViewCell.swift */; };
+		DAE3E22E270103B700DBEEBA /* RestaurantCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAE3E22C270103B700DBEEBA /* RestaurantCell.xib */; };
 		DAE50C1226E9471800F67B34 /* PopupImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE50C1126E9471800F67B34 /* PopupImageViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,26 +55,29 @@
 		661BEDFC325827CD64B74A4A /* Pods-nviro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nviro.release.xcconfig"; path = "Target Support Files/Pods-nviro/Pods-nviro.release.xcconfig"; sourceTree = "<group>"; };
 		D84B10577540C5C16707BB31 /* Pods_nviro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nviro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA04C29F26EAB82B00FDF49B /* SearchDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SearchDetail.storyboard; sourceTree = "<group>"; };
-		DA04C2A526EAF01100FDF49B /* Airports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Airports.swift; sourceTree = "<group>"; };
 		DA04C2A726EB00D400FDF49B /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		DA0A81FA26F953ED00BF7684 /* Airports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Airports.swift; sourceTree = "<group>"; };
+		DA1B7982270038DB00EC92B8 /* RestaurantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsViewController.swift; sourceTree = "<group>"; };
+		DA1B79842700390600EC92B8 /* RestaurantsList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RestaurantsList.storyboard; sourceTree = "<group>"; };
+		DA1B798627004B3800EC92B8 /* Restaurants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurants.swift; sourceTree = "<group>"; };
 		DA4AB63C26E3195400C280F3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		DA4AB64626E340DD00C280F3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		DA4AB64826E3420900C280F3 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		DA4AB64C26E4E4D900C280F3 /* SavedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedCollectionViewCell.swift; sourceTree = "<group>"; };
-		DA4AB64E26E4E66800C280F3 /* CollectionDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDataModel.swift; sourceTree = "<group>"; };
+		DA4AB64E26E4E66800C280F3 /* SavedPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPlace.swift; sourceTree = "<group>"; };
 		DA4AB65026E65EFC00C280F3 /* CarbonCalculateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonCalculateViewController.swift; sourceTree = "<group>"; };
 		DA4AB65526E67D6200C280F3 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
-		DA4AB65926E6FC3B00C280F3 /* TravelRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelRequest.swift; sourceTree = "<group>"; };
 		DA4AB66026E703B600C280F3 /* SavedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SavedCollectionViewCell.xib; sourceTree = "<group>"; };
 		DA4AB66426E7042100C280F3 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		DA4AB66926E7A4F600C280F3 /* AirQ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQ.swift; sourceTree = "<group>"; };
 		DA4AB66B26E8092700C280F3 /* CityImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		DA4AB66C26E8092700C280F3 /* CityImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		DA4AB66F26E8137100C280F3 /* CityImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityImage.swift; sourceTree = "<group>"; };
+		DA52012A26FAEC4A00E0C591 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		DA52012C26FB538500E0C591 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		DA52012D26FB538500E0C591 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
 		DA60A03F26DD3AF2004143FC /* nviro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nviro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA60A04226DD3AF2004143FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA60A04426DD3AF2004143FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DA60A04626DD3AF2004143FC /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		DA60A04926DD3AF2004143FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DA60A04E26DD3AF4004143FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA60A05126DD3AF4004143FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -78,17 +85,17 @@
 		DA60A07626DD5E89004143FC /* SearchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailViewController.swift; sourceTree = "<group>"; };
 		DA60A07826DD5E91004143FC /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		DA60A07A26DD5EBC004143FC /* SavedPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPlacesViewController.swift; sourceTree = "<group>"; };
-		DA60A07C26DD5EC5004143FC /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
-		DA60A08026DD5EEB004143FC /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		DA60A07C26DD5EC5004143FC /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		DA60A08B26DD81B7004143FC /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		DA60A08E26DD81F5004143FC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DA60A09026DD83A2004143FC /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
-		DA6D9B1526DED45B0004EBE3 /* CarbonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonData.swift; sourceTree = "<group>"; };
-		DA9E38A826E1066A006B0CBF /* AirportData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportData.swift; sourceTree = "<group>"; };
+		DA61F37926FA3D8B0000C251 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		DA9E38AA26E115BA006B0CBF /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
-		DA9E38AE26E190FF006B0CBF /* CityData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityData.swift; sourceTree = "<group>"; };
 		DAA84F1F26F19E7000CC2CB7 /* FlightOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightOffset.swift; sourceTree = "<group>"; };
 		DAA84F2126F19EAE00CC2CB7 /* FlightOffsetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightOffsetRequest.swift; sourceTree = "<group>"; };
+		DAB9CEDC2702320000DD2F99 /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
+		DAE3E22B270103B700DBEEBA /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
+		DAE3E22C270103B700DBEEBA /* RestaurantCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantCell.xib; sourceTree = "<group>"; };
 		DAE50C1126E9471800F67B34 /* PopupImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupImageViewController.swift; sourceTree = "<group>"; };
 		F534CC5AA158BA33AC1CEE4C /* Pods-nviro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nviro.debug.xcconfig"; path = "Target Support Files/Pods-nviro/Pods-nviro.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,24 +121,24 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		DA1B7981270038C100EC92B8 /* RestaurantsListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DA1B7982270038DB00EC92B8 /* RestaurantsViewController.swift */,
+			);
+			path = RestaurantsListViewController;
+			sourceTree = "<group>";
+		};
 		DA4AB63E26E33B9800C280F3 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				DA4AB63F26E33BAB00C280F3 /* Login */,
 				DA4AB64026E33BB100C280F3 /* Search */,
+				DA1B7981270038C100EC92B8 /* RestaurantsListViewController */,
+				DA61F37626F9A7420000C251 /* CarbonOffset */,
 				DA4AB64126E33BB900C280F3 /* Saved */,
-				DA4AB64226E33BBF00C280F3 /* Settings */,
+				DA4AB64226E33BBF00C280F3 /* News */,
 			);
 			path = Modules;
-			sourceTree = "<group>";
-		};
-		DA4AB63F26E33BAB00C280F3 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				DA4AB64626E340DD00C280F3 /* SignUpViewController.swift */,
-				DA60A04626DD3AF2004143FC /* SignInViewController.swift */,
-			);
-			path = Login;
 			sourceTree = "<group>";
 		};
 		DA4AB64026E33BB100C280F3 /* Search */ = {
@@ -140,7 +147,6 @@
 				DA60A07826DD5E91004143FC /* SearchViewController.swift */,
 				DA60A07626DD5E89004143FC /* SearchDetailViewController.swift */,
 				DAE50C1126E9471800F67B34 /* PopupImageViewController.swift */,
-				DA4AB65026E65EFC00C280F3 /* CarbonCalculateViewController.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -153,12 +159,12 @@
 			path = Saved;
 			sourceTree = "<group>";
 		};
-		DA4AB64226E33BBF00C280F3 /* Settings */ = {
+		DA4AB64226E33BBF00C280F3 /* News */ = {
 			isa = PBXGroup;
 			children = (
-				DA60A07C26DD5EC5004143FC /* InfoViewController.swift */,
+				DA60A07C26DD5EC5004143FC /* NewsViewController.swift */,
 			);
-			path = Settings;
+			path = News;
 			sourceTree = "<group>";
 		};
 		DA4AB64426E33C0800C280F3 /* Services */ = {
@@ -181,13 +187,13 @@
 		DA4AB65726E6FC1000C280F3 /* ResponseModels */ = {
 			isa = PBXGroup;
 			children = (
-				DA9E38A826E1066A006B0CBF /* AirportData.swift */,
-				DA04C2A526EAF01100FDF49B /* Airports.swift */,
-				DA9E38AE26E190FF006B0CBF /* CityData.swift */,
 				DA4AB66926E7A4F600C280F3 /* AirQ.swift */,
-				DA6D9B1526DED45B0004EBE3 /* CarbonData.swift */,
 				DA4AB66F26E8137100C280F3 /* CityImage.swift */,
 				DAA84F1F26F19E7000CC2CB7 /* FlightOffset.swift */,
+				DA0A81FA26F953ED00BF7684 /* Airports.swift */,
+				DA52012A26FAEC4A00E0C591 /* News.swift */,
+				DA1B798627004B3800EC92B8 /* Restaurants.swift */,
+				DAB9CEDC2702320000DD2F99 /* Venue.swift */,
 			);
 			path = ResponseModels;
 			sourceTree = "<group>";
@@ -195,7 +201,6 @@
 		DA4AB65826E6FC3200C280F3 /* RequestModels */ = {
 			isa = PBXGroup;
 			children = (
-				DA4AB65926E6FC3B00C280F3 /* TravelRequest.swift */,
 				DAA84F2126F19EAE00CC2CB7 /* FlightOffsetRequest.swift */,
 			);
 			path = RequestModels;
@@ -217,6 +222,10 @@
 			children = (
 				DA4AB65526E67D6200C280F3 /* SearchTableViewCell.swift */,
 				DA4AB66426E7042100C280F3 /* SearchTableViewCell.xib */,
+				DA52012C26FB538500E0C591 /* NewsTableViewCell.swift */,
+				DA52012D26FB538500E0C591 /* NewsTableViewCell.xib */,
+				DAE3E22B270103B700DBEEBA /* RestaurantTableViewCell.swift */,
+				DAE3E22C270103B700DBEEBA /* RestaurantCell.xib */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -279,6 +288,7 @@
 				DA60A05026DD3AF4004143FC /* LaunchScreen.storyboard */,
 				DA60A04826DD3AF2004143FC /* Main.storyboard */,
 				DA04C29F26EAB82B00FDF49B /* SearchDetail.storyboard */,
+				DA1B79842700390600EC92B8 /* RestaurantsList.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -295,7 +305,6 @@
 		DA60A07F26DD5EEB004143FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DA60A08026DD5EEB004143FC /* CloudKit.framework */,
 				D84B10577540C5C16707BB31 /* Pods_nviro.framework */,
 			);
 			name = Frameworks;
@@ -309,8 +318,17 @@
 				DA9E38AA26E115BA006B0CBF /* Endpoints.swift */,
 				DA04C2A726EB00D400FDF49B /* Date+Extension.swift */,
 				DA4AB64826E3420900C280F3 /* UIViewController+Extension.swift */,
+				DA61F37926FA3D8B0000C251 /* UIView+Extension.swift */,
 			);
 			path = "Helpers+Extensions";
+			sourceTree = "<group>";
+		};
+		DA61F37626F9A7420000C251 /* CarbonOffset */ = {
+			isa = PBXGroup;
+			children = (
+				DA4AB65026E65EFC00C280F3 /* CarbonCalculateViewController.swift */,
+			);
+			path = CarbonOffset;
 			sourceTree = "<group>";
 		};
 		DA9E38B026E19216006B0CBF /* NetworkModels */ = {
@@ -325,7 +343,7 @@
 		DA9E38B126E19224006B0CBF /* MainModels */ = {
 			isa = PBXGroup;
 			children = (
-				DA4AB64E26E4E66800C280F3 /* CollectionDataModel.swift */,
+				DA4AB64E26E4E66800C280F3 /* SavedPlace.swift */,
 			);
 			path = MainModels;
 			sourceTree = "<group>";
@@ -394,8 +412,11 @@
 				DA04C2A026EAB82B00FDF49B /* SearchDetail.storyboard in Resources */,
 				DA60A04F26DD3AF4004143FC /* Assets.xcassets in Resources */,
 				DA4AB66226E703B600C280F3 /* SavedCollectionViewCell.xib in Resources */,
+				DA52012F26FB538500E0C591 /* NewsTableViewCell.xib in Resources */,
+				DAE3E22E270103B700DBEEBA /* RestaurantCell.xib in Resources */,
 				DA60A04A26DD3AF2004143FC /* Main.storyboard in Resources */,
 				DA4AB63D26E3195400C280F3 /* GoogleService-Info.plist in Resources */,
+				DA1B79852700390600EC92B8 /* RestaurantsList.storyboard in Resources */,
 				DA4AB66E26E8092700C280F3 /* CityImageCollectionViewCell.xib in Resources */,
 				DA4AB66626E7042100C280F3 /* SearchTableViewCell.xib in Resources */,
 			);
@@ -437,7 +458,6 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
-				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
 				"${BUILT_PRODUCTS_DIR}/abseil/absl.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
@@ -450,7 +470,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/absl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
@@ -470,33 +489,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA60A09126DD83A2004143FC /* NetworkError.swift in Sources */,
-				DA9E38A926E1066A006B0CBF /* AirportData.swift in Sources */,
+				DAB9CEDD2702320000DD2F99 /* Venue.swift in Sources */,
 				DA4AB64D26E4E4D900C280F3 /* SavedCollectionViewCell.swift in Sources */,
 				DA60A07926DD5E91004143FC /* SearchViewController.swift in Sources */,
 				DA60A07B26DD5EBC004143FC /* SavedPlacesViewController.swift in Sources */,
-				DA04C2A626EAF01100FDF49B /* Airports.swift in Sources */,
+				DA52012E26FB538500E0C591 /* NewsTableViewCell.swift in Sources */,
 				DAA84F2026F19E7000CC2CB7 /* FlightOffset.swift in Sources */,
 				DA4AB66D26E8092700C280F3 /* CityImageCollectionViewCell.swift in Sources */,
+				DA1B7983270038DB00EC92B8 /* RestaurantsViewController.swift in Sources */,
 				DA4AB65626E67D6200C280F3 /* SearchTableViewCell.swift in Sources */,
-				DA60A04726DD3AF2004143FC /* SignInViewController.swift in Sources */,
-				DA4AB64726E340DD00C280F3 /* SignUpViewController.swift in Sources */,
-				DA6D9B1626DED45B0004EBE3 /* CarbonData.swift in Sources */,
-				DA4AB65A26E6FC3B00C280F3 /* TravelRequest.swift in Sources */,
 				DA60A04326DD3AF2004143FC /* AppDelegate.swift in Sources */,
 				DA4AB67026E8137100C280F3 /* CityImage.swift in Sources */,
 				DA60A08F26DD81F5004143FC /* Constants.swift in Sources */,
 				DA4AB65126E65EFC00C280F3 /* CarbonCalculateViewController.swift in Sources */,
 				DA60A07726DD5E89004143FC /* SearchDetailViewController.swift in Sources */,
-				DA4AB64F26E4E66800C280F3 /* CollectionDataModel.swift in Sources */,
+				DA0A81FB26F953ED00BF7684 /* Airports.swift in Sources */,
+				DA4AB64F26E4E66800C280F3 /* SavedPlace.swift in Sources */,
 				DA60A04526DD3AF2004143FC /* SceneDelegate.swift in Sources */,
 				DA4AB64926E3420900C280F3 /* UIViewController+Extension.swift in Sources */,
-				DA60A07D26DD5EC5004143FC /* InfoViewController.swift in Sources */,
+				DA60A07D26DD5EC5004143FC /* NewsViewController.swift in Sources */,
 				DA60A08C26DD81B7004143FC /* NetworkService.swift in Sources */,
+				DA1B798727004B3800EC92B8 /* Restaurants.swift in Sources */,
+				DA52012B26FAEC4A00E0C591 /* News.swift in Sources */,
 				DA9E38AB26E115BA006B0CBF /* Endpoints.swift in Sources */,
-				DA9E38AF26E190FF006B0CBF /* CityData.swift in Sources */,
 				DA04C2A826EB00D400FDF49B /* Date+Extension.swift in Sources */,
 				DA4AB66A26E7A4F600C280F3 /* AirQ.swift in Sources */,
 				DAE50C1226E9471800F67B34 /* PopupImageViewController.swift in Sources */,
+				DA61F37A26FA3D8B0000C251 /* UIView+Extension.swift in Sources */,
+				DAE3E22D270103B700DBEEBA /* RestaurantTableViewCell.swift in Sources */,
 				DAA84F2226F19EAE00CC2CB7 /* FlightOffsetRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -574,7 +594,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -629,7 +649,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -646,9 +666,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = nviro/nviro.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = GD7GT762TS;
 				INFOPLIST_FILE = nviro/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -679,8 +700,6 @@
 					"\"GoogleUtilities\"",
 					"-framework",
 					"\"MobileCoreServices\"",
-					"-framework",
-					"\"SCLAlertView\"",
 					"-framework",
 					"\"SafariServices\"",
 					"-framework",
@@ -718,9 +737,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = nviro/nviro.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = GD7GT762TS;
 				INFOPLIST_FILE = nviro/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -751,8 +771,6 @@
 					"\"GoogleUtilities\"",
 					"-framework",
 					"\"MobileCoreServices\"",
-					"-framework",
-					"\"SCLAlertView\"",
 					"-framework",
 					"\"SafariServices\"",
 					"-framework",

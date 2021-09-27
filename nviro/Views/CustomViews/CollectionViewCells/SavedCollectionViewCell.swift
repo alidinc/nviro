@@ -8,30 +8,32 @@
 import UIKit
 
 protocol DeleteFromCollectionVCDelegate: SavedPlacesViewController {
-    func deleteData(model: CollectionDataModel?, indexPath: Int)
+    func deleteData(model: SavedPlace?, indexPath: Int)
 }
 
 class SavedCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Properties
     var delegate: DeleteFromCollectionVCDelegate?
-    var model : CollectionDataModel?
+    var place : SavedPlace?
     var indexPath : Int?
     
     // MARK: - Outlets
     @IBOutlet weak var savedImage: UIImageView!
-    @IBOutlet weak var locationName: UILabel!
+    @IBOutlet weak var locationNameLabel: UILabel!
     
+    // MARK: - Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
         self.savedImage.contentMode = .scaleAspectFill
+        self.layer.cornerRadius = 20
     }
     
     // MARK: - Helpers
-    func configure(model: CollectionDataModel?, indexPath:Int) {
+    func configure(model: SavedPlace?, indexPath: Int) {
         guard let model = model else { return }
-        self.model = model
-        self.locationName.text = model.locationName
+        self.place = model
+        self.locationNameLabel.text = model.locationName
         self.indexPath = indexPath
         
         guard let urlImage = URL(string: model.imageURL ?? "") else { return }
@@ -50,7 +52,7 @@ class SavedCollectionViewCell: UICollectionViewCell {
     // MARK: - Actions
     @IBAction func deleteButtonTapped(_ sender: UIButton) {
         guard let indexPath = indexPath,
-              let model = model else { return }
+              let model = place else { return }
         delegate?.deleteData(model: model, indexPath: indexPath)
     }
 }

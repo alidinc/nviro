@@ -9,8 +9,6 @@ target 'nviro' do
 pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
 
-pod 'SCLAlertView'
-
 # Optionally, include the Swift extensions if you're using Swift.
 pod 'FirebaseFirestoreSwift'
 

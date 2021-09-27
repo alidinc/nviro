@@ -30,7 +30,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // to disable clean-up.
         settings.cacheSizeBytes = FirestoreCacheSizeUnlimited
         db.settings = settings
+    
+        let userID = UIDevice.current.identifierForVendor!.uuidString
+        UserDefaults.standard.set(userID, forKey: "user")
         
+
         return true
     }
 

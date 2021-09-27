@@ -5,7 +5,7 @@
 //  Created by Ali Dinç on 30/08/2021.
 //
 
-import FirebaseAuth
+import Firebase
 import UIKit
 import MapKit
 import CoreLocation
@@ -18,13 +18,15 @@ class SearchViewController: UIViewController {
     private let user = Auth.auth().currentUser
     private var coordinate: CLLocationCoordinate2D?
     private var nameVC: String?
-    private var searchTerm: String?
+    private var searchTermForImages: String?
+    private var locationID: String?
+    private var isFavorite : Bool?
+    private var documentID: String?
     
     // MARK: - Outlets
-    @IBOutlet weak var searchQuestionLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchTextField: UITextField!
-    @IBOutlet weak var searchQuestionLabelView: UIView!
+
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -33,45 +35,48 @@ class SearchViewController: UIViewController {
     }
     
     // MARK: - Helpers
-    fileprivate func setupSearchQuestionLabel() {
-        if let user = user {
-            guard let username = (user.email?.components(separatedBy: .punctuationCharacters))?.first?.capitalized else { return }
-            searchQuestionLabel.text = "Hello \(username), \nwhere are you going?"
-        }
-    }
+
     fileprivate func setupNavigationBar() {
-        let leavesView = UIImageView(image: UIImage(named: "leaves"))
+        let leavesView = UIImageView(image: UIImage(named: "leaves.dark"))
         leavesView.contentMode = .scaleAspectFit
         navigationItem.titleView = leavesView
         navigationController?.navigationBar.backgroundColor = .clear
     }
     
-    fileprivate func setupView() {
+    fileprivate func searchCompleterSetup() {
         searchTextField.delegate = self
         searchCompleter.delegate = self
         searchCompleter.resultTypes = .address
-        
-        searchQuestionLabelView.layer.cornerRadius = 20
-        self.addShadow(to: searchQuestionLabelView)
-        self.addShadow(to: searchTextField)
-        setupNavigationBar()
-        setupSearchQuestionLabel()
-        
+    }
+    
+    fileprivate func registerTableViewCell() {
         self.tableView.register(UINib(nibName: Constants.Identifiers.searchTableViewCellNibName, bundle: nil), forCellReuseIdentifier: Constants.Identifiers.searchTableViewCellId)
     }
     
-    // MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Constants.Identifiers.toDetailVC {
-            guard let destination = segue.destination as? SearchDetailViewController else { return }
-            guard let coordinate = coordinate,
-                  let nameVC = nameVC,
-                  let searchTerm = searchTerm else { return }
-            destination.title = nameVC
-            destination.coordinate = coordinate
-            destination.searchTerm = searchTerm
-        }
+    fileprivate func setupView() {
+        searchTextField.addShadow()
+        searchCompleterSetup()
+        setupNavigationBar()
+        registerTableViewCell()
     }
+    
+    // MARK: - Navigation
+    func navigateToCityDetail() {
+        let storyboard = UIStoryboard(name: Constants.Storyboards.searchDetail, bundle: nil)
+        guard let cityDetailVC = storyboard.instantiateViewController(withIdentifier: Constants.ViewControllers.cityDetail) as? SearchDetailViewController else { return }
+        guard let coordinate = coordinate,
+              let nameVC = nameVC,
+              let postalCodeLocation = locationID,
+              let searchTerm = searchTermForImages else { return }
+        cityDetailVC.title = nameVC
+        cityDetailVC.postalCodeLocation = postalCodeLocation
+        cityDetailVC.coordinate = coordinate
+        cityDetailVC.searchTermForFetchingImages = searchTerm
+        cityDetailVC.isFavorite = self.isFavorite
+        cityDetailVC.documentID = self.documentID
+        self.navigationController?.pushViewController(cityDetailVC, animated: true)
+    }
+   
 }
 // MARK: - UITableViewDelegate & UITableViewDataSource
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
@@ -90,10 +95,13 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         let search = MKLocalSearch(request: searchRequest)
         search.start { response, error in
             guard let coordinate = response?.mapItems[0].placemark.coordinate else { return }
-            self.nameVC = "\(searchToSend.title), \(searchToSend.subtitle)"
+            self.nameVC = searchToSend.title
             self.coordinate = coordinate
-            self.searchTerm = "\(searchToSend.title), \(searchToSend.subtitle)"
-            self.performSegue(withIdentifier: Constants.Identifiers.toDetailVC, sender: nil)
+            self.locationID = response?.mapItems[0].placemark.region?.identifier
+            self.searchTermForImages = "\(searchToSend.title), \(searchToSend.subtitle)"
+            
+            // check to see if location is favorite
+            self.getData(postalCode: self.locationID ?? "")
         }
     }
 }
@@ -130,5 +138,28 @@ extension SearchViewController: MKLocalSearchCompleterDelegate {
     func completer(_ completer: MKLocalSearchCompleter, didFailWithError error: Error) {
         self.showAlert(title: "Error", message: Constants.ErrorMessages.locationSearch)
         print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+    }
+}
+
+// MARK: - Firebase liked control
+extension SearchViewController {
+    func getData(postalCode: String) {
+        let db = Firestore.firestore()
+        let user = UserDefaults.standard.string(forKey: "user")
+        let ref = db.collection("favorites")
+            .document(user!)
+            .collection("places").whereField("postalCode", isEqualTo: postalCode)
+        
+        ref.getDocuments { (documents, error) in
+            if let documents = documents, documents.count > 0 {
+                print("Document available")
+                self.isFavorite = true
+                self.documentID = documents.documents.first?.documentID
+            } else {
+                self.isFavorite = false
+                print("Document does not exist")
+            }
+            self.navigateToCityDetail()
+        }
     }
 }

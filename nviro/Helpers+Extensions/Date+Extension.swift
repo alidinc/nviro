@@ -15,3 +15,11 @@ extension Date {
         return dateFormatter.string(from: self)
     }
 }
+
+extension Date {
+    func dateStringForForsquare() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYYMMDD"
+        return dateFormatter.string(from: self)
+    }
+}

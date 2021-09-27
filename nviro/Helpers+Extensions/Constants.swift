@@ -18,6 +18,11 @@ class Constants {
         static let searchDetailCollectionViewItemID = "cityImageItem"
         static let savedCollectionViewItemNibName = "SavedCollectionViewCell"
         static let savedCollectionViewItemID = "placeItem"
+        static let airportsTableVCCellID = "airportCell"
+        static let newsTableViewCellID = "newsCell"
+        static let newsTableViewCellNibName = "NewsTableViewCell"
+        static let restaurantCellId = "restaurantCell"
+        static let restaurantCellNibName = "RestaurantCell"
     }
     
     enum ViewControllers {
@@ -26,11 +31,16 @@ class Constants {
         static let carbonCalculateVC = "CarbonCalculateVC"
         static let popUpImageVC = "PopupImageVC"
         static let savedVC = "SavedVC"
+        static let airportsVC = "airportsTableVC"
+        static let newsVC = "newsVC"
+        static let cityDetail = "cityDetailVC"
+        static let restaurantsListVC = "restaurantsListVC"
     }
     
     enum Storyboards {
         static let main = "Main"
         static let searchDetail = "SearchDetail"
+        static let restaurantsList = "RestaurantsList"
     }
     
     enum ErrorMessages {
@@ -44,6 +54,13 @@ class Constants {
         static let carbonLabelInitialText = "Press calculate to see your carbon results."
     }
     
+    enum ApiKeys {
+        static let flightOffsetDeveloperKey = "9e7f65db-6e3d-4643-b30b-1f4e66f25b3f"
+        static let flightOffsetPartnerKey = "90f093ec-0cfe-4b27-9ba2-58bd4de65a95"
+        static let foursquareClientId = "GX4NHXFVDOAQSQERRTHS1FM2KD2OS5T51E5UEN1ABEVEIXT0"
+        static let foursquareClientScreet = "N4HWDWO1GR2RIO3CDYBM31KS23KUYMIZNJZ1EZRWNIEH4N0M"
+        static let googleCloudApiKey = "AIzaSyBCDNB2Fkv7pz8gG0EXXYnbCGdlZLeQtRw"
+    }
     
     
     

@@ -28,7 +28,7 @@ struct FlightOffsetRequest: Codable {
 // MARK: - Leg
 struct LegForFlight: Codable {
     let originAirportCode, destinationAirportCode: String
-    let travelClass: String = "Economy"
+    let travelClass: String
 
     enum CodingKeys: String, CodingKey {
         case originAirportCode = "origin_airport_code"

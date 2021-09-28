@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,8 @@
 		DA04C2A026EAB82B00FDF49B /* SearchDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA04C29F26EAB82B00FDF49B /* SearchDetail.storyboard */; };
 		DA04C2A826EB00D400FDF49B /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA04C2A726EB00D400FDF49B /* Date+Extension.swift */; };
 		DA0A81FB26F953ED00BF7684 /* Airports.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0A81FA26F953ED00BF7684 /* Airports.swift */; };
+		DA122B7F27030BBD00E34361 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA122B7E27030BBD00E34361 /* RealmManager.swift */; };
+		DA122B8127030C5000E34361 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA122B8027030C5000E34361 /* FirebaseManager.swift */; };
 		DA1B7983270038DB00EC92B8 /* RestaurantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1B7982270038DB00EC92B8 /* RestaurantsViewController.swift */; };
 		DA1B79852700390600EC92B8 /* RestaurantsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA1B79842700390600EC92B8 /* RestaurantsList.storyboard */; };
 		DA1B798727004B3800EC92B8 /* Restaurants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1B798627004B3800EC92B8 /* Restaurants.swift */; };
@@ -46,6 +48,8 @@
 		DAA84F2026F19E7000CC2CB7 /* FlightOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA84F1F26F19E7000CC2CB7 /* FlightOffset.swift */; };
 		DAA84F2226F19EAE00CC2CB7 /* FlightOffsetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA84F2126F19EAE00CC2CB7 /* FlightOffsetRequest.swift */; };
 		DAB9CEDD2702320000DD2F99 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB9CEDC2702320000DD2F99 /* Venue.swift */; };
+		DAB9CEE927029EEA00DD2F99 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = DAB9CEE827029EEA00DD2F99 /* Realm */; };
+		DAB9CEEB27029EEA00DD2F99 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DAB9CEEA27029EEA00DD2F99 /* RealmSwift */; };
 		DAE3E22D270103B700DBEEBA /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE3E22B270103B700DBEEBA /* RestaurantTableViewCell.swift */; };
 		DAE3E22E270103B700DBEEBA /* RestaurantCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAE3E22C270103B700DBEEBA /* RestaurantCell.xib */; };
 		DAE50C1226E9471800F67B34 /* PopupImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE50C1126E9471800F67B34 /* PopupImageViewController.swift */; };
@@ -57,6 +61,8 @@
 		DA04C29F26EAB82B00FDF49B /* SearchDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SearchDetail.storyboard; sourceTree = "<group>"; };
 		DA04C2A726EB00D400FDF49B /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		DA0A81FA26F953ED00BF7684 /* Airports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Airports.swift; sourceTree = "<group>"; };
+		DA122B7E27030BBD00E34361 /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		DA122B8027030C5000E34361 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		DA1B7982270038DB00EC92B8 /* RestaurantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsViewController.swift; sourceTree = "<group>"; };
 		DA1B79842700390600EC92B8 /* RestaurantsList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RestaurantsList.storyboard; sourceTree = "<group>"; };
 		DA1B798627004B3800EC92B8 /* Restaurants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurants.swift; sourceTree = "<group>"; };
@@ -105,6 +111,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAB9CEEB27029EEA00DD2F99 /* RealmSwift in Frameworks */,
+				DAB9CEE927029EEA00DD2F99 /* Realm in Frameworks */,
 				38CA352E77E97820ECF3C68D /* Pods_nviro.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -170,6 +178,8 @@
 		DA4AB64426E33C0800C280F3 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				DA122B7E27030BBD00E34361 /* RealmManager.swift */,
+				DA122B8027030C5000E34361 /* FirebaseManager.swift */,
 				DA60A08B26DD81B7004143FC /* NetworkService.swift */,
 			);
 			path = Services;
@@ -366,6 +376,10 @@
 			dependencies = (
 			);
 			name = nviro;
+			packageProductDependencies = (
+				DAB9CEE827029EEA00DD2F99 /* Realm */,
+				DAB9CEEA27029EEA00DD2F99 /* RealmSwift */,
+			);
 			productName = nviro;
 			productReference = DA60A03F26DD3AF2004143FC /* nviro.app */;
 			productType = "com.apple.product-type.application";
@@ -394,6 +408,9 @@
 				Base,
 			);
 			mainGroup = DA60A03626DD3AF2004143FC;
+			packageReferences = (
+				DAB9CEE727029EEA00DD2F99 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+			);
 			productRefGroup = DA60A04026DD3AF2004143FC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -500,6 +517,7 @@
 				DA4AB65626E67D6200C280F3 /* SearchTableViewCell.swift in Sources */,
 				DA60A04326DD3AF2004143FC /* AppDelegate.swift in Sources */,
 				DA4AB67026E8137100C280F3 /* CityImage.swift in Sources */,
+				DA122B8127030C5000E34361 /* FirebaseManager.swift in Sources */,
 				DA60A08F26DD81F5004143FC /* Constants.swift in Sources */,
 				DA4AB65126E65EFC00C280F3 /* CarbonCalculateViewController.swift in Sources */,
 				DA60A07726DD5E89004143FC /* SearchDetailViewController.swift in Sources */,
@@ -513,6 +531,7 @@
 				DA52012B26FAEC4A00E0C591 /* News.swift in Sources */,
 				DA9E38AB26E115BA006B0CBF /* Endpoints.swift in Sources */,
 				DA04C2A826EB00D400FDF49B /* Date+Extension.swift in Sources */,
+				DA122B7F27030BBD00E34361 /* RealmManager.swift in Sources */,
 				DA4AB66A26E7A4F600C280F3 /* AirQ.swift in Sources */,
 				DAE50C1226E9471800F67B34 /* PopupImageViewController.swift in Sources */,
 				DA61F37A26FA3D8B0000C251 /* UIView+Extension.swift in Sources */,
@@ -653,7 +672,8 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -670,7 +690,10 @@
 				DEVELOPMENT_TEAM = GD7GT762TS;
 				INFOPLIST_FILE = nviro/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -741,7 +764,10 @@
 				DEVELOPMENT_TEAM = GD7GT762TS;
 				INFOPLIST_FILE = nviro/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -822,6 +848,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DAB9CEE727029EEA00DD2F99 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DAB9CEE827029EEA00DD2F99 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DAB9CEE727029EEA00DD2F99 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		DAB9CEEA27029EEA00DD2F99 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DAB9CEE727029EEA00DD2F99 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DA60A03726DD3AF2004143FC /* Project object */;
 }

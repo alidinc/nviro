@@ -144,10 +144,8 @@ extension SearchViewController: MKLocalSearchCompleterDelegate {
 // MARK: - Firebase liked control
 extension SearchViewController {
     func getData(postalCode: String) {
-        let db = Firestore.firestore()
-        let user = UserDefaults.standard.string(forKey: "user")
-        let ref = db.collection("favorites")
-            .document(user!)
+        let ref = FirebaseManager.shared.db.collection("favorites")
+            .document(FirebaseManager.shared.user!)
             .collection("places").whereField("postalCode", isEqualTo: postalCode)
         
         ref.getDocuments { (documents, error) in

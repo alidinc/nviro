@@ -13,17 +13,12 @@ class RestaurantTableViewCell: UITableViewCell {
     // MARK: - Outlets
     @IBOutlet weak var cellStackView: UIStackView!
     @IBOutlet weak var venueNameLabel: UILabel!
-    @IBOutlet weak var venueAddressLabel: UILabel!
     @IBOutlet weak var venueCategoryLabel: UILabel!
     @IBOutlet weak var openInMapsButton: UIButton!
-    @IBOutlet weak var restaurantImageView: UIImageView!
     
+
     // MARK: - Properties
-    var venue: Venue? {
-        didSet {
-            updateView()
-        }
-    }
+    var venue: Venue? 
     
     // MARK: - Lifecycle
     override func awakeFromNib() {
@@ -38,14 +33,12 @@ class RestaurantTableViewCell: UITableViewCell {
     fileprivate func addCornerRadius() {
         cellStackView.layer.cornerRadius = 20
     }
-    func updateView() {
-        guard let venue = venue,
-              let venueAddress = venue.location.address,
-              let venueCategory = venue.categories.map({ $0.shortName }).first  else { return }
-        
+    func updateView(with venue: Venue) {
         self.venueNameLabel.text = venue.name
-        self.venueAddressLabel.text = venueAddress
-        self.venueCategoryLabel.text = venueCategory
+        
+        if let venueCategory = venue.categories.map({ $0.shortName }).first {
+            self.venueCategoryLabel.text = venueCategory
+        }
     }
     
     // MARK: - Actions

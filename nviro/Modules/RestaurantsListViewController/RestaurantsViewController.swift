@@ -64,7 +64,8 @@ extension RestaurantsListViewController: UITableViewDelegate, UITableViewDataSou
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Identifiers.restaurantCellId, for: indexPath) as? RestaurantTableViewCell else { return UITableViewCell() }
-        cell.venue = venues[indexPath.row]
+        let venue = venues[indexPath.row]
+        cell.updateView(with: venue)
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

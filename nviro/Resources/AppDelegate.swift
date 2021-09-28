@@ -16,25 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
-        
-        let settings = FirestoreSettings()
-        settings.isPersistenceEnabled = true
-
-
-        // Enable offline data persistence
-        let db = Firestore.firestore()
-        db.settings = settings
-        
-        // The default cache size threshold is 100 MB. Configure "cacheSizeBytes"
-        // for a different threshold (minimum 1 MB) or set to "FirestoreCacheSizeUnlimited"
-        // to disable clean-up.
-        settings.cacheSizeBytes = FirestoreCacheSizeUnlimited
-        db.settings = settings
-    
-        let userID = UIDevice.current.identifierForVendor!.uuidString
-        UserDefaults.standard.set(userID, forKey: "user")
-        
-
+        FirebaseManager.shared.setupFirebase()
         return true
     }
 

@@ -6,9 +6,15 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct SavedPlace: Hashable {
-    var imageURL: String?
-    var locationName: String?
-    var id: String?
+class SavedPlace: Object {
+    @objc dynamic var imageURL: String?
+    @objc dynamic var locationName: String?
+    @objc dynamic var id: String?
+    @objc dynamic var imageData: Data?
+    
+//    override static func primaryKey() -> String? {
+//        return "savedPlaceId"
+//    }
 }

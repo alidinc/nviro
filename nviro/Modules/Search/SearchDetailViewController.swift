@@ -13,7 +13,6 @@ import CoreLocation
 class SearchDetailViewController: UIViewController {
     
     // MARK: - Properties
-    let db = Firestore.firestore()
     var coordinate: CLLocationCoordinate2D? {
         didSet {
             getAirQualityForCity()
@@ -56,12 +55,7 @@ class SearchDetailViewController: UIViewController {
         setupView()
         getImagesForCity()
         getAirQualityForCity()
-        
-        
     }
-    
-    
-    
     // MARK: - Helpers
     fileprivate func hideAirQStatusButtons() {
         statusVeryPoorButton.isHidden = true
@@ -100,7 +94,7 @@ class SearchDetailViewController: UIViewController {
         
         if isFavorite {
             let user = UserDefaults.standard.string(forKey: "user")
-            db.collection("favorites").document(user!).collection("places").document(self.documentID ?? "").delete() { err in
+            FirebaseManager.shared.db.collection("favorites").document(user!).collection("places").document(self.documentID ?? "").delete() { err in
                 if let err = err {
                     print("Error removing document: \(err)")
                 } else {
@@ -121,7 +115,6 @@ class SearchDetailViewController: UIViewController {
             saveData(locationName: title, imageURL: imageURL)
         }
     }
-    
     fileprivate func switchAirQStatus(airQList: [AirQList]) {
         guard let airQStatus = (airQList.compactMap({ $0.main.aqi })).first else { return }
         switch airQStatus {
@@ -192,7 +185,6 @@ class SearchDetailViewController: UIViewController {
             }
         }
     }
-    
     @IBAction func navigateCarbonButtonTapped(_ sender: UIButton) {
         guard let carbonVC = mainStoryboard.instantiateViewController(withIdentifier: Constants.ViewControllers.carbonCalculateVC) as? CarbonCalculateViewController else { return }
         guard let searchTerm = searchTermForFetchingImages else { return }
@@ -209,7 +201,6 @@ class SearchDetailViewController: UIViewController {
         navigationController?.pushViewController(carbonVC, animated: true)
     }
     @IBAction func scrollButtonTapped(_ sender: UIButton) {
-        
         let visibleItems: NSArray = self.collectionView.indexPathsForVisibleItems as NSArray
         var minItem: NSIndexPath = visibleItems.object(at: 0) as! NSIndexPath
         for item in visibleItems {
@@ -218,15 +209,10 @@ class SearchDetailViewController: UIViewController {
                 minItem = item as! NSIndexPath
             }
         }
-        
         let nextItem = NSIndexPath(row: minItem.row + 1, section: 0)
         self.collectionView.scrollToItem(at: nextItem as IndexPath, at: .left, animated: true)
     }
-    
-    
     @IBAction func scrollLeftButtonTapped(_ sender: UIButton) {
-        
-        
         let visibleItems: NSArray = self.collectionView.indexPathsForVisibleItems as NSArray
         var minItem: NSIndexPath = visibleItems.object(at: 0) as! NSIndexPath
         for item in visibleItems {
@@ -235,16 +221,11 @@ class SearchDetailViewController: UIViewController {
                 minItem = item as! NSIndexPath
             }
         }
-        
         let nextItem = NSIndexPath(row: minItem.row - 1, section: 0)
-        
-        
         UIView.animate(withDuration: 1) {
             self.collectionView.scrollToItem(at: nextItem as IndexPath, at: .left, animated: true)
         }
     }
-    
-    
 }
 
 // MARK: - UICollectionViewDelegate & UICollectionViewDataSource
@@ -283,7 +264,7 @@ extension SearchDetailViewController {
     func saveData(locationName: String, imageURL: String) {
         let user = UserDefaults.standard.string(forKey: "user")
         var ref: DocumentReference? = nil
-        ref = db.collection("favorites")
+        ref = FirebaseManager.shared.db.collection("favorites")
             .document(user!)
             .collection("places").addDocument(data: [
                 "name": "\(locationName)",
@@ -291,12 +272,10 @@ extension SearchDetailViewController {
                 "timestamp" : "\(Date())",
                 "postalCode" : postalCodeLocation ?? ""
             ]) { err in
-                
                 if let err = err {
                     print("Error adding document: \(err)")
                     self.showAlert(title: "Error", message: Constants.ErrorMessages.savingError)
-                }
-                else {
+                } else {
                     self.isFavorite = true
                     self.documentID = ref?.documentID
                     UIView.animate(withDuration: 1.0,
@@ -305,7 +284,6 @@ extension SearchDetailViewController {
                                    initialSpringVelocity: 0.2,
                                    options: .transitionCrossDissolve,
                                    animations: {
-                        
                         self.likeButton?.image = UIImage(systemName: "heart.fill")
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                             guard let savedVC = self.mainStoryboard.instantiateViewController(withIdentifier: Constants.ViewControllers.savedVC) as? SavedPlacesViewController else { return }

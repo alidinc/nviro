@@ -14,11 +14,12 @@ class NewsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var scrollTopButton: UIButton!
+    @IBOutlet weak var backgroundView: UIView!
     
     // MARK: - Properties
     var articles = [Article]()
     var refresh = UIRefreshControl()
-
+    var cellImage: UIImage?
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -30,6 +31,7 @@ class NewsViewController: UIViewController {
     func setupView() {
         indicator.isHidden = true
         scrollTopButton.isHidden = true
+        backgroundView.layer.cornerRadius = 30
         refreshSetup()
         tableViewSetup()
         getNewsFromNetwork()
@@ -53,7 +55,7 @@ class NewsViewController: UIViewController {
     @objc fileprivate func getNewsFromNetwork() {
         indicator.isHidden = false
         indicator.startAnimating()
-        NetworkService.getNews(with: "climate change") { result in
+        NetworkService.getNews(with: "climate") { result in
             DispatchQueue.main.async {
                 self.indicator.isHidden = true
                 self.indicator.stopAnimating()
@@ -68,6 +70,9 @@ class NewsViewController: UIViewController {
             }
         }
     }
+    func setupNewsImageView() {
+        
+    }
     @IBAction func arrowTapped(_ sender: UIButton) {
         tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
     }
@@ -79,16 +84,14 @@ extension NewsViewController: UIScrollViewDelegate {
         offsetY > 400 ? scrollTopButton.fadeIn(duration: 1.0) : scrollTopButton.fadeOut(duration: 1.0)
     }
 }
-
 extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return articles.count
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Identifiers.newsTableViewCellID, for: indexPath) as? NewsTableViewCell else { return UITableViewCell() }
-        let article = articles[indexPath.row]
-        cell.article = article
+        cell.article = articles[indexPath.row]
+        cell.newsImageView.image = self.cellImage
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

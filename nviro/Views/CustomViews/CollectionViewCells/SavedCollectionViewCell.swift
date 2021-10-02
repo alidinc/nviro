@@ -8,7 +8,7 @@
 import UIKit
 
 protocol DeleteFromCollectionVCDelegate: SavedPlacesViewController {
-    func deleteData(model: SavedPlace?, indexPath: Int)
+    func deleteData(model: SavedPlace, indexPath: Int)
 }
 
 class SavedCollectionViewCell: UICollectionViewCell {
@@ -21,12 +21,18 @@ class SavedCollectionViewCell: UICollectionViewCell {
     // MARK: - Outlets
     @IBOutlet weak var savedImage: UIImageView!
     @IBOutlet weak var locationNameLabel: UILabel!
+    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var containerView: UIView!
     
     // MARK: - Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
         self.savedImage.contentMode = .scaleAspectFill
-        self.layer.cornerRadius = 20
+        self.stackView.layer.masksToBounds = true
+        self.stackView.layer.cornerRadius = 20
+        self.containerView.layer.masksToBounds = false
+        self.containerView.layer.cornerRadius = 20
+        self.containerView.addShadow(xAxis: 0, yAxis: 2, shadowRadius: 3, color: .black, shadowOpacity: 0.75)
     }
     
     // MARK: - Helpers
@@ -36,16 +42,8 @@ class SavedCollectionViewCell: UICollectionViewCell {
         self.locationNameLabel.text = model.locationName
         self.indexPath = indexPath
         
-        guard let urlImage = URL(string: model.imageURL ?? "") else { return }
-        NetworkService.fetchImage(with: urlImage) { result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let image):
-                    self.savedImage.image = image
-                case .failure(let error):
-                    print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
-                }
-            }
+        if let imageData = model.imageData {
+            self.savedImage.image = UIImage(data: imageData)
         }
     }
     

@@ -40,6 +40,7 @@ class CityImageCollectionViewCell: UICollectionViewCell {
                 case .success(let image):
                     self.cityImageView.image = image
                 case .failure(let error):
+                    self.cityImageView.image = UIImage(named: "NoImageForNews")
                     print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
                 }
             }

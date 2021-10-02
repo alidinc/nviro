@@ -3,18 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		38CA352E77E97820ECF3C68D /* Pods_nviro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D84B10577540C5C16707BB31 /* Pods_nviro.framework */; };
 		DA04C2A026EAB82B00FDF49B /* SearchDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA04C29F26EAB82B00FDF49B /* SearchDetail.storyboard */; };
 		DA04C2A826EB00D400FDF49B /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA04C2A726EB00D400FDF49B /* Date+Extension.swift */; };
 		DA0A81FB26F953ED00BF7684 /* Airports.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0A81FA26F953ED00BF7684 /* Airports.swift */; };
 		DA122B7F27030BBD00E34361 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA122B7E27030BBD00E34361 /* RealmManager.swift */; };
-		DA122B8127030C5000E34361 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA122B8027030C5000E34361 /* FirebaseManager.swift */; };
-		DA1B7983270038DB00EC92B8 /* RestaurantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1B7982270038DB00EC92B8 /* RestaurantsViewController.swift */; };
-		DA1B79852700390600EC92B8 /* RestaurantsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA1B79842700390600EC92B8 /* RestaurantsList.storyboard */; };
+		DA1B7983270038DB00EC92B8 /* VenueMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1B7982270038DB00EC92B8 /* VenueMapViewController.swift */; };
+		DA1B79852700390600EC92B8 /* VenuesList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA1B79842700390600EC92B8 /* VenuesList.storyboard */; };
 		DA1B798727004B3800EC92B8 /* Restaurants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1B798627004B3800EC92B8 /* Restaurants.swift */; };
 		DA4AB63D26E3195400C280F3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA4AB63C26E3195400C280F3 /* GoogleService-Info.plist */; };
 		DA4AB64926E3420900C280F3 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4AB64826E3420900C280F3 /* UIViewController+Extension.swift */; };
@@ -45,26 +43,26 @@
 		DA60A09126DD83A2004143FC /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA60A09026DD83A2004143FC /* NetworkError.swift */; };
 		DA61F37A26FA3D8B0000C251 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA61F37926FA3D8B0000C251 /* UIView+Extension.swift */; };
 		DA9E38AB26E115BA006B0CBF /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9E38AA26E115BA006B0CBF /* Endpoints.swift */; };
+		DAA308EB2707F1580056BCD2 /* VenueAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA308EA2707F1580056BCD2 /* VenueAnnotation.swift */; };
+		DAA308ED2708065E0056BCD2 /* MapView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA308EC2708065E0056BCD2 /* MapView+Extension.swift */; };
 		DAA84F2026F19E7000CC2CB7 /* FlightOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA84F1F26F19E7000CC2CB7 /* FlightOffset.swift */; };
 		DAA84F2226F19EAE00CC2CB7 /* FlightOffsetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA84F2126F19EAE00CC2CB7 /* FlightOffsetRequest.swift */; };
 		DAB9CEDD2702320000DD2F99 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB9CEDC2702320000DD2F99 /* Venue.swift */; };
-		DAB9CEE927029EEA00DD2F99 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = DAB9CEE827029EEA00DD2F99 /* Realm */; };
-		DAB9CEEB27029EEA00DD2F99 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DAB9CEEA27029EEA00DD2F99 /* RealmSwift */; };
 		DAE3E22D270103B700DBEEBA /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE3E22B270103B700DBEEBA /* RestaurantTableViewCell.swift */; };
 		DAE3E22E270103B700DBEEBA /* RestaurantCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAE3E22C270103B700DBEEBA /* RestaurantCell.xib */; };
 		DAE50C1226E9471800F67B34 /* PopupImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE50C1126E9471800F67B34 /* PopupImageViewController.swift */; };
+		ECEABB09D634278513C19315 /* Pods_nviro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22740893E88884E37FFC855B /* Pods_nviro.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		661BEDFC325827CD64B74A4A /* Pods-nviro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nviro.release.xcconfig"; path = "Target Support Files/Pods-nviro/Pods-nviro.release.xcconfig"; sourceTree = "<group>"; };
-		D84B10577540C5C16707BB31 /* Pods_nviro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nviro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		22740893E88884E37FFC855B /* Pods_nviro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nviro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C3351F099FA71799190DB18 /* Pods-nviro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nviro.debug.xcconfig"; path = "Target Support Files/Pods-nviro/Pods-nviro.debug.xcconfig"; sourceTree = "<group>"; };
 		DA04C29F26EAB82B00FDF49B /* SearchDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SearchDetail.storyboard; sourceTree = "<group>"; };
 		DA04C2A726EB00D400FDF49B /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		DA0A81FA26F953ED00BF7684 /* Airports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Airports.swift; sourceTree = "<group>"; };
 		DA122B7E27030BBD00E34361 /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
-		DA122B8027030C5000E34361 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
-		DA1B7982270038DB00EC92B8 /* RestaurantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsViewController.swift; sourceTree = "<group>"; };
-		DA1B79842700390600EC92B8 /* RestaurantsList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RestaurantsList.storyboard; sourceTree = "<group>"; };
+		DA1B7982270038DB00EC92B8 /* VenueMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueMapViewController.swift; sourceTree = "<group>"; };
+		DA1B79842700390600EC92B8 /* VenuesList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VenuesList.storyboard; sourceTree = "<group>"; };
 		DA1B798627004B3800EC92B8 /* Restaurants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurants.swift; sourceTree = "<group>"; };
 		DA4AB63C26E3195400C280F3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DA4AB64826E3420900C280F3 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
@@ -97,13 +95,15 @@
 		DA60A09026DD83A2004143FC /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		DA61F37926FA3D8B0000C251 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		DA9E38AA26E115BA006B0CBF /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		DAA308EA2707F1580056BCD2 /* VenueAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueAnnotation.swift; sourceTree = "<group>"; };
+		DAA308EC2708065E0056BCD2 /* MapView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapView+Extension.swift"; sourceTree = "<group>"; };
 		DAA84F1F26F19E7000CC2CB7 /* FlightOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightOffset.swift; sourceTree = "<group>"; };
 		DAA84F2126F19EAE00CC2CB7 /* FlightOffsetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightOffsetRequest.swift; sourceTree = "<group>"; };
 		DAB9CEDC2702320000DD2F99 /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 		DAE3E22B270103B700DBEEBA /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
 		DAE3E22C270103B700DBEEBA /* RestaurantCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantCell.xib; sourceTree = "<group>"; };
 		DAE50C1126E9471800F67B34 /* PopupImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupImageViewController.swift; sourceTree = "<group>"; };
-		F534CC5AA158BA33AC1CEE4C /* Pods-nviro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nviro.debug.xcconfig"; path = "Target Support Files/Pods-nviro/Pods-nviro.debug.xcconfig"; sourceTree = "<group>"; };
+		F6D267ED33D9D4C2B473FCF1 /* Pods-nviro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nviro.release.xcconfig"; path = "Target Support Files/Pods-nviro/Pods-nviro.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,20 +111,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAB9CEEB27029EEA00DD2F99 /* RealmSwift in Frameworks */,
-				DAB9CEE927029EEA00DD2F99 /* Realm in Frameworks */,
-				38CA352E77E97820ECF3C68D /* Pods_nviro.framework in Frameworks */,
+				ECEABB09D634278513C19315 /* Pods_nviro.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6FB6E546FE38E4DA39B1A632 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				22740893E88884E37FFC855B /* Pods_nviro.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7D65D1E0092D82745825CD76 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F534CC5AA158BA33AC1CEE4C /* Pods-nviro.debug.xcconfig */,
-				661BEDFC325827CD64B74A4A /* Pods-nviro.release.xcconfig */,
+				9C3351F099FA71799190DB18 /* Pods-nviro.debug.xcconfig */,
+				F6D267ED33D9D4C2B473FCF1 /* Pods-nviro.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -132,7 +138,7 @@
 		DA1B7981270038C100EC92B8 /* RestaurantsListViewController */ = {
 			isa = PBXGroup;
 			children = (
-				DA1B7982270038DB00EC92B8 /* RestaurantsViewController.swift */,
+				DA1B7982270038DB00EC92B8 /* VenueMapViewController.swift */,
 			);
 			path = RestaurantsListViewController;
 			sourceTree = "<group>";
@@ -141,9 +147,9 @@
 			isa = PBXGroup;
 			children = (
 				DA4AB64026E33BB100C280F3 /* Search */,
-				DA1B7981270038C100EC92B8 /* RestaurantsListViewController */,
 				DA61F37626F9A7420000C251 /* CarbonOffset */,
 				DA4AB64126E33BB900C280F3 /* Saved */,
+				DA1B7981270038C100EC92B8 /* RestaurantsListViewController */,
 				DA4AB64226E33BBF00C280F3 /* News */,
 			);
 			path = Modules;
@@ -152,9 +158,9 @@
 		DA4AB64026E33BB100C280F3 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				DA60A07826DD5E91004143FC /* SearchViewController.swift */,
-				DA60A07626DD5E89004143FC /* SearchDetailViewController.swift */,
 				DAE50C1126E9471800F67B34 /* PopupImageViewController.swift */,
+				DA60A07626DD5E89004143FC /* SearchDetailViewController.swift */,
+				DA60A07826DD5E91004143FC /* SearchViewController.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -179,7 +185,6 @@
 			isa = PBXGroup;
 			children = (
 				DA122B7E27030BBD00E34361 /* RealmManager.swift */,
-				DA122B8027030C5000E34361 /* FirebaseManager.swift */,
 				DA60A08B26DD81B7004143FC /* NetworkService.swift */,
 			);
 			path = Services;
@@ -219,10 +224,10 @@
 		DA4AB66726E708F300C280F3 /* CollectionViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				DA4AB64C26E4E4D900C280F3 /* SavedCollectionViewCell.swift */,
-				DA4AB66026E703B600C280F3 /* SavedCollectionViewCell.xib */,
 				DA4AB66B26E8092700C280F3 /* CityImageCollectionViewCell.swift */,
+				DA4AB64C26E4E4D900C280F3 /* SavedCollectionViewCell.swift */,
 				DA4AB66C26E8092700C280F3 /* CityImageCollectionViewCell.xib */,
+				DA4AB66026E703B600C280F3 /* SavedCollectionViewCell.xib */,
 			);
 			path = CollectionViewCells;
 			sourceTree = "<group>";
@@ -230,12 +235,12 @@
 		DA4AB66826E708FF00C280F3 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				DA4AB65526E67D6200C280F3 /* SearchTableViewCell.swift */,
-				DA4AB66426E7042100C280F3 /* SearchTableViewCell.xib */,
 				DA52012C26FB538500E0C591 /* NewsTableViewCell.swift */,
-				DA52012D26FB538500E0C591 /* NewsTableViewCell.xib */,
 				DAE3E22B270103B700DBEEBA /* RestaurantTableViewCell.swift */,
+				DA4AB65526E67D6200C280F3 /* SearchTableViewCell.swift */,
+				DA52012D26FB538500E0C591 /* NewsTableViewCell.xib */,
 				DAE3E22C270103B700DBEEBA /* RestaurantCell.xib */,
+				DA4AB66426E7042100C280F3 /* SearchTableViewCell.xib */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -245,8 +250,8 @@
 			children = (
 				DA60A04126DD3AF2004143FC /* nviro */,
 				DA60A04026DD3AF2004143FC /* Products */,
-				DA60A07F26DD5EEB004143FC /* Frameworks */,
 				7D65D1E0092D82745825CD76 /* Pods */,
+				6FB6E546FE38E4DA39B1A632 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -298,7 +303,7 @@
 				DA60A05026DD3AF4004143FC /* LaunchScreen.storyboard */,
 				DA60A04826DD3AF2004143FC /* Main.storyboard */,
 				DA04C29F26EAB82B00FDF49B /* SearchDetail.storyboard */,
-				DA1B79842700390600EC92B8 /* RestaurantsList.storyboard */,
+				DA1B79842700390600EC92B8 /* VenuesList.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -312,14 +317,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		DA60A07F26DD5EEB004143FC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D84B10577540C5C16707BB31 /* Pods_nviro.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		DA60A08D26DD81EC004143FC /* Helpers+Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,6 +326,7 @@
 				DA04C2A726EB00D400FDF49B /* Date+Extension.swift */,
 				DA4AB64826E3420900C280F3 /* UIViewController+Extension.swift */,
 				DA61F37926FA3D8B0000C251 /* UIView+Extension.swift */,
+				DAA308EC2708065E0056BCD2 /* MapView+Extension.swift */,
 			);
 			path = "Helpers+Extensions";
 			sourceTree = "<group>";
@@ -354,6 +352,7 @@
 			isa = PBXGroup;
 			children = (
 				DA4AB64E26E4E66800C280F3 /* SavedPlace.swift */,
+				DAA308EA2707F1580056BCD2 /* VenueAnnotation.swift */,
 			);
 			path = MainModels;
 			sourceTree = "<group>";
@@ -365,21 +364,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DA60A05626DD3AF4004143FC /* Build configuration list for PBXNativeTarget "nviro" */;
 			buildPhases = (
-				475F56ED2220D7FC47873872 /* [CP] Check Pods Manifest.lock */,
+				A0C3B422BA318A2FD93F34ED /* [CP] Check Pods Manifest.lock */,
 				DA60A03B26DD3AF2004143FC /* Sources */,
 				DA60A03C26DD3AF2004143FC /* Frameworks */,
 				DA60A03D26DD3AF2004143FC /* Resources */,
-				55AE00020F09029D5226C34C /* [CP] Embed Pods Frameworks */,
+				416447FB6195BBDD3F259F0F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = nviro;
-			packageProductDependencies = (
-				DAB9CEE827029EEA00DD2F99 /* Realm */,
-				DAB9CEEA27029EEA00DD2F99 /* RealmSwift */,
-			);
 			productName = nviro;
 			productReference = DA60A03F26DD3AF2004143FC /* nviro.app */;
 			productType = "com.apple.product-type.application";
@@ -408,9 +403,6 @@
 				Base,
 			);
 			mainGroup = DA60A03626DD3AF2004143FC;
-			packageReferences = (
-				DAB9CEE727029EEA00DD2F99 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
-			);
 			productRefGroup = DA60A04026DD3AF2004143FC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -433,7 +425,7 @@
 				DAE3E22E270103B700DBEEBA /* RestaurantCell.xib in Resources */,
 				DA60A04A26DD3AF2004143FC /* Main.storyboard in Resources */,
 				DA4AB63D26E3195400C280F3 /* GoogleService-Info.plist in Resources */,
-				DA1B79852700390600EC92B8 /* RestaurantsList.storyboard in Resources */,
+				DA1B79852700390600EC92B8 /* VenuesList.storyboard in Resources */,
 				DA4AB66E26E8092700C280F3 /* CityImageCollectionViewCell.xib in Resources */,
 				DA4AB66626E7042100C280F3 /* SearchTableViewCell.xib in Resources */,
 			);
@@ -442,7 +434,27 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		475F56ED2220D7FC47873872 /* [CP] Check Pods Manifest.lock */ = {
+		416447FB6195BBDD3F259F0F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-nviro/Pods-nviro-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-nviro/Pods-nviro-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A0C3B422BA318A2FD93F34ED /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -464,40 +476,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		55AE00020F09029D5226C34C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-nviro/Pods-nviro-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
-				"${BUILT_PRODUCTS_DIR}/abseil/absl.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/absl.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-nviro/Pods-nviro-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -508,18 +486,19 @@
 				DA60A09126DD83A2004143FC /* NetworkError.swift in Sources */,
 				DAB9CEDD2702320000DD2F99 /* Venue.swift in Sources */,
 				DA4AB64D26E4E4D900C280F3 /* SavedCollectionViewCell.swift in Sources */,
+				DAA308ED2708065E0056BCD2 /* MapView+Extension.swift in Sources */,
 				DA60A07926DD5E91004143FC /* SearchViewController.swift in Sources */,
 				DA60A07B26DD5EBC004143FC /* SavedPlacesViewController.swift in Sources */,
 				DA52012E26FB538500E0C591 /* NewsTableViewCell.swift in Sources */,
 				DAA84F2026F19E7000CC2CB7 /* FlightOffset.swift in Sources */,
 				DA4AB66D26E8092700C280F3 /* CityImageCollectionViewCell.swift in Sources */,
-				DA1B7983270038DB00EC92B8 /* RestaurantsViewController.swift in Sources */,
+				DA1B7983270038DB00EC92B8 /* VenueMapViewController.swift in Sources */,
 				DA4AB65626E67D6200C280F3 /* SearchTableViewCell.swift in Sources */,
 				DA60A04326DD3AF2004143FC /* AppDelegate.swift in Sources */,
 				DA4AB67026E8137100C280F3 /* CityImage.swift in Sources */,
-				DA122B8127030C5000E34361 /* FirebaseManager.swift in Sources */,
 				DA60A08F26DD81F5004143FC /* Constants.swift in Sources */,
 				DA4AB65126E65EFC00C280F3 /* CarbonCalculateViewController.swift in Sources */,
+				DAA308EB2707F1580056BCD2 /* VenueAnnotation.swift in Sources */,
 				DA60A07726DD5E89004143FC /* SearchDetailViewController.swift in Sources */,
 				DA0A81FB26F953ED00BF7684 /* Airports.swift in Sources */,
 				DA4AB64F26E4E66800C280F3 /* SavedPlace.swift in Sources */,
@@ -672,15 +651,14 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		DA60A05726DD3AF4004143FC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F534CC5AA158BA33AC1CEE4C /* Pods-nviro.debug.xcconfig */;
+			baseConfigurationReference = 9C3351F099FA71799190DB18 /* Pods-nviro.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -688,63 +666,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = GD7GT762TS;
+				EXCLUDED_ARCHS = "";
 				INFOPLIST_FILE = nviro/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-					"-l\"c++\"",
-					"-l\"z\"",
-					"-framework",
-					"\"CoreTelephony\"",
-					"-framework",
-					"\"FBLPromises\"",
-					"-framework",
-					"\"FirebaseAuth\"",
-					"-framework",
-					"\"FirebaseCore\"",
-					"-framework",
-					"\"FirebaseCoreDiagnostics\"",
-					"-framework",
-					"\"FirebaseFirestore\"",
-					"-framework",
-					"\"FirebaseFirestoreSwift\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"GTMSessionFetcher\"",
-					"-framework",
-					"\"GoogleDataTransport\"",
-					"-framework",
-					"\"GoogleUtilities\"",
-					"-framework",
-					"\"MobileCoreServices\"",
-					"-framework",
-					"\"SafariServices\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-framework",
-					"\"UIKit\"",
-					"-framework",
-					"\"absl\"",
-					"-framework",
-					"\"grpc\"",
-					"-framework",
-					"\"grpcpp\"",
-					"-framework",
-					"\"leveldb\"",
-					"-framework",
-					"\"nanopb\"",
-					"-framework",
-					"\"openssl_grpc\"",
-					"$(inherited)",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.normprojects.nviro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -754,7 +680,7 @@
 		};
 		DA60A05826DD3AF4004143FC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 661BEDFC325827CD64B74A4A /* Pods-nviro.release.xcconfig */;
+			baseConfigurationReference = F6D267ED33D9D4C2B473FCF1 /* Pods-nviro.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -762,63 +688,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = GD7GT762TS;
+				EXCLUDED_ARCHS = "";
 				INFOPLIST_FILE = nviro/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-					"-l\"c++\"",
-					"-l\"z\"",
-					"-framework",
-					"\"CoreTelephony\"",
-					"-framework",
-					"\"FBLPromises\"",
-					"-framework",
-					"\"FirebaseAuth\"",
-					"-framework",
-					"\"FirebaseCore\"",
-					"-framework",
-					"\"FirebaseCoreDiagnostics\"",
-					"-framework",
-					"\"FirebaseFirestore\"",
-					"-framework",
-					"\"FirebaseFirestoreSwift\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"GTMSessionFetcher\"",
-					"-framework",
-					"\"GoogleDataTransport\"",
-					"-framework",
-					"\"GoogleUtilities\"",
-					"-framework",
-					"\"MobileCoreServices\"",
-					"-framework",
-					"\"SafariServices\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-framework",
-					"\"UIKit\"",
-					"-framework",
-					"\"absl\"",
-					"-framework",
-					"\"grpc\"",
-					"-framework",
-					"\"grpcpp\"",
-					"-framework",
-					"\"leveldb\"",
-					"-framework",
-					"\"nanopb\"",
-					"-framework",
-					"\"openssl_grpc\"",
-					"$(inherited)",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.normprojects.nviro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -848,30 +722,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		DAB9CEE727029EEA00DD2F99 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-cocoa.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		DAB9CEE827029EEA00DD2F99 /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DAB9CEE727029EEA00DD2F99 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
-			productName = Realm;
-		};
-		DAB9CEEA27029EEA00DD2F99 /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DAB9CEE727029EEA00DD2F99 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
-			productName = RealmSwift;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DA60A03726DD3AF2004143FC /* Project object */;
 }

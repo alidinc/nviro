@@ -27,7 +27,6 @@ class NewsTableViewCell: UITableViewCell {
         setupView()
     }
     
-    
     // MARK: - Helpers
     func setupView() {
         newsImageView.layer.masksToBounds = true
@@ -50,6 +49,7 @@ class NewsTableViewCell: UITableViewCell {
                 case .success(let image):
                     self.newsImageView.image = image
                 case .failure(let error):
+                    self.newsImageView.image = UIImage(named: "NoImageForNews")
                     print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
                 }
             }

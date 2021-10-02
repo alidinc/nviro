@@ -5,27 +5,22 @@
 //  Created by Ali Dinç on 30/08/2021.
 //
 
-import FirebaseFirestore
-import Firebase
 import UIKit
 import CoreLocation
 
 class SearchDetailViewController: UIViewController {
-    
     // MARK: - Properties
     var coordinate: CLLocationCoordinate2D? {
         didSet {
             getAirQualityForCity()
         }
     }
-    
     var cityImages = [UnsplashImage]()
     var searchTermForFetchingImages: String?
     var postalCodeLocation: String?
-    let mainStoryboard = UIStoryboard(name: Constants.Storyboards.main, bundle: nil)
-    var isFavorite : Bool?
-    var documentID: String?
     var likeButton : UIBarButtonItem?
+    var cityImage: UIImage?
+    let mainStoryboard = UIStoryboard(name: Constants.Storyboards.main, bundle: nil)
     
     // MARK: - Outlets
     @IBOutlet weak var cityImagesBackgroundView: UIView!
@@ -46,8 +41,11 @@ class SearchDetailViewController: UIViewController {
     @IBOutlet weak var measurementDate: UILabel!
     @IBOutlet weak var navigateToCarbonVCButton: UIButton!
     @IBOutlet weak var calculateButton: UIButton!
-    @IBOutlet weak var scrollButton: UIButton!
-    @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var scrollRightButton: UIButton!
+    @IBOutlet weak var scrollLeftButton: UIButton!
+    @IBOutlet weak var backgroundMain: UIView!
+    @IBOutlet weak var airPollutionLabel: UILabel!
+    @IBOutlet weak var airPollutionLabelBackground: UIView!
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -56,7 +54,29 @@ class SearchDetailViewController: UIViewController {
         getImagesForCity()
         getAirQualityForCity()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        checkLikeStatus()
+    }
     // MARK: - Helpers
+    func setupView() {
+        indicator.isHidden = true
+        scrollLeftButton.isHidden = true
+        measurementDate.text = Date().dateToString()
+        hideAirQStatusButtons()
+        setupDesign()
+        setupLikeButton()
+        registerCollectionViewCell()
+    }
+    fileprivate func checkLikeStatus() {
+        if let result = RealmManager.sharedInstance.get(SavedPlace.self) as? [SavedPlace] {
+            if !result.filter({ $0.locationId == postalCodeLocation }).isEmpty {
+                self.likeButton?.image = UIImage(systemName: "heart.fill")
+            } else {
+                self.likeButton?.image = UIImage(systemName: "heart")
+            }
+        }
+    }
     fileprivate func hideAirQStatusButtons() {
         statusVeryPoorButton.isHidden = true
         statusPoorButton.isHidden = true
@@ -64,10 +84,20 @@ class SearchDetailViewController: UIViewController {
         statusFairButton.isHidden = true
         statusGoodButton.isHidden = true
     }
-    fileprivate func addCornerRadius() {
-        cityImagesBackgroundView.layer.cornerRadius = 20
-        airQDetailBackgroundView.layer.cornerRadius = 20
+    fileprivate func setupDesign() {
+        collectionView.layer.masksToBounds = true
         collectionView.layer.cornerRadius = 20
+        cityImagesBackgroundView.layer.masksToBounds = false
+        cityImagesBackgroundView.layer.cornerRadius = 20
+        cityImagesBackgroundView.addShadow(xAxis: 0, yAxis: 4, shadowRadius: 8, color: .black, shadowOpacity: 0.7)
+        airQDetailBackgroundView.layer.masksToBounds = false
+        airQDetailBackgroundView.layer.cornerRadius = 20
+        airQDetailBackgroundView.addShadow(xAxis: 0, yAxis: 4, shadowRadius: 8, color: .black, shadowOpacity: 0.7)
+        calculateButton.addShadow(xAxis: 0, yAxis: 4, shadowRadius: 8, color: .black, shadowOpacity: 0.7)
+        backgroundMain.layer.cornerRadius = 30
+        airPollutionLabelBackground.addShadow(xAxis: 0, yAxis: 4, shadowRadius: 8, color: .black, shadowOpacity: 0.4)
+        airPollutionLabelBackground.layer.cornerRadius = 20
+        
     }
     fileprivate func registerCollectionViewCell() {
         collectionView.register(UINib(nibName: Constants.Identifiers.searchDetailCollectionViewCellNibName, bundle: nil), forCellWithReuseIdentifier: Constants.Identifiers.searchDetailCollectionViewItemID)
@@ -75,74 +105,76 @@ class SearchDetailViewController: UIViewController {
     fileprivate func setupLikeButton() {
         likeButton = UIBarButtonItem(image: UIImage(systemName: "heart"), style: .plain, target: self, action: #selector(tapForLikeButton))
         likeButton?.tintColor = UIColor(named: "Green")
-        likeButton?.image =  isFavorite ?? false ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart")
         navigationItem.rightBarButtonItem = likeButton
     }
-    func setupView() {
-        indicator.isHidden = true
-        measurementDate.text = Date().dateToString()
-        hideAirQStatusButtons()
-        addCornerRadius()
-        setupLikeButton()
-        registerCollectionViewCell()
-    }
-    
     @objc func tapForLikeButton() {
         guard let title = title else { return }
-        guard let imageURL = self.cityImages.first?.urls.regularURL.absoluteString else { return }
-        guard let isFavorite = isFavorite else { return }
-        
-        if isFavorite {
-            let user = UserDefaults.standard.string(forKey: "user")
-            FirebaseManager.shared.db.collection("favorites").document(user!).collection("places").document(self.documentID ?? "").delete() { err in
-                if let err = err {
-                    print("Error removing document: \(err)")
+        if let result = RealmManager.sharedInstance.get(SavedPlace.self) as? [SavedPlace] {
+            if let place = result.filter({ $0.locationId == self.postalCodeLocation }).first {
+                if place.isFavorite {
+                    RealmManager.sharedInstance.remove(place)
+                    self.checkLikeStatus()
                 } else {
-                    print("Document successfully removed!")
-                    self.isFavorite = false
-                    UIView.animate(withDuration: 1.0,
-                                   delay: 0.5,
-                                   usingSpringWithDamping: 1,
-                                   initialSpringVelocity: 0.2,
-                                   options: .transitionCrossDissolve,
-                                   animations: {
-                        
-                        self.likeButton?.image = UIImage(systemName: "heart") },
-                                   completion: nil)
+                    savePlaceToRealm(title)
+                    navigateToSavedPlacesVC()
                 }
+            } else {
+                savePlaceToRealm(title)
+                navigateToSavedPlacesVC()
             }
-        } else {
-            saveData(locationName: title, imageURL: imageURL)
+        }
+    }
+    fileprivate func savePlaceToRealm(_ title: String) {
+        let placeToSave = SavedPlace()
+        placeToSave.locationName = title
+        placeToSave.imageData = cityImage?.pngData()
+        placeToSave.isFavorite = true
+        if let coordinate = coordinate {
+            placeToSave.latitude = coordinate.latitude
+            placeToSave.longitude = coordinate.longitude
+        }
+        placeToSave.locationId = postalCodeLocation
+        RealmManager.sharedInstance.set(placeToSave)
+    }
+    fileprivate func navigateToSavedPlacesVC() {
+        DispatchQueue.main.async {
+            guard let savedVC = self.mainStoryboard.instantiateViewController(withIdentifier: Constants.ViewControllers.savedVC) as? SavedPlacesViewController else { return }
+            self.navigationController?.pushViewController(savedVC, animated: true)
         }
     }
     fileprivate func switchAirQStatus(airQList: [AirQList]) {
         guard let airQStatus = (airQList.compactMap({ $0.main.aqi })).first else { return }
         switch airQStatus {
         case 1:
+            airPollutionLabel.text = "Low air pollution"
             statusVeryPoorButton.isHidden = true
             statusPoorButton.isHidden = true
             statusModerateButton.isHidden = true
             statusFairButton.isHidden = true
             statusGoodButton.isHidden = false
         case 2:
+            airPollutionLabel.text = "Moderate air pollution"
             statusVeryPoorButton.isHidden = true
             statusPoorButton.isHidden = true
             statusModerateButton.isHidden = true
             statusFairButton.isHidden = false
             statusGoodButton.isHidden = true
         case 3:
+            airPollutionLabel.text = "Unhealthy for sensitive groups"
             statusVeryPoorButton.isHidden = true
             statusPoorButton.isHidden = true
             statusModerateButton.isHidden = false
             statusFairButton.isHidden = true
             statusGoodButton.isHidden = true
         case 4:
+            airPollutionLabel.text = "Very unhealthy air pollution"
             statusVeryPoorButton.isHidden = true
             statusPoorButton.isHidden = false
             statusModerateButton.isHidden = true
             statusFairButton.isHidden = true
             statusGoodButton.isHidden = true
         case 5:
+            airPollutionLabel.text = "Hazardous air pollution"
             statusVeryPoorButton.isHidden = false
             statusPoorButton.isHidden = true
             statusModerateButton.isHidden = true
@@ -152,7 +184,7 @@ class SearchDetailViewController: UIViewController {
             break
         }
     }
-    func getAirQualityForCity() {
+    fileprivate func getAirQualityForCity() {
         guard let coordinate = coordinate else { return }
         NetworkService.getAirQuality(with: coordinate) { result in
             DispatchQueue.main.async {
@@ -166,7 +198,7 @@ class SearchDetailViewController: UIViewController {
             }
         }
     }
-    func getImagesForCity() {
+    fileprivate func getImagesForCity() {
         guard let searchTerm = searchTermForFetchingImages else { return }
         indicator.isHidden = false
         indicator.startAnimating()
@@ -177,9 +209,23 @@ class SearchDetailViewController: UIViewController {
                 switch result {
                 case .success(let unsplashImages):
                     self.cityImages = unsplashImages
+                    self.getCellImage()
                     self.collectionView.reloadData()
                 case .failure(let error):
                     self.showAlert(title: "Error", message: Constants.ErrorMessages.noResults)
+                    print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+                }
+            }
+        }
+    }
+    fileprivate func getCellImage() {
+        guard let imageURL = self.cityImages.first?.urls.regularURL else { return }
+        NetworkService.fetchImage(with: imageURL) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let image):
+                    self.cityImage = image
+                case .failure(let error):
                     print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
                 }
             }
@@ -200,47 +246,24 @@ class SearchDetailViewController: UIViewController {
         }
         navigationController?.pushViewController(carbonVC, animated: true)
     }
-    @IBAction func scrollButtonTapped(_ sender: UIButton) {
-        let visibleItems: NSArray = self.collectionView.indexPathsForVisibleItems as NSArray
-        var minItem: NSIndexPath = visibleItems.object(at: 0) as! NSIndexPath
-        for item in visibleItems {
-            
-            if minItem.row > (item as AnyObject).row {
-                minItem = item as! NSIndexPath
-            }
-        }
-        let nextItem = NSIndexPath(row: minItem.row + 1, section: 0)
-        self.collectionView.scrollToItem(at: nextItem as IndexPath, at: .left, animated: true)
+    @IBAction func scrollRightButtonTapped(_ sender: UIButton) {
+        self.collectionView.scrollToNextItem()
     }
     @IBAction func scrollLeftButtonTapped(_ sender: UIButton) {
-        let visibleItems: NSArray = self.collectionView.indexPathsForVisibleItems as NSArray
-        var minItem: NSIndexPath = visibleItems.object(at: 0) as! NSIndexPath
-        for item in visibleItems {
-            
-            if minItem.row > (item as AnyObject).row {
-                minItem = item as! NSIndexPath
-            }
-        }
-        let nextItem = NSIndexPath(row: minItem.row - 1, section: 0)
-        UIView.animate(withDuration: 1) {
-            self.collectionView.scrollToItem(at: nextItem as IndexPath, at: .left, animated: true)
-        }
+        self.collectionView.scrollToPreviousItem()
     }
 }
 
 // MARK: - UICollectionViewDelegate & UICollectionViewDataSource
 extension SearchDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return cityImages.count
     }
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let item = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.Identifiers.searchDetailCollectionViewItemID, for: indexPath) as? CityImageCollectionViewCell else { return UICollectionViewCell() }
         item.cityImage = cityImages[indexPath.row]
         return item
     }
-    
     func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
         let config = UIContextMenuConfiguration(identifier: indexPath as NSIndexPath, previewProvider: { () -> UIViewController? in
             let storyboard = UIStoryboard(name: Constants.Storyboards.searchDetail, bundle: nil)
@@ -250,61 +273,35 @@ extension SearchDetailViewController: UICollectionViewDelegate, UICollectionView
         }, actionProvider: nil)
         return config
     }
-    
     func collectionView(_ collectionView: UICollectionView, willPerformPreviewActionForMenuWith configuration: UIContextMenuConfiguration, animator: UIContextMenuInteractionCommitAnimating) {
         guard let vc = animator.previewViewController else { return }
         animator.addCompletion {
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
-}
-
-// MARK: - Firebase Firestore Cloud Persistence
-extension SearchDetailViewController {
-    func saveData(locationName: String, imageURL: String) {
-        let user = UserDefaults.standard.string(forKey: "user")
-        var ref: DocumentReference? = nil
-        ref = FirebaseManager.shared.db.collection("favorites")
-            .document(user!)
-            .collection("places").addDocument(data: [
-                "name": "\(locationName)",
-                "imageURL": "\(imageURL)",
-                "timestamp" : "\(Date())",
-                "postalCode" : postalCodeLocation ?? ""
-            ]) { err in
-                if let err = err {
-                    print("Error adding document: \(err)")
-                    self.showAlert(title: "Error", message: Constants.ErrorMessages.savingError)
-                } else {
-                    self.isFavorite = true
-                    self.documentID = ref?.documentID
-                    UIView.animate(withDuration: 1.0,
-                                   delay: 0.5,
-                                   usingSpringWithDamping: 1,
-                                   initialSpringVelocity: 0.2,
-                                   options: .transitionCrossDissolve,
-                                   animations: {
-                        self.likeButton?.image = UIImage(systemName: "heart.fill")
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                            guard let savedVC = self.mainStoryboard.instantiateViewController(withIdentifier: Constants.ViewControllers.savedVC) as? SavedPlacesViewController else { return }
-                            self.navigationController?.pushViewController(savedVC, animated: true)
-                        }
-                    },completion: nil)
-                }
-            }
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        scrollRightButton.isEnabled = (indexPath.item == cityImages.count - 1) ? false : true
     }
 }
-
-
 extension SearchDetailViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width * 0.6, height: collectionView.frame.height)
     }
 }
-
+// MARK: - UIScrollViewDelegate
+extension SearchDetailViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetX = scrollView.contentOffset.x
+        offsetX >= 50 ? scrollLeftButton.fadeIn(duration: 1.0) : scrollLeftButton.fadeOut(duration: 1.0)
+    }
+}
 extension UICollectionView {
     func scrollToNextItem() {
         let contentOffset = CGFloat(floor(self.contentOffset.x + self.bounds.size.width))
+        self.setContentOffset(CGPoint(x: contentOffset, y: self.contentOffset.y), animated: true)
+    }
+    func scrollToPreviousItem() {
+        let contentOffset = CGFloat(floor(self.contentOffset.x - self.bounds.size.width))
         self.setContentOffset(CGPoint(x: contentOffset, y: self.contentOffset.y), animated: true)
     }
 }

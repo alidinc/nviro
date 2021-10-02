@@ -5,7 +5,7 @@
 //  Created by Ali Dinç on 30/08/2021.
 //
 
-import Firebase
+import RealmSwift
 import UIKit
 
 @main
@@ -15,8 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        FirebaseApp.configure()
-        FirebaseManager.shared.setupFirebase()
+        Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 5)
+        
         return true
     }
 

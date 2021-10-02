@@ -5,7 +5,6 @@
 //  Created by Ali Dinç on 30/08/2021.
 //
 
-import Firebase
 import UIKit
 import MapKit
 import CoreLocation
@@ -15,13 +14,12 @@ class SearchViewController: UIViewController {
     // MARK: - Properties
     private var searchCompleter = MKLocalSearchCompleter()
     private var searchResults = [MKLocalSearchCompletion]()
-    private let user = Auth.auth().currentUser
     private var coordinate: CLLocationCoordinate2D?
     private var nameVC: String?
     private var searchTermForImages: String?
     private var locationID: String?
-    private var isFavorite : Bool?
-    private var documentID: String?
+    private var locationLat: Double?
+    private var locationLon: Double?
     
     // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -54,7 +52,7 @@ class SearchViewController: UIViewController {
     }
     
     fileprivate func setupView() {
-        searchTextField.addShadow()
+        searchTextField.addShadow(xAxis: 0, yAxis: 4, shadowRadius: 8, color: .black, shadowOpacity: 0.12)
         searchCompleterSetup()
         setupNavigationBar()
         registerTableViewCell()
@@ -72,8 +70,6 @@ class SearchViewController: UIViewController {
         cityDetailVC.postalCodeLocation = postalCodeLocation
         cityDetailVC.coordinate = coordinate
         cityDetailVC.searchTermForFetchingImages = searchTerm
-        cityDetailVC.isFavorite = self.isFavorite
-        cityDetailVC.documentID = self.documentID
         self.navigationController?.pushViewController(cityDetailVC, animated: true)
     }
    
@@ -90,6 +86,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let searchToSend = searchResults[indexPath.row]
         let searchRequest = MKLocalSearch.Request(completion: searchToSend)
         let search = MKLocalSearch(request: searchRequest)
@@ -100,8 +97,8 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             self.locationID = response?.mapItems[0].placemark.region?.identifier
             self.searchTermForImages = "\(searchToSend.title), \(searchToSend.subtitle)"
             
-            // check to see if location is favorite
-            self.getData(postalCode: self.locationID ?? "")
+
+            self.navigateToCityDetail()
         }
     }
 }
@@ -138,26 +135,5 @@ extension SearchViewController: MKLocalSearchCompleterDelegate {
     func completer(_ completer: MKLocalSearchCompleter, didFailWithError error: Error) {
         self.showAlert(title: "Error", message: Constants.ErrorMessages.locationSearch)
         print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
-    }
-}
-
-// MARK: - Firebase liked control
-extension SearchViewController {
-    func getData(postalCode: String) {
-        let ref = FirebaseManager.shared.db.collection("favorites")
-            .document(FirebaseManager.shared.user!)
-            .collection("places").whereField("postalCode", isEqualTo: postalCode)
-        
-        ref.getDocuments { (documents, error) in
-            if let documents = documents, documents.count > 0 {
-                print("Document available")
-                self.isFavorite = true
-                self.documentID = documents.documents.first?.documentID
-            } else {
-                self.isFavorite = false
-                print("Document does not exist")
-            }
-            self.navigateToCityDetail()
-        }
     }
 }

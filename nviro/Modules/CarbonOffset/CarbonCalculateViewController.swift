@@ -27,6 +27,8 @@ class CarbonCalculateViewController: UIViewController {
     @IBOutlet weak var resultsStackView: UIStackView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
+    @IBOutlet weak var backgroundMain: UIView!
+    
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -35,8 +37,9 @@ class CarbonCalculateViewController: UIViewController {
     }
     
     // MARK: - Helpers
-    fileprivate func setupCornerRadius() {
+    fileprivate func setupDesign() {
         calculateCarbonOffsetView.layer.cornerRadius = 20
+        backgroundMain.layer.cornerRadius = 30
     }
     fileprivate func clearButtonTitles() {
         self.distanceButton.setTitle("0 km", for: .normal)
@@ -47,7 +50,7 @@ class CarbonCalculateViewController: UIViewController {
         indicator.isHidden = true
         resultsStackView.isHidden = true
         tableView.layer.cornerRadius = 20
-        setupCornerRadius()
+        setupDesign()
         clearButtonTitles()
     }
     func setupLabelTexts() {
@@ -126,7 +129,6 @@ class CarbonCalculateViewController: UIViewController {
 // MARK: - UITextFieldDelegate
 extension CarbonCalculateViewController: UITextFieldDelegate {
     fileprivate func hideKeyboard(_ textField: UITextField) {
-        textField.endEditing(true)
         textField.resignFirstResponder()
     }
     
@@ -134,8 +136,7 @@ extension CarbonCalculateViewController: UITextFieldDelegate {
         if fromTextField.text == "" && toTextField.text == "" {
             hideKeyboard(textField)
         }
-        
-        hideKeyboard(textField)
+        //hideKeyboard(textField)
         return true
     }
     
@@ -159,7 +160,6 @@ extension CarbonCalculateViewController: UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return airports.count
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Identifiers.airportsTableVCCellID, for: indexPath)
         let airport = airports[indexPath.row]
@@ -169,7 +169,6 @@ extension CarbonCalculateViewController: UITableViewDelegate, UITableViewDataSou
         cell.detailTextLabel?.tintColor = .secondaryLabel
         return cell
     }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let airport = airports[indexPath.row]
         if fromTextField.isFirstResponder {
@@ -180,5 +179,3 @@ extension CarbonCalculateViewController: UITableViewDelegate, UITableViewDataSou
         tableView.fadeOut(duration: 0.4)
     }
 }
-
-

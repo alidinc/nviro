@@ -43,12 +43,11 @@
                         <constraints>
                             <constraint firstItem="0sP-N1-bYw" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Dm5-3N-Smw"/>
                             <constraint firstItem="0sP-N1-bYw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="103" id="Ioe-MN-8MM"/>
-                            <constraint firstItem="0sP-N1-bYw" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="569" id="Lbt-Nq-vog"/>
+                            <constraint firstItem="0sP-N1-bYw" firstAttribute="top" secondItem="u0y-tX-905" secondAttribute="bottom" constant="-205" id="LDe-Ze-NZX"/>
                             <constraint firstItem="u0y-tX-905" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="-127" id="LdJ-cZ-Sww"/>
                             <constraint firstAttribute="trailing" secondItem="u0y-tX-905" secondAttribute="trailing" constant="-232" id="Q88-LC-baB"/>
                             <constraint firstAttribute="bottom" secondItem="u0y-tX-905" secondAttribute="bottom" constant="-107" id="VXG-uj-tGb"/>
                             <constraint firstItem="u0y-tX-905" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="-130" id="i1P-kC-EM5"/>
-                            <constraint firstItem="0sP-N1-bYw" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.0854573" id="lOo-Fp-QCs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0sP-N1-bYw" secondAttribute="trailing" constant="103" id="puh-7X-rP5"/>
                         </constraints>
                     </view>

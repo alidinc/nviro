@@ -104,7 +104,7 @@ class SearchDetailViewController: UIViewController {
     }
     fileprivate func setupLikeButton() {
         likeButton = UIBarButtonItem(image: UIImage(systemName: "heart"), style: .plain, target: self, action: #selector(tapForLikeButton))
-        likeButton?.tintColor = UIColor(named: "Green")
+        likeButton?.tintColor = UIColor(named: "Pine")
         navigationItem.rightBarButtonItem = likeButton
     }
     @objc func tapForLikeButton() {

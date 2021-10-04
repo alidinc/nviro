@@ -15,40 +15,26 @@ class RestaurantTableViewCell: UITableViewCell {
     @IBOutlet weak var venueNameLabel: UILabel!
     @IBOutlet weak var venueCategoryLabel: UILabel!
     @IBOutlet weak var openInMapsButton: UIButton!
-    
 
     // MARK: - Properties
-    var venue: Venue? 
-    
-    // MARK: - Lifecycle
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        addCornerRadius()
+    var venue: Venue? {
+        didSet {
+            updateView()
+        }
     }
     
     // MARK: - Helpers
     fileprivate func setupView() {
-        addCornerRadius()
-    }
-    fileprivate func addCornerRadius() {
+        self.layer.masksToBounds = true
         cellStackView.layer.cornerRadius = 20
     }
-    func updateView(with venue: Venue) {
-        self.venueNameLabel.text = venue.name
-        
-        if let venueCategory = venue.categories.map({ $0.shortName }).first {
-            self.venueCategoryLabel.text = venueCategory
+    fileprivate func updateView() {
+        if let venue = venue {
+            venueNameLabel.text = venue.name
+            let categories = venue.categories.map({$0})
+            guard let categoryName = categories.map({$0.name}).first else { return }
+            
+            venueCategoryLabel.text = categoryName
         }
     }
-    
-    // MARK: - Actions
-    
-    @IBAction func openInMapsButtonTapped(_ sender: UIButton) {
-        
-        
-        
-        
-    }
-    
-    
 }

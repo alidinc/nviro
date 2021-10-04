@@ -177,7 +177,7 @@ class NetworkService: NSObject {
             URLQueryItem(name: "apiKey", value: "97341e5bfacc46d6972c0fa3ebaf2de5"),
             URLQueryItem(name: "pageSize", value: "100"),
             URLQueryItem(name: "sortBy", value: "relevancy"),
-            URLQueryItem(name: "excludeDomains", value: "wired.com")])
+            URLQueryItem(name: "excludeDomains", value: "wired.com,engadget.com,techcrunch.com,gizmodo.com,azocleantech.com,ctvnew.ca,euroweeklynews.com")])
         
         guard let finalURL = endpoint.url else { return completion(.failure(.invalidURL)) }
         var request = URLRequest(url: finalURL)
@@ -199,10 +199,43 @@ class NetworkService: NSObject {
         task.resume()
     }
     
-//    static func getRestaurants(with searchTerm: String, completion: @escaping (Result<[Venue], NetworkError>) -> Void) {
-//        // https://api.foursquare.com/v2/venues/search?near=aberdeen&categoryId=+4bf58dd8d48988d1d3941735&client_id=GX4NHXFVDOAQSQERRTHS1FM2KD2OS5T51E5UEN1ABEVEIXT0&client_secret=N4HWDWO1GR2RIO3CDYBM31KS23KUYMIZNJZ1EZRWNIEH4N0M&v=20210926
+    static func getVenues(with searchTerm: String, completion: @escaping (Result<[Venue], NetworkError>) -> Void) {
+        // https://api.foursquare.com/v2/venues/search?near=aberdeen&categoryId=+4bf58dd8d48988d1d3941735&client_id=GX4NHXFVDOAQSQERRTHS1FM2KD2OS5T51E5UEN1ABEVEIXT0&client_secret=N4HWDWO1GR2RIO3CDYBM31KS23KUYMIZNJZ1EZRWNIEH4N0M&v=20210926
+
+        let endpoint = Endpoint(scheme: .https, host: "api.foursquare.com", path: "/v2/venues/search", queryItems: [
+            URLQueryItem(name: "categoryId", value: "+4bf58dd8d48988d1d3941735"),
+            URLQueryItem(name: "v", value: Date().dateStringForForsquare()),
+            URLQueryItem(name: "near", value: searchTerm),
+            URLQueryItem(name: "client_id", value: Constants.ApiKeys.foursquareClientId),
+            URLQueryItem(name: "client_secret", value: Constants.ApiKeys.foursquareClientScreet),
+            URLQueryItem(name: "limit", value: "50")])
+
+        guard let finalURL = endpoint.url else { return completion(.failure(.invalidURL)) }
+        print(finalURL)
+        var request = URLRequest(url: finalURL)
+        request.httpMethod = "GET"
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+                completion(.failure(.invalidURL))
+            }
+            guard let data = data else { return completion(.failure(.noData)) }
+            do {
+                let results = try JSONDecoder().decode(Restaurants.self, from: data)
+                guard let venues = results.response?.venues else { return }
+                completion(.success(venues))
+            } catch {
+                print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+                completion(.failure(.thrownError(error)))
+            }
+        }
+        task.resume()
+    }
+    
+//    static func getVenues(with searchTerm: String, completion: @escaping (Result<[Venue], NetworkError>) -> Void) {
+//        //  https://api.foursquare.com/v2/venues/explore?near=NYC
 //
-//        let endpoint = Endpoint(scheme: .https, host: "api.foursquare.com", path: "/v2/venues/search", queryItems: [
+//        let endpoint = Endpoint(scheme: .https, host: "api.foursquare.com", path: "/v2/venues/explore", queryItems: [
 //            URLQueryItem(name: "categoryId", value: "+4bf58dd8d48988d1d3941735"),
 //            URLQueryItem(name: "v", value: Date().dateStringForForsquare()),
 //            URLQueryItem(name: "near", value: searchTerm),
@@ -221,8 +254,11 @@ class NetworkService: NSObject {
 //            }
 //            guard let data = data else { return completion(.failure(.noData)) }
 //            do {
-//                let results = try JSONDecoder().decode(Restaurants.self, from: data)
-//                completion(.success(results.response.venues))
+//                showNetworkResponse(data: data)
+//                let results = try JSONDecoder().decode(Group.self, from: data)
+//                guard let groupItems = results.items else { return }
+//                let venues = groupItems.map({$0.venue})
+//                completion(.success(venues))
 //            } catch {
 //                print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
 //                completion(.failure(.thrownError(error)))
@@ -230,39 +266,4 @@ class NetworkService: NSObject {
 //        }
 //        task.resume()
 //    }
-    
-    static func getRestaurants(with searchTerm: String, completion: @escaping (Result<[GroupItem], NetworkError>) -> Void) {
-        //  https://api.foursquare.com/v2/venues/explore?near=NYC
-        
-        let endpoint = Endpoint(scheme: .https, host: "api.foursquare.com", path: "/v2/venues/explore", queryItems: [
-            URLQueryItem(name: "categoryId", value: "+4bf58dd8d48988d1d3941735"),
-            URLQueryItem(name: "v", value: Date().dateStringForForsquare()),
-            URLQueryItem(name: "near", value: searchTerm),
-            URLQueryItem(name: "client_id", value: Constants.ApiKeys.foursquareClientId),
-            URLQueryItem(name: "client_secret", value: Constants.ApiKeys.foursquareClientScreet),
-            URLQueryItem(name: "limit", value: "50")])
-        
-        guard let finalURL = endpoint.url else { return completion(.failure(.invalidURL)) }
-        print(finalURL)
-        var request = URLRequest(url: finalURL)
-        request.httpMethod = "GET"
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            if let error = error {
-                print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
-                completion(.failure(.invalidURL))
-            }
-            guard let data = data else { return completion(.failure(.noData)) }
-            do {
-                showNetworkResponse(data: data)
-                let results = try JSONDecoder().decode(Response.self, from: data)
-                guard let groups = results.groups else { return }
-                guard let groupItems = groups.map({$0.items}).first else { return }
-                completion(.success(groupItems))
-            } catch {
-                print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
-                completion(.failure(.thrownError(error)))
-            }
-        }
-        task.resume()
-    }
 }

@@ -27,8 +27,8 @@
                                         <color key="tintColor" name="Background"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" image="airplane" catalog="system" imagePlacement="trailing" title="Calculate" subtitle="carbon offset" imagePadding="10" cornerStyle="large" titleAlignment="center">
-                                            <color key="baseForegroundColor" name="Background"/>
-                                            <color key="baseBackgroundColor" name="Green"/>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseBackgroundColor" name="Pine"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="navigateCarbonButtonTapped:" destination="9GP-7s-djL" eventType="touchUpInside" id="Nfl-aL-dXC"/>
@@ -366,8 +366,8 @@
         <namedColor name="BackgroundReverse">
             <color red="0.17100000381469727" green="0.16899999976158142" blue="0.16899999976158142" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
-        <namedColor name="Green">
-            <color red="0.085000000894069672" green="0.31299999356269836" blue="0.18799999356269836" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="Pine">
+            <color red="0.32941177490000001" green="0.41176474089999998" blue="0.36078432199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="SearchBarColor">
             <color red="0.79199999570846558" green="0.81599998474121094" blue="0.81599998474121094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

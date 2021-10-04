@@ -11,7 +11,7 @@ import RealmSwift
 
 class SavedPlacesViewController: UIViewController {
     // MARK: - Properties
-    var savedPlaces = [SavedPlace?]() {
+    var savedPlaces = [SavedPlace]() {
         didSet {
             self.countLabelSwitch()
             self.collectionView.reloadData()
@@ -69,8 +69,23 @@ extension SavedPlacesViewController: UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: Constants.Storyboards.venuesList, bundle: nil)
         guard let venuesMapVC = storyboard.instantiateViewController(withIdentifier: Constants.ViewControllers.venuesMapVC) as? VenueMapViewController else { return }
-        guard let place = savedPlaces[indexPath.row] else { return }
+        let place = savedPlaces[indexPath.row]
         venuesMapVC.place = place
+        
+//        if let locationName = place.locationName {
+//            DispatchQueue.main.async {
+//                NetworkService.getVenues(with: locationName) { result in
+//                    switch result {
+//                    case .success(let venues):
+//                         print("LOCATION FOR ANNOTATIONS --------------------------\(venues.map({$0.name}))")
+//                        venuesMapVC.venues = venues
+//                    case .failure(let error):
+//                        print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+//                    }
+//                }
+//            }
+//        }
+    
         self.navigationController?.pushViewController(venuesMapVC, animated: true)
     }
 }

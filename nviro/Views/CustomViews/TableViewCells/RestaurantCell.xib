@@ -6,38 +6,37 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="restaurantCell" rowHeight="121" id="KGk-i7-Jjw" customClass="RestaurantTableViewCell" customModule="nviro" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="364" height="110"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="restaurantCell" rowHeight="123" id="KGk-i7-Jjw" customClass="RestaurantTableViewCell" customModule="nviro" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="376" height="112"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="364" height="110"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="376" height="112"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cyv-MC-h02">
-                        <rect key="frame" x="0.0" y="10" width="364" height="90"/>
+                        <rect key="frame" x="0.0" y="10" width="376" height="92"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xBa-al-aC8">
-                                <rect key="frame" x="226" y="0.0" width="93" height="90"/>
+                                <rect key="frame" x="0.0" y="0.0" width="332" height="92"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="tu1-Sa-DcZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="93" height="90"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="332" height="92"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venue name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAS-sJ-BsF">
-                                                <rect key="frame" x="0.0" y="0.0" width="93" height="45"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="332" height="46"/>
                                                 <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="14"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venue category" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otv-kQ-VyW">
-                                                <rect key="frame" x="0.0" y="45" width="93" height="45"/>
+                                                <rect key="frame" x="0.0" y="46" width="332" height="46"/>
                                                 <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="12"/>
-                                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -45,9 +44,9 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0vr-OI-Xb5">
-                                <rect key="frame" x="319" y="0.0" width="45" height="90"/>
-                                <color key="tintColor" name="SearchBarColor"/>
-                                <buttonConfiguration key="configuration" style="plain" image="map" catalog="system">
+                                <rect key="frame" x="332" y="0.0" width="44" height="92"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrow.right.circle.fill" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large" weight="regular"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -55,12 +54,10 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" name="Background"/>
-                        <constraints>
-                            <constraint firstItem="xBa-al-aC8" firstAttribute="leading" secondItem="Cyv-MC-h02" secondAttribute="leading" constant="10" id="pH5-pg-NVX"/>
-                        </constraints>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </stackView>
                 </subviews>
+                <color key="backgroundColor" name="Pine"/>
                 <constraints>
                     <constraint firstItem="Cyv-MC-h02" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="XdF-IE-UNT"/>
                     <constraint firstItem="Cyv-MC-h02" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="cyz-VW-zpf"/>
@@ -69,25 +66,22 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <constraints>
+                <constraint firstItem="tu1-Sa-DcZ" firstAttribute="leading" secondItem="njF-e1-oar" secondAttribute="leading" constant="10" id="diF-VA-tWG"/>
+            </constraints>
             <connections>
                 <outlet property="cellStackView" destination="Cyv-MC-h02" id="r20-QU-5k7"/>
                 <outlet property="openInMapsButton" destination="0vr-OI-Xb5" id="bva-fH-yZ4"/>
                 <outlet property="venueCategoryLabel" destination="otv-kQ-VyW" id="zb4-St-Dcq"/>
                 <outlet property="venueNameLabel" destination="XAS-sJ-BsF" id="fOD-K7-YEr"/>
             </connections>
-            <point key="canvasLocation" x="-28.985507246376812" y="111.83035714285714"/>
+            <point key="canvasLocation" x="-37.681159420289859" y="111.83035714285714"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="map" catalog="system" width="128" height="110"/>
-        <namedColor name="Background">
-            <color red="0.94900000095367432" green="0.94099998474121094" blue="0.94099998474121094" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        <image name="arrow.right.circle.fill" catalog="system" width="128" height="121"/>
+        <namedColor name="Pine">
+            <color red="0.32941177490000001" green="0.41176474089999998" blue="0.36078432199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
-        <namedColor name="SearchBarColor">
-            <color red="0.79199999570846558" green="0.81599998474121094" blue="0.81599998474121094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>

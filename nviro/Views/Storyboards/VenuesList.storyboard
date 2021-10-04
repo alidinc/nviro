@@ -44,11 +44,23 @@
                                             <outlet property="delegate" destination="u7g-QA-xsI" id="4dw-cA-yvB"/>
                                         </connections>
                                     </mapView>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="OXo-hv-9yz">
+                                        <rect key="frame" x="20" y="410.5" width="374" height="310.5"/>
+                                        <color key="backgroundColor" name="SearchBarColor"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="u7g-QA-xsI" id="MzA-dO-aac"/>
+                                            <outlet property="delegate" destination="u7g-QA-xsI" id="glk-jx-2ha"/>
+                                        </connections>
+                                    </tableView>
                                 </subviews>
                                 <color key="backgroundColor" name="SearchBarColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="OXo-hv-9yz" secondAttribute="trailing" constant="20" id="1AN-Jv-gwx"/>
+                                    <constraint firstItem="OXo-hv-9yz" firstAttribute="leading" secondItem="CpR-PS-q7z" secondAttribute="leading" constant="20" id="DkQ-ZQ-Y48"/>
                                     <constraint firstItem="oPw-x8-9ed" firstAttribute="leading" secondItem="CpR-PS-q7z" secondAttribute="leading" constant="20" id="Ebe-7A-yTc"/>
+                                    <constraint firstAttribute="bottom" secondItem="OXo-hv-9yz" secondAttribute="bottom" constant="20" id="FX9-tS-Amy"/>
                                     <constraint firstItem="oPw-x8-9ed" firstAttribute="height" secondItem="CpR-PS-q7z" secondAttribute="height" multiplier="0.5" id="Ldw-1K-S8L"/>
+                                    <constraint firstItem="OXo-hv-9yz" firstAttribute="top" secondItem="oPw-x8-9ed" secondAttribute="bottom" constant="20" id="e8S-i6-WEA"/>
                                     <constraint firstAttribute="trailing" secondItem="oPw-x8-9ed" secondAttribute="trailing" constant="20" id="jTq-xK-TH0"/>
                                     <constraint firstItem="oPw-x8-9ed" firstAttribute="top" secondItem="CpR-PS-q7z" secondAttribute="top" constant="20" id="qdX-e6-93w"/>
                                 </constraints>
@@ -69,11 +81,12 @@
                     <connections>
                         <outlet property="backgroundView" destination="CpR-PS-q7z" id="EXR-SW-rJ1"/>
                         <outlet property="mapView" destination="oPw-x8-9ed" id="t2p-7Y-UKB"/>
+                        <outlet property="tableView" destination="OXo-hv-9yz" id="3v9-5n-mDs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KLK-V8-ajU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2451" y="-3"/>
+            <point key="canvasLocation" x="2450.7246376811595" y="-3.3482142857142856"/>
         </scene>
     </scenes>
     <resources>

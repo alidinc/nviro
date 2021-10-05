@@ -80,7 +80,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         return searchResults.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Identifiers.searchTableViewCellId, for: indexPath) as? SearchTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Identifiers.searchTableViewCellId, for: indexPath) as? SearchCell else { return UITableViewCell() }
         let searchResult = searchResults[indexPath.row]
         cell.configure(locationName: searchResult.title, locationCountry: searchResult.subtitle)
         return cell

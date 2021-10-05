@@ -266,4 +266,32 @@ class NetworkService: NSObject {
 //        }
 //        task.resume()
 //    }
+    
+    static func purchaseTrees(with amount: Int, from name: String, completion: @escaping (Result<TreePurchase, NetworkError>) -> Void) {
+        let endpoint = Endpoint(scheme: .https, host: "ecologi.com", path: "/impact/trees", queryItems: [
+            URLQueryItem(name: "number", value: "\(amount)"),
+            URLQueryItem(name: "name", value: "\(name)"),
+            URLQueryItem(name: "test", value: "true")])
+        
+        guard let finalURL = endpoint.url else { return completion(.failure(.invalidURL)) }
+        var request = URLRequest(url: finalURL)
+        request.httpMethod = "POST"
+        request.addValue("Bearer \(Constants.ApiKeys.ecologi)", forHTTPHeaderField: "authorization")
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+                completion(.failure(.thrownError(error)))
+            }
+            if let data = data {
+                do {
+                    let result = try JSONDecoder().decode(TreePurchase.self, from: data)
+                    completion(.success(result))
+                } catch {
+                    print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+                    completion(.failure(.noData))
+                }
+            }
+        }
+        task.resume()
+    }
 }

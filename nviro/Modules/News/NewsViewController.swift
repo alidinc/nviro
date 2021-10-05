@@ -89,7 +89,7 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
         return articles.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Identifiers.newsTableViewCellID, for: indexPath) as? NewsTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Identifiers.newsTableViewCellID, for: indexPath) as? NewsCell else { return UITableViewCell() }
         cell.article = articles[indexPath.row]
         cell.newsImageView.image = self.cellImage
         return cell

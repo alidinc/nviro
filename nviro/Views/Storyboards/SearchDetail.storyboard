@@ -21,32 +21,13 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0fF-gN-5Ev">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucD-Xj-Ym5">
-                                        <rect key="frame" x="20" y="566" width="374" height="46.5"/>
-                                        <color key="tintColor" name="Background"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" image="airplane" catalog="system" imagePlacement="trailing" title="Calculate" subtitle="carbon offset" imagePadding="10" cornerStyle="large" titleAlignment="center">
-                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="baseBackgroundColor" name="Pine"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="navigateCarbonButtonTapped:" destination="9GP-7s-djL" eventType="touchUpInside" id="Nfl-aL-dXC"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
                                 <color key="backgroundColor" name="SearchBarColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="ucD-Xj-Ym5" secondAttribute="trailing" constant="20" id="Bvp-ul-W1d"/>
-                                    <constraint firstItem="ucD-Xj-Ym5" firstAttribute="leading" secondItem="0fF-gN-5Ev" secondAttribute="leading" constant="20" id="liH-pa-6H6"/>
-                                    <constraint firstItem="ucD-Xj-Ym5" firstAttribute="height" secondItem="0fF-gN-5Ev" secondAttribute="height" multiplier="0.06" id="wzI-gH-cYp"/>
-                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mra-7Q-WHG">
-                                <rect key="frame" x="20" y="108" width="374" height="269"/>
+                                <rect key="frame" x="20" y="108" width="374" height="313.5"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KzC-Ii-EJ7">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="269"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="313.5"/>
                                         <color key="backgroundColor" name="SearchBarColor"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="2Vo-9n-zh1">
                                             <size key="itemSize" width="128" height="150"/>
@@ -55,7 +36,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <activityIndicatorView key="backgroundView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" id="4SO-jN-Me9">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="269"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="313.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </activityIndicatorView>
                                         <cells/>
@@ -65,9 +46,9 @@
                                         </connections>
                                     </collectionView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGg-py-Ucz">
-                                        <rect key="frame" x="314" y="119" width="40" height="31"/>
+                                        <rect key="frame" x="298" y="134" width="56" height="46"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="chevron.right" catalog="system">
+                                        <buttonConfiguration key="configuration" style="plain" image="next">
                                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large" weight="heavy"/>
                                             <color key="baseForegroundColor" name="Background"/>
                                         </buttonConfiguration>
@@ -76,11 +57,11 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZw-js-eRE">
-                                        <rect key="frame" x="20" y="119" width="40" height="31"/>
+                                        <rect key="frame" x="10" y="134" width="56" height="46"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="chevron.left" catalog="system"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="chevron.left" catalog="system">
-                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large" weight="heavy"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="back">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="default" weight="heavy"/>
                                             <color key="baseForegroundColor" name="Background"/>
                                         </buttonConfiguration>
                                         <connections>
@@ -94,23 +75,23 @@
                                     <constraint firstItem="cGg-py-Ucz" firstAttribute="centerY" secondItem="mra-7Q-WHG" secondAttribute="centerY" id="Fti-mk-Bg3"/>
                                     <constraint firstItem="LZw-js-eRE" firstAttribute="centerY" secondItem="mra-7Q-WHG" secondAttribute="centerY" id="Go7-U7-ON6"/>
                                     <constraint firstAttribute="bottom" secondItem="KzC-Ii-EJ7" secondAttribute="bottom" id="Kc5-SY-A0M"/>
-                                    <constraint firstItem="LZw-js-eRE" firstAttribute="leading" secondItem="mra-7Q-WHG" secondAttribute="leading" constant="20" id="RiV-ee-EBY"/>
+                                    <constraint firstItem="LZw-js-eRE" firstAttribute="leading" secondItem="mra-7Q-WHG" secondAttribute="leading" constant="10" id="RiV-ee-EBY"/>
                                     <constraint firstAttribute="trailing" secondItem="cGg-py-Ucz" secondAttribute="trailing" constant="20" id="TrO-mw-lHM"/>
                                     <constraint firstAttribute="trailing" secondItem="KzC-Ii-EJ7" secondAttribute="trailing" id="c14-eu-ksT"/>
                                     <constraint firstItem="KzC-Ii-EJ7" firstAttribute="leading" secondItem="mra-7Q-WHG" secondAttribute="leading" id="r79-KS-Zr9"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Pjc-ZW-SW6">
-                                <rect key="frame" x="25" y="382" width="369" height="50"/>
+                                <rect key="frame" x="25" y="426.5" width="369" height="75"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" text="Air Quality" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fw6-iq-6tS">
-                                        <rect key="frame" x="0.0" y="0.0" width="67" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="67" height="75"/>
                                         <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="13"/>
                                         <color key="textColor" name="BackgroundReverse"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" text="09/09/2021" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHC-ne-pY2">
-                                        <rect key="frame" x="294" y="0.0" width="75" height="50"/>
+                                        <rect key="frame" x="294" y="0.0" width="75" height="75"/>
                                         <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="13"/>
                                         <color key="textColor" name="BackgroundReverse"/>
                                         <nil key="highlightedColor"/>
@@ -118,13 +99,13 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QUq-UA-izT">
-                                <rect key="frame" x="20" y="437" width="374" height="170"/>
+                                <rect key="frame" x="20" y="481.5" width="374" height="170.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="412-eC-B8N">
-                                        <rect key="frame" x="15" y="10" width="344" height="140"/>
+                                        <rect key="frame" x="15" y="10" width="344" height="140.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="253" axis="vertical" spacing="-40" translatesAutoresizingMaskIntoConstraints="NO" id="eqw-gh-5nG">
-                                                <rect key="frame" x="0.0" y="0.0" width="344" height="97.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="344" height="98"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="nCi-io-hSy">
                                                         <rect key="frame" x="0.0" y="0.0" width="344" height="77"/>
@@ -202,7 +183,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="colorIndex" translatesAutoresizingMaskIntoConstraints="NO" id="U5L-K4-Fe1">
-                                                        <rect key="frame" x="0.0" y="37" width="344" height="60.5"/>
+                                                        <rect key="frame" x="0.0" y="37" width="344" height="61"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <real key="value" value="10"/>
@@ -212,7 +193,7 @@
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Km-e0-fg0">
-                                                <rect key="frame" x="0.0" y="97.5" width="344" height="42.5"/>
+                                                <rect key="frame" x="0.0" y="98" width="344" height="42.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not available now. Check your network settings" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCR-Ir-9Y7">
                                                         <rect key="frame" x="20" y="0.0" width="304" height="42.5"/>
@@ -246,8 +227,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="mra-7Q-WHG" firstAttribute="leading" secondItem="Hfb-ze-0WA" secondAttribute="leading" constant="20" id="2mO-CI-lqN"/>
-                            <constraint firstItem="mra-7Q-WHG" firstAttribute="height" secondItem="3PE-Wh-gPS" secondAttribute="height" multiplier="0.3" id="5vo-3P-7ue"/>
-                            <constraint firstItem="ucD-Xj-Ym5" firstAttribute="top" secondItem="QUq-UA-izT" secondAttribute="bottom" constant="47" id="7aK-JB-XJE"/>
+                            <constraint firstItem="mra-7Q-WHG" firstAttribute="height" secondItem="3PE-Wh-gPS" secondAttribute="height" multiplier="0.35" id="5vo-3P-7ue"/>
                             <constraint firstItem="QUq-UA-izT" firstAttribute="top" secondItem="mra-7Q-WHG" secondAttribute="bottom" constant="60" id="DYf-M6-AXV"/>
                             <constraint firstItem="Pjc-ZW-SW6" firstAttribute="top" secondItem="mra-7Q-WHG" secondAttribute="bottom" constant="5" id="KA5-Vd-bJ3"/>
                             <constraint firstItem="0fF-gN-5Ev" firstAttribute="leading" secondItem="Hfb-ze-0WA" secondAttribute="leading" id="RHN-AU-4Mt"/>
@@ -255,7 +235,7 @@
                             <constraint firstItem="0fF-gN-5Ev" firstAttribute="trailing" secondItem="Hfb-ze-0WA" secondAttribute="trailing" id="SOU-of-hnY"/>
                             <constraint firstItem="QUq-UA-izT" firstAttribute="height" secondItem="3PE-Wh-gPS" secondAttribute="height" multiplier="0.19" id="SuO-5z-bpT"/>
                             <constraint firstItem="Hfb-ze-0WA" firstAttribute="trailing" secondItem="QUq-UA-izT" secondAttribute="trailing" constant="20" id="buH-ps-pLN"/>
-                            <constraint firstItem="QUq-UA-izT" firstAttribute="top" secondItem="Pjc-ZW-SW6" secondAttribute="bottom" constant="5" id="d2G-A2-fxK"/>
+                            <constraint firstItem="QUq-UA-izT" firstAttribute="top" secondItem="Pjc-ZW-SW6" secondAttribute="bottom" constant="-20" id="d2G-A2-fxK"/>
                             <constraint firstItem="Hfb-ze-0WA" firstAttribute="bottom" secondItem="0fF-gN-5Ev" secondAttribute="bottom" id="h1E-nh-Oaj"/>
                             <constraint firstItem="Hfb-ze-0WA" firstAttribute="trailing" secondItem="Pjc-ZW-SW6" secondAttribute="trailing" constant="20" id="hoC-cJ-tbN"/>
                             <constraint firstItem="QUq-UA-izT" firstAttribute="leading" secondItem="Hfb-ze-0WA" secondAttribute="leading" constant="20" id="iIS-yq-sGM"/>
@@ -272,13 +252,11 @@
                         <outlet property="airPollutionLabelBackground" destination="8Km-e0-fg0" id="asI-hJ-DV4"/>
                         <outlet property="airQDetailBackgroundView" destination="QUq-UA-izT" id="oLq-fK-KfP"/>
                         <outlet property="backgroundMain" destination="0fF-gN-5Ev" id="K9G-F3-Qat"/>
-                        <outlet property="calculateButton" destination="ucD-Xj-Ym5" id="yaf-k5-tVo"/>
                         <outlet property="cityImagesBackgroundView" destination="mra-7Q-WHG" id="VRj-bj-69R"/>
                         <outlet property="collectionView" destination="KzC-Ii-EJ7" id="IMZ-Ed-1zq"/>
                         <outlet property="colorIndexImageView" destination="U5L-K4-Fe1" id="0i6-j2-ZaT"/>
                         <outlet property="indicator" destination="4SO-jN-Me9" id="rL7-xl-Rsf"/>
                         <outlet property="measurementDate" destination="YHC-ne-pY2" id="vei-zu-bxo"/>
-                        <outlet property="navigateToCarbonVCButton" destination="ucD-Xj-Ym5" id="Hbi-qF-vFv"/>
                         <outlet property="scrollLeftButton" destination="LZw-js-eRE" id="oJJ-Rp-3NQ"/>
                         <outlet property="scrollRightButton" destination="cGg-py-Ucz" id="sko-QX-4D0"/>
                         <outlet property="statusFairButton" destination="cWD-Q2-6IW" id="ibc-YI-Hjt"/>
@@ -355,19 +333,16 @@
     </scenes>
     <color key="tintColor" systemColor="labelColor"/>
     <resources>
-        <image name="airplane" catalog="system" width="128" height="115"/>
         <image name="arrow.down.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="back" width="32" height="32"/>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
-        <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="colorIndex" width="1404" height="74"/>
+        <image name="next" width="32" height="32"/>
         <namedColor name="Background">
             <color red="0.94900000095367432" green="0.94099998474121094" blue="0.94099998474121094" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="BackgroundReverse">
             <color red="0.17100000381469727" green="0.16899999976158142" blue="0.16899999976158142" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
-        <namedColor name="Pine">
-            <color red="0.32941177490000001" green="0.41176474089999998" blue="0.36078432199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="SearchBarColor">
             <color red="0.79199999570846558" green="0.81599998474121094" blue="0.81599998474121094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -39,8 +39,6 @@ class SearchDetailViewController: UIViewController {
     @IBOutlet weak var statusFairButton: UIButton!
     @IBOutlet weak var statusGoodButton: UIButton!
     @IBOutlet weak var measurementDate: UILabel!
-    @IBOutlet weak var navigateToCarbonVCButton: UIButton!
-    @IBOutlet weak var calculateButton: UIButton!
     @IBOutlet weak var scrollRightButton: UIButton!
     @IBOutlet weak var scrollLeftButton: UIButton!
     @IBOutlet weak var backgroundMain: UIView!
@@ -93,11 +91,8 @@ class SearchDetailViewController: UIViewController {
         airQDetailBackgroundView.layer.masksToBounds = false
         airQDetailBackgroundView.layer.cornerRadius = 20
         airQDetailBackgroundView.addShadow(xAxis: 0, yAxis: 4, shadowRadius: 8, color: .black, shadowOpacity: 0.7)
-        calculateButton.addShadow(xAxis: 0, yAxis: 4, shadowRadius: 8, color: .black, shadowOpacity: 0.7)
         backgroundMain.layer.cornerRadius = 30
-        airPollutionLabelBackground.addShadow(xAxis: 0, yAxis: 4, shadowRadius: 8, color: .black, shadowOpacity: 0.4)
         airPollutionLabelBackground.layer.cornerRadius = 20
-        
     }
     fileprivate func registerCollectionViewCell() {
         collectionView.register(UINib(nibName: Constants.Identifiers.searchDetailCollectionViewCellNibName, bundle: nil), forCellWithReuseIdentifier: Constants.Identifiers.searchDetailCollectionViewItemID)
@@ -152,6 +147,7 @@ class SearchDetailViewController: UIViewController {
             statusModerateButton.isHidden = true
             statusFairButton.isHidden = true
             statusGoodButton.isHidden = false
+            airPollutionLabelBackground.addShadow(xAxis: 0, yAxis: 6, shadowRadius: 15, color: UIColor(named: "AirStatus1")!, shadowOpacity: 0.8)
         case 2:
             airPollutionLabel.text = "Moderate air pollution"
             statusVeryPoorButton.isHidden = true
@@ -159,6 +155,7 @@ class SearchDetailViewController: UIViewController {
             statusModerateButton.isHidden = true
             statusFairButton.isHidden = false
             statusGoodButton.isHidden = true
+            airPollutionLabelBackground.addShadow(xAxis: 0, yAxis: 4, shadowRadius: 10, color: UIColor(named: "AirStatus2")!, shadowOpacity: 0.6)
         case 3:
             airPollutionLabel.text = "Unhealthy for sensitive groups"
             statusVeryPoorButton.isHidden = true
@@ -166,6 +163,7 @@ class SearchDetailViewController: UIViewController {
             statusModerateButton.isHidden = false
             statusFairButton.isHidden = true
             statusGoodButton.isHidden = true
+            airPollutionLabelBackground.addShadow(xAxis: 0, yAxis: 4, shadowRadius: 8, color: UIColor(named: "AirStatus3")!, shadowOpacity: 0.6)
         case 4:
             airPollutionLabel.text = "Very unhealthy air pollution"
             statusVeryPoorButton.isHidden = true
@@ -173,6 +171,7 @@ class SearchDetailViewController: UIViewController {
             statusModerateButton.isHidden = true
             statusFairButton.isHidden = true
             statusGoodButton.isHidden = true
+            airPollutionLabelBackground.addShadow(xAxis: 0, yAxis: 4, shadowRadius: 8, color: UIColor(named: "AirStatus4")!, shadowOpacity: 0.6)
         case 5:
             airPollutionLabel.text = "Hazardous air pollution"
             statusVeryPoorButton.isHidden = false
@@ -180,6 +179,7 @@ class SearchDetailViewController: UIViewController {
             statusModerateButton.isHidden = true
             statusFairButton.isHidden = true
             statusGoodButton.isHidden = true
+            airPollutionLabelBackground.addShadow(xAxis: 0, yAxis: 4, shadowRadius: 8, color: UIColor(named: "AirStatus5")!, shadowOpacity: 0.6)
         default:
             break
         }
@@ -231,21 +231,21 @@ class SearchDetailViewController: UIViewController {
             }
         }
     }
-    @IBAction func navigateCarbonButtonTapped(_ sender: UIButton) {
-        guard let carbonVC = mainStoryboard.instantiateViewController(withIdentifier: Constants.ViewControllers.carbonCalculateVC) as? CarbonCalculateViewController else { return }
-        guard let searchTerm = searchTermForFetchingImages else { return }
-        NetworkService.getAirports(with: "\(searchTerm) airport") { result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let result):
-                    carbonVC.toTextField.text = result.map { $0.iata ?? "" }.first
-                case .failure(let error):
-                    print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
-                }
-            }
-        }
-        navigationController?.pushViewController(carbonVC, animated: true)
-    }
+//    @IBAction func navigateCarbonButtonTapped(_ sender: UIButton) {
+//        guard let carbonVC = mainStoryboard.instantiateViewController(withIdentifier: Constants.ViewControllers.carbonCalculateVC) as? CarbonCalculateViewController else { return }
+//        guard let searchTerm = searchTermForFetchingImages else { return }
+//        NetworkService.getAirports(with: "\(searchTerm) airport") { result in
+//            DispatchQueue.main.async {
+//                switch result {
+//                case .success(let result):
+//                    carbonVC.toTextField.text = result.map { $0.iata ?? "" }.first
+//                case .failure(let error):
+//                    print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+//                }
+//            }
+//        }
+//        navigationController?.pushViewController(carbonVC, animated: true)
+//    }
     @IBAction func scrollRightButtonTapped(_ sender: UIButton) {
         self.collectionView.scrollToNextItem()
     }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NewsTableViewCell: UITableViewCell {
+class NewsCell: UITableViewCell {
     
     // MARK: - Outlets
     @IBOutlet weak var newsDescriptionLabel: UILabel!

@@ -20,6 +20,7 @@ class SavedPlacesViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var countOfSavedPlacesLabel: UILabel!
+    @IBOutlet weak var countLabelBackground: UIView!
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -34,6 +35,9 @@ class SavedPlacesViewController: UIViewController {
     // MARK: - Helpers
     func setupView() {
         self.navigationController?.navigationBar.prefersLargeTitles = false
+        self.countLabelBackground.layer.cornerRadius = 12
+        self.countLabelBackground.layer.masksToBounds = true
+        self.countLabelBackground.layer.maskedCorners = [ .layerMinXMinYCorner, .layerMinXMaxYCorner]
         collectionView.layer.cornerRadius = 30
         collectionView.register(UINib(nibName: Constants.Identifiers.savedCollectionViewItemNibName, bundle: nil),
                                 forCellWithReuseIdentifier: Constants.Identifiers.savedCollectionViewItemID)
@@ -41,11 +45,11 @@ class SavedPlacesViewController: UIViewController {
     @objc func countLabelSwitch() {
         switch self.savedPlaces.count {
         case 0:
-            self.countOfSavedPlacesLabel.text = "there aren't any places"
+            self.countOfSavedPlacesLabel.text = "has no place"
         case 1:
-            self.countOfSavedPlacesLabel.text = "there's one place"
+            self.countOfSavedPlacesLabel.text = "has one place"
         default:
-            self.countOfSavedPlacesLabel.text = "there are \(self.savedPlaces.count) places"
+            self.countOfSavedPlacesLabel.text = "has \(self.savedPlaces.count) places"
         }
     }
     @objc func snapshotListener() {

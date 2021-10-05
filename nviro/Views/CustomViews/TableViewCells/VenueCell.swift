@@ -8,14 +8,14 @@
 import UIKit
 import MapKit
 
-class RestaurantTableViewCell: UITableViewCell {
+class VenueCell: UITableViewCell {
     
     // MARK: - Outlets
     @IBOutlet weak var cellStackView: UIStackView!
     @IBOutlet weak var venueNameLabel: UILabel!
     @IBOutlet weak var venueCategoryLabel: UILabel!
-    @IBOutlet weak var openInMapsButton: UIButton!
-
+    @IBOutlet weak var rankingStarLabel: UILabel!
+    
     // MARK: - Properties
     var venue: Venue? {
         didSet {
@@ -33,8 +33,9 @@ class RestaurantTableViewCell: UITableViewCell {
             venueNameLabel.text = venue.name
             let categories = venue.categories.map({$0})
             guard let categoryName = categories.map({$0.name}).first else { return }
-            
             venueCategoryLabel.text = categoryName
+            
+            
         }
     }
 }

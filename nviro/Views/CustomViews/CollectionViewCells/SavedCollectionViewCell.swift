@@ -32,7 +32,7 @@ class SavedCollectionViewCell: UICollectionViewCell {
         self.stackView.layer.cornerRadius = 20
         self.containerView.layer.masksToBounds = false
         self.containerView.layer.cornerRadius = 20
-        self.containerView.addShadow(xAxis: 0, yAxis: 2, shadowRadius: 3, color: .black, shadowOpacity: 0.75)
+        self.containerView.addShadow(xAxis: 0, yAxis: 2, shadowRadius: 4, color: .black, shadowOpacity: 0.75)
     }
     
     // MARK: - Helpers

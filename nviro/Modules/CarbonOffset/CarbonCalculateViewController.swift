@@ -15,20 +15,18 @@ class CarbonCalculateViewController: UIViewController {
     var airports = [Content]()
     
     // MARK: - Outlets
-    @IBOutlet weak var calculateCarbonOffsetView: UIView!
-    @IBOutlet weak var calculateButton: UIButton!
     @IBOutlet weak var fromTextField: UITextField!
     @IBOutlet weak var toTextField: UITextField!
     @IBOutlet weak var flightClassSegment: UISegmentedControl!
     @IBOutlet weak var flightOptionSegment: UISegmentedControl!
-    @IBOutlet weak var distanceButton: UIButton!
-    @IBOutlet weak var emissionButton: UIButton!
-    @IBOutlet weak var treesButton: UIButton!
-    @IBOutlet weak var resultsStackView: UIStackView!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var calculateStackView: UIStackView!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
+    @IBOutlet weak var calculateBackgroundView: UIView!
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var backgroundMain: UIView!
-    
+    @IBOutlet weak var calculateButton: UIButton!
+    @IBOutlet weak var resultsContainerView: UIView!
+    @IBOutlet weak var refreshButton: UIButton!
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -38,59 +36,57 @@ class CarbonCalculateViewController: UIViewController {
     
     // MARK: - Helpers
     fileprivate func setupDesign() {
-        calculateCarbonOffsetView.layer.cornerRadius = 20
+        calculateBackgroundView.layer.masksToBounds = true
+        calculateBackgroundView.layer.cornerRadius = 20
+        calculateStackView.layer.cornerRadius = 20
+        calculateStackView.layer.masksToBounds = true
+        
         backgroundMain.layer.cornerRadius = 30
-    }
-    fileprivate func clearButtonTitles() {
-        self.distanceButton.setTitle("0 km", for: .normal)
-        self.emissionButton.setTitle("0 kg", for: .normal)
-        self.treesButton.setTitle("0 tree", for: .normal)
+        refreshButton.layer.cornerRadius = 12
+        refreshButton.layer.masksToBounds = true
+        refreshButton.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMinXMinYCorner]
+        calculateBackgroundView.addShadow(xAxis: 0, yAxis: 4, shadowRadius: 8, color: .black, shadowOpacity: 1)
+        calculateButton.styleFilledButton(fillColor: UIColor(named: "Background")!, radius: 15, tintColor: .lightGray)
     }
     func setupView() {
+        self.navigationController?.navigationBar.isTranslucent = true
         indicator.isHidden = true
-        resultsStackView.isHidden = true
+        resultsContainerView.isHidden = true
         tableView.layer.cornerRadius = 20
         setupDesign()
-        clearButtonTitles()
     }
-    func setupLabelTexts() {
-        guard let from = fromTextField.text, !from.isEmpty,
-              let to = toTextField.text, !to.isEmpty else { return }
-        
-        let flightOffsetRequest = FlightOffsetRequest(leg1: LegForFlight(originAirportCode: from, destinationAirportCode: to, travelClass: travelClass ?? "Economy"))
-        getFlightOffsetData(request: flightOffsetRequest)
+    
+    func navigateToCarbonResultsVC(flightOffset: FlightOffset) {
+        guard let cvc = children.last as? CarbonResultsViewController else { return }
+        cvc.flightOffset = flightOffset
+        cvc.selectedSegmentControlIndex = flightOptionSegment.selectedSegmentIndex
     }
-    func setTreeOffsetLabel(for flightOffset: FlightOffset) -> String {
-        if flightOptionSegment.selectedSegmentIndex == 1 {
-            guard let treeQuantityString = flightOffset.data.requires.components(separatedBy: .whitespaces).first else { return "N/A" }
-            guard let treeQuantityInt = Int(treeQuantityString) else { return "N/A" }
-            return flightOffset.data.requires == "0 tree" ? "2 trees" : "\(treeQuantityInt * 2) trees"
-        }
-        return flightOffset.data.requires == "0 tree" ? "1 tree" : flightOffset.data.requires
+    fileprivate func transition(to: UIView) {
+        UIView.transition(with: to, duration: 1, options: .transitionFlipFromTop, animations: {
+            self.tableView.isHidden = true
+            self.hideKeyboard(self.fromTextField)
+            self.hideKeyboard(self.toTextField)
+            to.isHidden = false
+        }, completion: nil)
     }
-    func setDistanceLabel(for flightOffset: FlightOffset) -> String {
-        if flightOptionSegment.selectedSegmentIndex == 1 {
-            guard let distanceString = flightOffset.data.distance.components(separatedBy: .whitespaces).first else { return "N/A" }
-            guard let distanceInt = Int(distanceString) else { return "N/A" }
-            return "\(distanceInt * 2) km"
-        }
-        return flightOffset.data.distance
-    }
+    
     func getFlightOffsetData(request: FlightOffsetRequest) {
-        indicator.isHidden = false
-        indicator.startAnimating()
+        self.indicator.isHidden = false
+        self.indicator.startAnimating()
         NetworkService.flightOffset(flightOffsetRequest: request) { result in
             DispatchQueue.main.async {
-                self.indicator.isHidden = true
-                self.indicator.stopAnimating()
                 switch result {
                 case .success(let flightOffset):
-                    self.emissionButton.setTitle(flightOffset.data.carbonLoad, for: .normal)
-                    self.distanceButton.setTitle(self.setDistanceLabel(for: flightOffset), for: .normal)
-                    self.treesButton.setTitle(self.setTreeOffsetLabel(for: flightOffset), for: .normal)
+                    self.navigateToCarbonResultsVC(flightOffset: flightOffset)
+                    self.calculateBackgroundView.fadeOut2()
+                    self.transition(to: self.resultsContainerView)
+                    self.indicator.isHidden = true
+                    self.indicator.stopAnimating()
                 case .failure(let error):
                     self.showAlert(title: "Error", message: Constants.ErrorMessages.noResults)
                     print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+                    self.indicator.isHidden = true
+                    self.indicator.stopAnimating()
                 }
             }
         }
@@ -98,13 +94,13 @@ class CarbonCalculateViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func calculateButtonTapped(_ sender: UIButton) {
-        setupLabelTexts()
-        tableView.fadeOut(duration: 0.4)
-        hideKeyboard(fromTextField)
-        hideKeyboard(toTextField)
-        if fromTextField.text != "" && toTextField.text != "" {
-            self.resultsStackView.fadeIn(duration: 0.4)
-        }
+        guard let from = fromTextField.text, !from.isEmpty, from.count == 3,
+              let to = toTextField.text, !to.isEmpty, to.count == 3 else {
+                  self.showAlert(title: "Unrecognized airport code", message: "Please fill out text fields with your flight's departure and arrival airport codes(i.e Amsterdam == AMS).")
+                  return
+              }
+        let flightOffsetRequest = FlightOffsetRequest(leg1: LegForFlight(originAirportCode: from, destinationAirportCode: to, travelClass: travelClass ?? "Economy"))
+        getFlightOffsetData(request: flightOffsetRequest)
     }
     @IBAction func flightClassChanged(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
@@ -116,14 +112,17 @@ class CarbonCalculateViewController: UIViewController {
             travelClass = "Economy"
         }
     }
-    @IBAction func refreshButtonTapped(_ sender: UIBarButtonItem) {
-        resultsStackView.fadeOut(duration: 0.4)
-        tableView.fadeOut(duration: 0.4)
-        fromTextField.text = ""
-        toTextField.text = ""
-        fromTextField.endEditing(true)
-        toTextField.endEditing(true)
-        clearButtonTitles()
+    @IBAction func refreshTapped(_ sender: UIButton) {
+        UIView.transition(with: self.calculateBackgroundView, duration: 1, options: .transitionFlipFromBottom, animations: {
+            self.indicator.isHidden = true
+            self.indicator.stopAnimating()
+            self.resultsContainerView.isHidden = true
+            self.calculateBackgroundView.isHidden = false
+            self.fromTextField.text?.removeAll()
+            self.toTextField.text?.removeAll()
+            self.fromTextField.endEditing(true)
+            self.toTextField.endEditing(true)
+        }, completion: nil)
     }
 }
 // MARK: - UITextFieldDelegate
@@ -131,25 +130,24 @@ extension CarbonCalculateViewController: UITextFieldDelegate {
     fileprivate func hideKeyboard(_ textField: UITextField) {
         textField.resignFirstResponder()
     }
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if fromTextField.text == "" && toTextField.text == "" {
             hideKeyboard(textField)
         }
-        //hideKeyboard(textField)
         return true
     }
-    
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        tableView.fadeIn(duration: 0.4)
-        NetworkService.getAirports(with: textField.text!) { result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let results):
-                    self.airports = results
-                    self.tableView.reloadData()
-                case .failure(let error):
-                    print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+        if textField.text?.count ?? 0 >= 1 {
+            NetworkService.getAirports(with: textField.text!) { result in
+                DispatchQueue.main.async {
+                    switch result {
+                    case .success(let results):
+                        self.airports = results
+                        self.tableView.reloadData()
+                        self.tableView.isHidden = false
+                    case .failure(let error):
+                        print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+                    }
                 }
             }
         }

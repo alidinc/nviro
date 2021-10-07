@@ -106,13 +106,9 @@ class VenueMapViewController: UIViewController {
             self.annotations.append(annotation)
         }
         DispatchQueue.main.async {
-            
             self.mapView.addAnnotations(self.annotations)
             self.mapView.showAnnotations(self.annotations, animated: true)
         }
-    }
-    @IBAction func selectedCallOutButtonTapped(_ sender: UIButton) {
-        
     }
 }
 
@@ -140,7 +136,7 @@ extension VenueMapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         if let venueForAnnotation = view.annotation as? VenueAnnotation {
             let location = CLLocation(latitude: venueForAnnotation.coordinate.latitude, longitude: venueForAnnotation.coordinate.longitude)
-            if let locationName = venueForAnnotation.locationName {
+            if let locationName = venueForAnnotation.title {
                 self.openInMaps(location, locationName)
             }
         }
@@ -157,7 +153,7 @@ extension VenueMapViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return self.tableView.frame.height / 4
+        return self.tableView.frame.height / 3.5
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let venue = venues[indexPath.row]

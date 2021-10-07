@@ -11,7 +11,6 @@ import MapKit
 class VenueCell: UITableViewCell {
     
     // MARK: - Outlets
-    @IBOutlet weak var cellStackView: UIStackView!
     @IBOutlet weak var venueNameLabel: UILabel!
     @IBOutlet weak var venueCategoryLabel: UILabel!
     @IBOutlet weak var rankingStarLabel: UILabel!
@@ -22,20 +21,13 @@ class VenueCell: UITableViewCell {
             updateView()
         }
     }
-    
     // MARK: - Helpers
-    fileprivate func setupView() {
-        self.layer.masksToBounds = true
-        cellStackView.layer.cornerRadius = 20
-    }
     fileprivate func updateView() {
         if let venue = venue {
             venueNameLabel.text = venue.name
             let categories = venue.categories.map({$0})
             guard let categoryName = categories.map({$0.name}).first else { return }
             venueCategoryLabel.text = categoryName
-            
-            
         }
     }
 }

@@ -12,77 +12,89 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="placeItem" id="gTV-IL-0wX" customClass="SavedCollectionViewCell" customModule="nviro" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="322" height="120"/>
+            <rect key="frame" x="0.0" y="0.0" width="390" height="142"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="322" height="120"/>
+                <rect key="frame" x="0.0" y="0.0" width="390" height="142"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oke-jM-tc2">
-                        <rect key="frame" x="20" y="10" width="282" height="100"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="142"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4EQ-hc-vcZ">
-                                <rect key="frame" x="0.0" y="0.0" width="282" height="100"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EpM-pa-Ust">
+                                <rect key="frame" x="20" y="10" width="350" height="122"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="254" translatesAutoresizingMaskIntoConstraints="NO" id="FPH-rR-Fro">
-                                        <rect key="frame" x="0.0" y="0.0" width="169" height="100"/>
-                                    </imageView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SBX-nA-ScK">
-                                        <rect key="frame" x="169" y="0.0" width="113" height="100"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4EQ-hc-vcZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="122"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzc-s9-w8D">
-                                                <rect key="frame" x="10" y="0.0" width="83" height="100"/>
-                                                <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="16"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                                <size key="shadowOffset" width="0.0" height="0.0"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" horizontalCompressionResistancePriority="752" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zxk-K5-C85">
-                                                <rect key="frame" x="71" y="10" width="32" height="22"/>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" image="xmark.circle.fill" catalog="system">
-                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="15"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="deleteButtonTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="rXV-sb-Hao"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F4O-pP-nCa">
-                                                <rect key="frame" x="71" y="68" width="32" height="22"/>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" image="arrow.right.circle.fill" catalog="system">
-                                                    <color key="titleColor" name="SearchBarColor"/>
-                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="15"/>
-                                                </state>
-                                            </button>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="254" translatesAutoresizingMaskIntoConstraints="NO" id="FPH-rR-Fro">
+                                                <rect key="frame" x="0.0" y="0.0" width="210" height="122"/>
+                                            </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SBX-nA-ScK">
+                                                <rect key="frame" x="210" y="0.0" width="140" height="122"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzc-s9-w8D">
+                                                        <rect key="frame" x="10" y="0.0" width="110" height="122"/>
+                                                        <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="14"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" horizontalCompressionResistancePriority="752" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zxk-K5-C85">
+                                                        <rect key="frame" x="71" y="10" width="59" height="22"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="xmark.circle.fill" catalog="system">
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="15"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="deleteButtonTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="rXV-sb-Hao"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F4O-pP-nCa">
+                                                        <rect key="frame" x="71" y="90" width="59" height="22"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" image="arrow.right.circle.fill" catalog="system">
+                                                            <color key="titleColor" name="SearchBarColor"/>
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="15"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" name="Pine"/>
+                                                <constraints>
+                                                    <constraint firstItem="F4O-pP-nCa" firstAttribute="centerX" secondItem="zxk-K5-C85" secondAttribute="centerX" id="Qbf-zb-qPZ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="zxk-K5-C85" secondAttribute="trailing" constant="10" id="YDM-g2-eVJ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="F4O-pP-nCa" secondAttribute="trailing" constant="10" id="fPV-aI-tnS"/>
+                                                    <constraint firstAttribute="bottom" secondItem="F4O-pP-nCa" secondAttribute="bottom" constant="10" id="kSG-7f-wvW"/>
+                                                    <constraint firstItem="zxk-K5-C85" firstAttribute="top" secondItem="SBX-nA-ScK" secondAttribute="top" constant="10" id="lOx-x5-sk5"/>
+                                                    <constraint firstAttribute="trailing" secondItem="fzc-s9-w8D" secondAttribute="trailing" constant="20" id="pzh-zp-tcE"/>
+                                                    <constraint firstItem="fzc-s9-w8D" firstAttribute="leading" secondItem="SBX-nA-ScK" secondAttribute="leading" constant="10" id="sa7-Ru-GyC"/>
+                                                    <constraint firstAttribute="bottom" secondItem="fzc-s9-w8D" secondAttribute="bottom" id="wVD-6n-dul"/>
+                                                    <constraint firstItem="fzc-s9-w8D" firstAttribute="top" secondItem="SBX-nA-ScK" secondAttribute="top" id="xXS-xt-vTh"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
-                                        <color key="backgroundColor" name="Pine"/>
                                         <constraints>
-                                            <constraint firstItem="F4O-pP-nCa" firstAttribute="centerX" secondItem="zxk-K5-C85" secondAttribute="centerX" id="Qbf-zb-qPZ"/>
-                                            <constraint firstAttribute="trailing" secondItem="zxk-K5-C85" secondAttribute="trailing" constant="10" id="YDM-g2-eVJ"/>
-                                            <constraint firstAttribute="trailing" secondItem="F4O-pP-nCa" secondAttribute="trailing" constant="10" id="fPV-aI-tnS"/>
-                                            <constraint firstAttribute="bottom" secondItem="F4O-pP-nCa" secondAttribute="bottom" constant="10" id="kSG-7f-wvW"/>
-                                            <constraint firstItem="zxk-K5-C85" firstAttribute="top" secondItem="SBX-nA-ScK" secondAttribute="top" constant="10" id="lOx-x5-sk5"/>
-                                            <constraint firstAttribute="trailing" secondItem="fzc-s9-w8D" secondAttribute="trailing" constant="20" id="pzh-zp-tcE"/>
-                                            <constraint firstItem="fzc-s9-w8D" firstAttribute="leading" secondItem="SBX-nA-ScK" secondAttribute="leading" constant="10" id="sa7-Ru-GyC"/>
-                                            <constraint firstAttribute="bottom" secondItem="fzc-s9-w8D" secondAttribute="bottom" id="wVD-6n-dul"/>
-                                            <constraint firstItem="fzc-s9-w8D" firstAttribute="top" secondItem="SBX-nA-ScK" secondAttribute="top" id="xXS-xt-vTh"/>
+                                            <constraint firstItem="F4O-pP-nCa" firstAttribute="leading" secondItem="FPH-rR-Fro" secondAttribute="trailing" constant="71" id="LCg-25-0ME"/>
+                                            <constraint firstItem="FPH-rR-Fro" firstAttribute="width" secondItem="4EQ-hc-vcZ" secondAttribute="width" multiplier="0.6" id="esd-NA-lYv"/>
                                         </constraints>
-                                    </view>
+                                    </stackView>
                                 </subviews>
+                                <color key="backgroundColor" name="SearchBarColor"/>
                                 <constraints>
-                                    <constraint firstItem="F4O-pP-nCa" firstAttribute="leading" secondItem="FPH-rR-Fro" secondAttribute="trailing" constant="71" id="LCg-25-0ME"/>
-                                    <constraint firstItem="FPH-rR-Fro" firstAttribute="width" secondItem="4EQ-hc-vcZ" secondAttribute="width" multiplier="0.6" id="esd-NA-lYv"/>
+                                    <constraint firstItem="4EQ-hc-vcZ" firstAttribute="leading" secondItem="EpM-pa-Ust" secondAttribute="leading" id="fSZ-wE-fph"/>
+                                    <constraint firstAttribute="bottom" secondItem="4EQ-hc-vcZ" secondAttribute="bottom" id="kkS-2f-jke"/>
+                                    <constraint firstItem="4EQ-hc-vcZ" firstAttribute="top" secondItem="EpM-pa-Ust" secondAttribute="top" id="v1G-Uy-bbj"/>
+                                    <constraint firstAttribute="trailing" secondItem="4EQ-hc-vcZ" secondAttribute="trailing" id="xbg-dB-thM"/>
                                 </constraints>
-                            </stackView>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" name="SearchBarColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="4EQ-hc-vcZ" secondAttribute="bottom" id="2bC-Uj-wuk"/>
-                            <constraint firstItem="4EQ-hc-vcZ" firstAttribute="leading" secondItem="Oke-jM-tc2" secondAttribute="leading" id="fqj-2C-96G"/>
-                            <constraint firstItem="4EQ-hc-vcZ" firstAttribute="top" secondItem="Oke-jM-tc2" secondAttribute="top" id="gzb-ue-BqH"/>
-                            <constraint firstAttribute="trailing" secondItem="4EQ-hc-vcZ" secondAttribute="trailing" id="jTK-rV-o5a"/>
+                            <constraint firstItem="EpM-pa-Ust" firstAttribute="leading" secondItem="Oke-jM-tc2" secondAttribute="leading" constant="20" id="6ZI-YM-6V9"/>
+                            <constraint firstAttribute="bottom" secondItem="EpM-pa-Ust" secondAttribute="bottom" constant="10" id="JfT-ew-hrE"/>
+                            <constraint firstItem="EpM-pa-Ust" firstAttribute="top" secondItem="Oke-jM-tc2" secondAttribute="top" constant="10" id="VRC-yh-QJ4"/>
+                            <constraint firstAttribute="trailing" secondItem="EpM-pa-Ust" secondAttribute="trailing" constant="20" id="btF-5b-l77"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -90,19 +102,19 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" name="SearchBarColor"/>
             <constraints>
-                <constraint firstItem="Oke-jM-tc2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="3Ci-4e-HOq"/>
-                <constraint firstItem="Oke-jM-tc2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="Koa-6B-8gD"/>
-                <constraint firstAttribute="bottom" secondItem="Oke-jM-tc2" secondAttribute="bottom" constant="10" id="bil-rF-9ii"/>
-                <constraint firstAttribute="trailing" secondItem="Oke-jM-tc2" secondAttribute="trailing" constant="20" id="lGm-Mx-T2I"/>
+                <constraint firstItem="Oke-jM-tc2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="3Ci-4e-HOq"/>
+                <constraint firstItem="Oke-jM-tc2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Koa-6B-8gD"/>
+                <constraint firstAttribute="bottom" secondItem="Oke-jM-tc2" secondAttribute="bottom" id="bil-rF-9ii"/>
+                <constraint firstAttribute="trailing" secondItem="Oke-jM-tc2" secondAttribute="trailing" id="lGm-Mx-T2I"/>
             </constraints>
-            <size key="customSize" width="355" height="153"/>
+            <size key="customSize" width="423" height="175"/>
             <connections>
-                <outlet property="containerView" destination="Oke-jM-tc2" id="ERf-c7-tAn"/>
+                <outlet property="backgroundCell" destination="EpM-pa-Ust" id="6JQ-KP-5ht"/>
                 <outlet property="locationNameLabel" destination="fzc-s9-w8D" id="rYZ-G1-ma5"/>
                 <outlet property="savedImage" destination="FPH-rR-Fro" id="M5e-qG-frA"/>
                 <outlet property="stackView" destination="4EQ-hc-vcZ" id="mhK-MD-azr"/>
             </connections>
-            <point key="canvasLocation" x="375.36231884057975" y="143.30357142857142"/>
+            <point key="canvasLocation" x="424.63768115942031" y="150.66964285714286"/>
         </collectionViewCell>
     </objects>
     <resources>

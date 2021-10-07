@@ -19,16 +19,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="L3Z-Xq-snW">
-                                <rect key="frame" x="20" y="44" width="248.5" height="52"/>
+                                <rect key="frame" x="20" y="44" width="192" height="52"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venues" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSc-dq-Tcw">
-                                        <rect key="frame" x="0.0" y="0.0" width="248.5" height="35.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="192" height="35.5"/>
                                         <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="serving vegan &amp; vegetarian food" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27P-3o-Rfh">
-                                        <rect key="frame" x="0.0" y="35.5" width="248.5" height="16.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="for vegan &amp; vegetarian food" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27P-3o-Rfh">
+                                        <rect key="frame" x="0.0" y="35.5" width="192" height="16.5"/>
                                         <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -117,7 +117,6 @@
                             <constraint firstItem="CpR-PS-q7z" firstAttribute="top" secondItem="QwC-pc-3Hg" secondAttribute="bottom" constant="20" id="EAG-Q8-3Yv"/>
                             <constraint firstItem="CpR-PS-q7z" firstAttribute="leading" secondItem="ir8-Pw-feU" secondAttribute="leading" id="MlK-th-Fbm"/>
                             <constraint firstItem="ir8-Pw-feU" firstAttribute="trailing" secondItem="CpR-PS-q7z" secondAttribute="trailing" id="NZ7-HA-LTb"/>
-                            <constraint firstItem="L3Z-Xq-snW" firstAttribute="width" secondItem="lSu-qa-7zF" secondAttribute="width" multiplier="0.6" id="Oit-vB-TqA"/>
                             <constraint firstItem="L3Z-Xq-snW" firstAttribute="leading" secondItem="ir8-Pw-feU" secondAttribute="leading" constant="20" id="Pc8-xc-1yQ"/>
                             <constraint firstItem="CpR-PS-q7z" firstAttribute="top" secondItem="L3Z-Xq-snW" secondAttribute="bottom" constant="20" id="T9M-0U-5Si"/>
                             <constraint firstItem="QwC-pc-3Hg" firstAttribute="width" secondItem="lSu-qa-7zF" secondAttribute="width" multiplier="0.4" id="go0-ax-eCu"/>

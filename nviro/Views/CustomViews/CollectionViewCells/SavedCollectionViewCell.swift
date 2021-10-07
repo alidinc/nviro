@@ -22,7 +22,8 @@ class SavedCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var savedImage: UIImageView!
     @IBOutlet weak var locationNameLabel: UILabel!
     @IBOutlet weak var stackView: UIStackView!
-    @IBOutlet weak var containerView: UIView!
+
+    @IBOutlet weak var backgroundCell: UIView!
     
     // MARK: - Lifecycle
     override func awakeFromNib() {
@@ -30,9 +31,9 @@ class SavedCollectionViewCell: UICollectionViewCell {
         self.savedImage.contentMode = .scaleAspectFill
         self.stackView.layer.masksToBounds = true
         self.stackView.layer.cornerRadius = 20
-        self.containerView.layer.masksToBounds = false
-        self.containerView.layer.cornerRadius = 20
-        self.containerView.addShadow(xAxis: 0, yAxis: 2, shadowRadius: 4, color: .black, shadowOpacity: 0.75)
+        self.backgroundCell.layer.masksToBounds = false
+        self.backgroundCell.layer.cornerRadius = 20
+        self.backgroundCell.addShadow(xAxis: 0, yAxis: 2, shadowRadius: 4, color: .black, shadowOpacity: 0.75)
     }
     
     // MARK: - Helpers

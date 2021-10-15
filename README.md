@@ -1,5 +1,8 @@
 # nviro
-An eco-friendly travel guide app. You can search for any cities globally via MapKit.
+An eco-friendly travel guide app. 
+
+
+You can search for any cities globally via MapKit.
 ![simulator_screenshot_62A9166E-CAF7-4E81-9987-FCAE62677ABC](https://user-images.githubusercontent.com/78941775/137491325-6deb6f52-708c-4a05-b743-7438a993b84c.png)
 
 You can find instant air pollution readings provided by iQAir, and images provided by unsplash.com for a selected location.

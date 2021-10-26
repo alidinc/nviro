@@ -89,7 +89,6 @@ fastlane/test_output
 
 iOSInjectionProject/
 
-/nviro/Helpers+Extensions/Constants.swift
 
 
 .DS_Store

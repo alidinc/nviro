@@ -34,6 +34,7 @@ class SavedCollectionViewCell: UICollectionViewCell {
         self.backgroundCell.layer.masksToBounds = false
         self.backgroundCell.layer.cornerRadius = 20
         self.backgroundCell.addShadow(xAxis: 0, yAxis: 2, shadowRadius: 4, color: .black, shadowOpacity: 0.75)
+        
     }
     
     // MARK: - Helpers

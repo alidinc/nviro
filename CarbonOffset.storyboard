@@ -20,10 +20,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Q7-CU-opj">
-                                <rect key="frame" x="0.0" y="121" width="414" height="692"/>
+                                <rect key="frame" x="0.0" y="116" width="414" height="697"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ycO-8V-GFb">
-                                        <rect key="frame" x="20" y="224" width="374" height="468"/>
+                                        <rect key="frame" x="20" y="224" width="374" height="473"/>
                                         <color key="backgroundColor" name="SearchBarColor"/>
                                         <color key="sectionIndexBackgroundColor" name="SearchBarColor"/>
                                         <prototypes>
@@ -94,7 +94,7 @@
                                                             <segment title="Economy"/>
                                                             <segment title="Business"/>
                                                         </segments>
-                                                        <color key="selectedSegmentTintColor" name="Green-Background"/>
+                                                        <color key="selectedSegmentTintColor" name="Pine"/>
                                                         <connections>
                                                             <action selector="flightClassChanged:" destination="r04-4z-Lea" eventType="valueChanged" id="q6H-4H-Jaj"/>
                                                         </connections>
@@ -106,7 +106,7 @@
                                                             <segment title="One way"/>
                                                             <segment title="Round trip"/>
                                                         </segments>
-                                                        <color key="selectedSegmentTintColor" name="Green-Background"/>
+                                                        <color key="selectedSegmentTintColor" name="Pine"/>
                                                         <connections>
                                                             <action selector="flightClassChanged:" destination="r04-4z-Lea" eventType="valueChanged" id="jMV-ef-iy3"/>
                                                         </connections>
@@ -114,10 +114,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90F-hM-U2U">
                                                         <rect key="frame" x="0.0" y="150" width="337" height="40"/>
                                                         <color key="backgroundColor" name="Background"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="Calculate">
-                                                            <fontDescription key="titleFontDescription" name="Galvji" family="Galvji" pointSize="16"/>
-                                                        </buttonConfiguration>
+                                                        <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="16"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="Calculate"/>
                                                         <connections>
                                                             <action selector="calculateButtonTapped:" destination="r04-4z-Lea" eventType="touchUpInside" id="dG5-M7-xAI"/>
                                                         </connections>
@@ -129,7 +128,7 @@
                                                 </constraints>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" name="Pine"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="pUF-bX-5q8" firstAttribute="centerX" secondItem="FG4-mY-OSv" secondAttribute="centerX" id="0Eu-W2-gAJ"/>
                                             <constraint firstItem="pUF-bX-5q8" firstAttribute="centerY" secondItem="FG4-mY-OSv" secondAttribute="centerY" id="Fe4-b0-RV2"/>
@@ -138,45 +137,44 @@
                                         </constraints>
                                     </view>
                                     <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mft-mk-9sf">
-                                        <rect key="frame" x="20.5" y="34.5" width="373" height="623"/>
+                                        <rect key="frame" x="20.5" y="35" width="373" height="627"/>
                                         <connections>
                                             <segue destination="0oD-Xt-ucM" kind="embed" id="VZn-Ff-ljC"/>
                                         </connections>
                                     </containerView>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="o9B-XY-rEG">
-                                        <rect key="frame" x="253" y="197" width="20" height="20"/>
+                                        <rect key="frame" x="197" y="196" width="20" height="20"/>
                                         <color key="color" name="BackgroundReverse"/>
                                     </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" name="SearchBarColor"/>
                                 <constraints>
-                                    <constraint firstItem="o9B-XY-rEG" firstAttribute="leading" secondItem="7Q7-CU-opj" secondAttribute="leading" constant="253" id="2Mv-tY-e2o"/>
                                     <constraint firstItem="ycO-8V-GFb" firstAttribute="top" secondItem="FG4-mY-OSv" secondAttribute="bottom" constant="-20" id="6zM-BM-GZw"/>
-                                    <constraint firstItem="o9B-XY-rEG" firstAttribute="top" secondItem="7Q7-CU-opj" secondAttribute="top" constant="197" id="88i-Se-4YO"/>
                                     <constraint firstItem="ycO-8V-GFb" firstAttribute="leading" secondItem="7Q7-CU-opj" secondAttribute="leading" constant="20" id="9Uq-jn-MNO"/>
-                                    <constraint firstAttribute="trailing" secondItem="o9B-XY-rEG" secondAttribute="trailing" constant="141" id="9oC-l4-cVD"/>
                                     <constraint firstItem="FG4-mY-OSv" firstAttribute="leading" secondItem="7Q7-CU-opj" secondAttribute="leading" constant="20" id="HKZ-fR-TEp"/>
                                     <constraint firstItem="Mft-mk-9sf" firstAttribute="centerY" secondItem="7Q7-CU-opj" secondAttribute="centerY" id="I2k-zE-SUK"/>
+                                    <constraint firstItem="o9B-XY-rEG" firstAttribute="top" secondItem="7Q7-CU-opj" secondAttribute="top" constant="196" id="Tu3-lm-y04"/>
                                     <constraint firstItem="Mft-mk-9sf" firstAttribute="height" secondItem="7Q7-CU-opj" secondAttribute="height" multiplier="0.9" id="YDm-5i-sjR"/>
                                     <constraint firstItem="FG4-mY-OSv" firstAttribute="top" secondItem="7Q7-CU-opj" secondAttribute="top" constant="20" id="bBM-FV-6bK"/>
                                     <constraint firstAttribute="bottom" secondItem="ycO-8V-GFb" secondAttribute="bottom" id="dDT-sn-EUy"/>
-                                    <constraint firstItem="FG4-mY-OSv" firstAttribute="bottom" secondItem="o9B-XY-rEG" secondAttribute="bottom" constant="27" id="hlF-gf-vCy"/>
+                                    <constraint firstItem="o9B-XY-rEG" firstAttribute="leading" secondItem="7Q7-CU-opj" secondAttribute="leading" constant="197" id="hkj-LM-b8H"/>
                                     <constraint firstAttribute="trailing" secondItem="ycO-8V-GFb" secondAttribute="trailing" constant="20" id="oUn-ep-qaZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="o9B-XY-rEG" secondAttribute="trailing" constant="197" id="ogq-zW-Di5"/>
                                     <constraint firstItem="Mft-mk-9sf" firstAttribute="centerX" secondItem="7Q7-CU-opj" secondAttribute="centerX" id="qfc-qd-Mxm"/>
                                     <constraint firstAttribute="trailing" secondItem="FG4-mY-OSv" secondAttribute="trailing" constant="20" id="xcE-v0-Dvs"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="TxX-0s-9DB">
-                                <rect key="frame" x="20" y="44" width="226" height="57"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TxX-0s-9DB">
+                                <rect key="frame" x="20" y="44" width="290" height="52"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carbon offset" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2pI-2y-PE5">
-                                        <rect key="frame" x="0.0" y="0.0" width="226" height="35.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="290" height="35.5"/>
                                         <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="for your flight's carbon emission" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQo-9W-R96">
-                                        <rect key="frame" x="0.0" y="40.5" width="226" height="16.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="for your flight's carbon emission" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQo-9W-R96">
+                                        <rect key="frame" x="0.0" y="35.5" width="290" height="16.5"/>
                                         <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -184,8 +182,11 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2b0-vY-UpR">
-                                <rect key="frame" x="290" y="44" width="124" height="57"/>
-                                <color key="backgroundColor" name="Pine"/>
+                                <rect key="frame" x="310.5" y="44" width="103.5" height="52"/>
+                                <color key="backgroundColor" red="0.30617162590000002" green="0.41534477469999997" blue="0.35811167960000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="gst-SL-Jvx"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="arrow.clockwise" catalog="system" title=" ">
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -198,17 +199,18 @@
                         <viewLayoutGuide key="safeArea" id="3a6-Av-gfu"/>
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
-                            <constraint firstItem="7Q7-CU-opj" firstAttribute="top" secondItem="TxX-0s-9DB" secondAttribute="bottom" constant="20" id="35u-gh-056"/>
                             <constraint firstItem="7Q7-CU-opj" firstAttribute="top" secondItem="2b0-vY-UpR" secondAttribute="bottom" constant="20" id="AuY-yj-1jD"/>
+                            <constraint firstItem="TxX-0s-9DB" firstAttribute="bottom" secondItem="2b0-vY-UpR" secondAttribute="bottom" id="BLe-vM-yKP"/>
                             <constraint firstItem="TxX-0s-9DB" firstAttribute="top" secondItem="3a6-Av-gfu" secondAttribute="top" id="JJB-51-gM6"/>
-                            <constraint firstItem="2b0-vY-UpR" firstAttribute="width" secondItem="HFT-X7-Yw8" secondAttribute="width" multiplier="0.3" id="Oy8-Gc-ttg"/>
                             <constraint firstItem="TxX-0s-9DB" firstAttribute="leading" secondItem="3a6-Av-gfu" secondAttribute="leading" constant="20" id="UJw-Eg-aeH"/>
+                            <constraint firstItem="TxX-0s-9DB" firstAttribute="width" secondItem="HFT-X7-Yw8" secondAttribute="width" multiplier="0.7" id="YeG-Tp-Orv"/>
                             <constraint firstItem="FG4-mY-OSv" firstAttribute="height" secondItem="HFT-X7-Yw8" secondAttribute="height" multiplier="0.25" id="dl0-Wl-Om7"/>
                             <constraint firstItem="7Q7-CU-opj" firstAttribute="trailing" secondItem="3a6-Av-gfu" secondAttribute="trailing" id="hng-7g-UZm"/>
                             <constraint firstItem="3a6-Av-gfu" firstAttribute="trailing" secondItem="2b0-vY-UpR" secondAttribute="trailing" id="jxF-hu-gd3"/>
                             <constraint firstItem="3a6-Av-gfu" firstAttribute="bottom" secondItem="7Q7-CU-opj" secondAttribute="bottom" id="lEY-KS-kvS"/>
                             <constraint firstItem="7Q7-CU-opj" firstAttribute="leading" secondItem="3a6-Av-gfu" secondAttribute="leading" id="mt3-C8-4Yi"/>
                             <constraint firstItem="2b0-vY-UpR" firstAttribute="top" secondItem="3a6-Av-gfu" secondAttribute="top" id="nYb-YI-bnl"/>
+                            <constraint firstItem="2b0-vY-UpR" firstAttribute="width" secondItem="HFT-X7-Yw8" secondAttribute="width" multiplier="0.25" id="ozg-0V-wnD"/>
                             <constraint firstItem="Mft-mk-9sf" firstAttribute="width" secondItem="HFT-X7-Yw8" secondAttribute="width" multiplier="0.9" id="xov-KG-arn"/>
                         </constraints>
                     </view>
@@ -239,20 +241,20 @@
             <objects>
                 <viewController storyboardIdentifier="carbonResultsVC" id="0oD-Xt-ucM" customClass="CarbonResultsViewController" customModule="nviro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WKB-t4-Xfa">
-                        <rect key="frame" x="0.0" y="0.0" width="373" height="623"/>
+                        <rect key="frame" x="0.0" y="0.0" width="373" height="627"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="150-DC-aaf">
-                                <rect key="frame" x="10" y="10" width="353" height="603"/>
+                                <rect key="frame" x="10" y="10" width="353" height="607"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MWR-xU-2CG">
-                                        <rect key="frame" x="20" y="20" width="313" height="124.5"/>
+                                        <rect key="frame" x="20" y="20" width="313" height="125.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="iNd-wr-9yn">
-                                                <rect key="frame" x="50" y="0.0" width="213" height="124.5"/>
+                                                <rect key="frame" x="50" y="0.0" width="213" height="125.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="bottom" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="MEy-bw-7Ke">
-                                                        <rect key="frame" x="0.0" y="29.5" width="133" height="65.5"/>
+                                                        <rect key="frame" x="0.0" y="30" width="133" height="65.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8c-7H-7NG">
                                                                 <rect key="frame" x="72" y="0.0" width="61" height="16.5"/>
@@ -372,9 +374,6 @@
         </namedColor>
         <namedColor name="BackgroundReverse">
             <color red="0.17100000381469727" green="0.16899999976158142" blue="0.16899999976158142" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
-        <namedColor name="Green-Background">
-            <color red="0.76599997282028198" green="0.90499997138977051" blue="0.80699998140335083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Pine">
             <color red="0.32899999618530273" green="0.41200000047683716" blue="0.36100000143051147" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

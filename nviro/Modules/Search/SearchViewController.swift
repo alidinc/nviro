@@ -51,8 +51,18 @@ class SearchViewController: UIViewController {
         self.tableView.register(UINib(nibName: Constants.Identifiers.searchTableViewCellNibName, bundle: nil), forCellReuseIdentifier: Constants.Identifiers.searchTableViewCellId)
     }
     
+    fileprivate func setupSearchTextField() {
+        self.searchTextField.textColor = UIColor.black
+        self.searchTextField.addShadow(xAxis: 0, yAxis: 4, shadowRadius: 8, color: .black, shadowOpacity: 0.12)
+        self.searchTextField.backgroundColor = UIColor.quaternarySystemFill
+        self.searchTextField.layer.cornerRadius = 20
+        self.searchTextField.attributedPlaceholder = NSAttributedString(string: " Where are you going?", attributes: [
+            NSAttributedString.Key.foregroundColor : UIColor.darkGray,
+            NSAttributedString.Key.backgroundColor : UIColor.clear])
+    }
+    
     fileprivate func setupView() {
-        searchTextField.addShadow(xAxis: 0, yAxis: 4, shadowRadius: 8, color: .black, shadowOpacity: 0.12)
+        setupSearchTextField()
         searchCompleterSetup()
         setupNavigationBar()
         registerTableViewCell()
@@ -96,8 +106,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             self.coordinate = coordinate
             self.locationID = response?.mapItems[0].placemark.region?.identifier
             self.searchTermForImages = "\(searchToSend.title), \(searchToSend.subtitle)"
-            
-
+    
             self.navigateToCityDetail()
         }
     }

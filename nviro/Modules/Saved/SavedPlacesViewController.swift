@@ -75,41 +75,32 @@ extension SavedPlacesViewController: UICollectionViewDelegate, UICollectionViewD
         guard let venuesMapVC = storyboard.instantiateViewController(withIdentifier: Constants.ViewControllers.venuesMapVC) as? VenueMapViewController else { return }
         let place = savedPlaces[indexPath.row]
         venuesMapVC.place = place
-        
-//        if let locationName = place.locationName {
-//            DispatchQueue.main.async {
-//                NetworkService.getVenues(with: locationName) { result in
-//                    switch result {
-//                    case .success(let venues):
-//                         print("LOCATION FOR ANNOTATIONS --------------------------\(venues.map({$0.name}))")
-//                        venuesMapVC.venues = venues
-//                    case .failure(let error):
-//                        print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
-//                    }
-//                }
-//            }
-//        }
-    
         self.navigationController?.pushViewController(venuesMapVC, animated: true)
     }
+    
 }
 extension SavedPlacesViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: collectionView.frame.height / 3.5)
     }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
 }
 // MARK: - DeleteFromCollectionVCDelegate
 extension SavedPlacesViewController: DeleteFromCollectionVCDelegate {
     func deleteData(model: SavedPlace, indexPath: Int) {
-        let alert = UIAlertController(title: "Are you sure to delete this place?", message: nil, preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { _ in
-            RealmManager.sharedInstance.remove(model)
-            self.snapshotListener()
+        if let locationName = model.locationName {
+            let alert = UIAlertController(title: "Are you sure to delete \(locationName) from your travel list?", message: nil, preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { _ in
+                RealmManager.sharedInstance.remove(model)
+                self.snapshotListener()
+            }
+            alert.addAction(cancelAction)
+            alert.addAction(deleteAction)
+            present(alert, animated: true, completion: nil)
         }
-        alert.addAction(cancelAction)
-        alert.addAction(deleteAction)
-        present(alert, animated: true, completion: nil)
     }
 }
 

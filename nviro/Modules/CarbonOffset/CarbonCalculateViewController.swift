@@ -45,7 +45,7 @@ class CarbonCalculateViewController: UIViewController {
         refreshButton.layer.cornerRadius = 12
         refreshButton.layer.masksToBounds = true
         refreshButton.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMinXMinYCorner]
-        calculateBackgroundView.addShadow(xAxis: 0, yAxis: 4, shadowRadius: 8, color: .black, shadowOpacity: 1)
+        calculateBackgroundView.addShadow(xAxis: 0, yAxis: 4, shadowRadius: 6, color: .black, shadowOpacity: 1)
         calculateButton.styleFilledButton(fillColor: UIColor(named: "Background")!, radius: 15, tintColor: .lightGray)
     }
     func setupView() {
@@ -71,6 +71,7 @@ class CarbonCalculateViewController: UIViewController {
     }
     
     func getFlightOffsetData(request: FlightOffsetRequest) {
+        self.calculateButton.setTitle("", for: .normal)
         self.indicator.isHidden = false
         self.indicator.startAnimating()
         NetworkService.flightOffset(flightOffsetRequest: request) { result in
@@ -82,6 +83,7 @@ class CarbonCalculateViewController: UIViewController {
                     self.transition(to: self.resultsContainerView)
                     self.indicator.isHidden = true
                     self.indicator.stopAnimating()
+                    self.calculateButton.setTitle("Calculate", for: .normal)
                 case .failure(let error):
                     self.showAlert(title: "Error", message: Constants.ErrorMessages.noResults)
                     print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")

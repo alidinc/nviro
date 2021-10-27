@@ -27,6 +27,7 @@ class CarbonCalculateViewController: UIViewController {
     @IBOutlet weak var calculateButton: UIButton!
     @IBOutlet weak var resultsContainerView: UIView!
     @IBOutlet weak var refreshButton: UIButton!
+    @IBOutlet weak var indicator2: UIActivityIndicatorView!
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -51,6 +52,7 @@ class CarbonCalculateViewController: UIViewController {
     func setupView() {
         self.navigationController?.navigationBar.isTranslucent = true
         indicator.isHidden = true
+        indicator2.isHidden = true
         resultsContainerView.isHidden = true
         tableView.layer.cornerRadius = 20
         setupDesign()
@@ -140,8 +142,14 @@ extension CarbonCalculateViewController: UITextFieldDelegate {
     }
     func textFieldDidChangeSelection(_ textField: UITextField) {
         if textField.text?.count ?? 0 >= 1 {
+            refreshButton.isHidden = true
+            indicator2.isHidden = false
+            indicator2.startAnimating()
             NetworkService.getAirports(with: textField.text!) { result in
                 DispatchQueue.main.async {
+                    self.indicator2.isHidden = true
+                    self.indicator2.stopAnimating()
+                    self.refreshButton.isHidden = false
                     switch result {
                     case .success(let results):
                         self.airports = results
@@ -149,6 +157,10 @@ extension CarbonCalculateViewController: UITextFieldDelegate {
                         self.tableView.isHidden = false
                     case .failure(let error):
                         print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+                        self.presentGGAlertOnMainThread(title: "No network", message: "Please try again.", buttonTitle: "OK") {
+                            self.dismiss(animated: true, completion: nil)
+                            self.showEmptyStateView(with: "There's no network. Please check your settings.", in: self.backgroundMain)
+                        }
                     }
                 }
             }

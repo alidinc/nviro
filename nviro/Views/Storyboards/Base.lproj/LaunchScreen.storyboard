@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -42,13 +42,11 @@
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
                             <constraint firstItem="0sP-N1-bYw" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Dm5-3N-Smw"/>
-                            <constraint firstItem="0sP-N1-bYw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="103" id="Ioe-MN-8MM"/>
                             <constraint firstItem="0sP-N1-bYw" firstAttribute="top" secondItem="u0y-tX-905" secondAttribute="bottom" constant="-205" id="LDe-Ze-NZX"/>
                             <constraint firstItem="u0y-tX-905" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="-127" id="LdJ-cZ-Sww"/>
                             <constraint firstAttribute="trailing" secondItem="u0y-tX-905" secondAttribute="trailing" constant="-232" id="Q88-LC-baB"/>
                             <constraint firstAttribute="bottom" secondItem="u0y-tX-905" secondAttribute="bottom" constant="-107" id="VXG-uj-tGb"/>
                             <constraint firstItem="u0y-tX-905" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="-130" id="i1P-kC-EM5"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0sP-N1-bYw" secondAttribute="trailing" constant="103" id="puh-7X-rP5"/>
                         </constraints>
                     </view>
                 </viewController>

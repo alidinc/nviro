@@ -46,6 +46,10 @@
 		DA60A08F26DD81F5004143FC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA60A08E26DD81F5004143FC /* Constants.swift */; };
 		DA60A09126DD83A2004143FC /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA60A09026DD83A2004143FC /* NetworkError.swift */; };
 		DA61F37A26FA3D8B0000C251 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA61F37926FA3D8B0000C251 /* UIView+Extension.swift */; };
+		DA8BBD79272970A100A95848 /* NVAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8BBD78272970A100A95848 /* NVAlertView.swift */; };
+		DA8BBD7C272977E600A95848 /* NVButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8BBD7A272977E500A95848 /* NVButton.swift */; };
+		DA8BBD7D272977E600A95848 /* NVLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8BBD7B272977E500A95848 /* NVLabel.swift */; };
+		DA8BBD7F2729798100A95848 /* NVEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8BBD7E2729798100A95848 /* NVEmptyStateView.swift */; };
 		DA9E38AB26E115BA006B0CBF /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9E38AA26E115BA006B0CBF /* Endpoints.swift */; };
 		DAA308EB2707F1580056BCD2 /* VenueAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA308EA2707F1580056BCD2 /* VenueAnnotation.swift */; };
 		DAA308ED2708065E0056BCD2 /* MapView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA308EC2708065E0056BCD2 /* MapView+Extension.swift */; };
@@ -102,6 +106,10 @@
 		DA60A08E26DD81F5004143FC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DA60A09026DD83A2004143FC /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		DA61F37926FA3D8B0000C251 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		DA8BBD78272970A100A95848 /* NVAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVAlertView.swift; sourceTree = "<group>"; };
+		DA8BBD7A272977E500A95848 /* NVButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVButton.swift; sourceTree = "<group>"; };
+		DA8BBD7B272977E500A95848 /* NVLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVLabel.swift; sourceTree = "<group>"; };
+		DA8BBD7E2729798100A95848 /* NVEmptyStateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVEmptyStateView.swift; sourceTree = "<group>"; };
 		DA9E38AA26E115BA006B0CBF /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		DAA308EA2707F1580056BCD2 /* VenueAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueAnnotation.swift; sourceTree = "<group>"; };
 		DAA308EC2708065E0056BCD2 /* MapView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapView+Extension.swift"; sourceTree = "<group>"; };
@@ -300,6 +308,10 @@
 		DA60A05B26DD3B21004143FC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DA8BBD7E2729798100A95848 /* NVEmptyStateView.swift */,
+				DA8BBD78272970A100A95848 /* NVAlertView.swift */,
+				DA8BBD7A272977E500A95848 /* NVButton.swift */,
+				DA8BBD7B272977E500A95848 /* NVLabel.swift */,
 				DA4AB65426E67D3100C280F3 /* CustomViews */,
 				DA60A05C26DD3B26004143FC /* Storyboards */,
 			);
@@ -512,13 +524,17 @@
 				DA3E884E270DE7F200445B30 /* UIButton+Extension.swift in Sources */,
 				DA4AB67026E8137100C280F3 /* CityImage.swift in Sources */,
 				DA60A08F26DD81F5004143FC /* Constants.swift in Sources */,
+				DA8BBD7D272977E600A95848 /* NVLabel.swift in Sources */,
+				DA8BBD79272970A100A95848 /* NVAlertView.swift in Sources */,
 				DA4AB65126E65EFC00C280F3 /* CarbonCalculateViewController.swift in Sources */,
 				DAA308EB2707F1580056BCD2 /* VenueAnnotation.swift in Sources */,
 				DA60A07726DD5E89004143FC /* SearchDetailViewController.swift in Sources */,
 				DA0A81FB26F953ED00BF7684 /* Airports.swift in Sources */,
+				DA8BBD7C272977E600A95848 /* NVButton.swift in Sources */,
 				DA4AB64F26E4E66800C280F3 /* SavedPlace.swift in Sources */,
 				DA60A04526DD3AF2004143FC /* SceneDelegate.swift in Sources */,
 				DA4AB64926E3420900C280F3 /* UIViewController+Extension.swift in Sources */,
+				DA8BBD7F2729798100A95848 /* NVEmptyStateView.swift in Sources */,
 				DA60A07D26DD5EC5004143FC /* NewsViewController.swift in Sources */,
 				DA60A08C26DD81B7004143FC /* NetworkService.swift in Sources */,
 				DA1B798727004B3800EC92B8 /* Restaurants.swift in Sources */,

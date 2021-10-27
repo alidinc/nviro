@@ -76,11 +76,13 @@ class VenueMapViewController: UIViewController {
         }
     }
     fileprivate func getVenues() {
+        self.showLoadingView()
         if let place = place {
             if let locationName = place.locationName {
                 print("LOCATION----------------------------------------------------------\(locationName)")
                 DispatchQueue.main.async {
                     NetworkService.getVenues(with: locationName) { result in
+                        self.dismissLoadingView()
                         DispatchQueue.main.async {
                             switch result {
                             case .success(let venues):
@@ -90,6 +92,10 @@ class VenueMapViewController: UIViewController {
                                 print("VENUE COUNT::::::::::::::::::\(venues.count)")
                             case .failure(let error):
                                 print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+                                self.presentGGAlertOnMainThread(title: "No network", message: "Please check your network", buttonTitle: "OK") {
+                                    self.dismiss(animated: true, completion: nil)
+                                    self.showEmptyStateView(with: "There's no network. Please check your settings.", in: self.backgroundView)
+                                }
                             }
                         }
                     }
@@ -150,10 +156,11 @@ extension VenueMapViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Identifiers.restaurantCellId, for: indexPath) as? VenueCell else { return UITableViewCell() }
         cell.venue = venues[indexPath.row]
+        cell.selectionStyle = .none
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return self.tableView.frame.height / 3.5
+        return self.tableView.frame.height / 2
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let venue = venues[indexPath.row]

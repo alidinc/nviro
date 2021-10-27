@@ -53,9 +53,11 @@ class NewsViewController: UIViewController {
         tableView.addSubview(refresh)
     }
     @objc fileprivate func getNewsFromNetwork() {
+        self.showLoadingView()
         indicator.isHidden = false
         indicator.startAnimating()
         NetworkService.getNews(with: "climate") { result in
+            self.dismissLoadingView()
             DispatchQueue.main.async {
                 self.indicator.isHidden = true
                 self.indicator.stopAnimating()
@@ -66,6 +68,10 @@ class NewsViewController: UIViewController {
                     self.tableView.reloadData()
                 case .failure(let error):
                     print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+                    self.presentGGAlertOnMainThread(title: "No network", message: "Please check your network", buttonTitle: "OK") {
+                        self.dismiss(animated: true, completion: nil)
+                        self.showEmptyStateView(with: "There's no network. Please check your settings.", in: self.backgroundView)
+                    }
                 }
             }
         }

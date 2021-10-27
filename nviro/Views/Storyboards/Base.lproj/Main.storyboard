@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="A5y-rz-63Z">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="A5y-rz-63Z">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -24,7 +24,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Your list" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7i-fv-sSP">
                                         <rect key="frame" x="0.0" y="0.0" width="214" height="35.333333333333336"/>
-                                        <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="30"/>
+                                        <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="26"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -53,11 +53,11 @@
                                 </connections>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J7V-wB-1DF">
-                                <rect key="frame" x="260" y="88" width="130" height="52"/>
+                                <rect key="frame" x="273" y="88" width="117" height="52"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="has no place" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRT-0C-fRg">
-                                        <rect key="frame" x="10" y="10" width="110" height="32"/>
-                                        <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="16"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="has no place" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRT-0C-fRg">
+                                        <rect key="frame" x="10" y="10" width="97" height="32"/>
+                                        <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -65,7 +65,6 @@
                                 <color key="backgroundColor" red="0.30617162590000002" green="0.41534477469999997" blue="0.35811167960000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="kRT-0C-fRg" firstAttribute="top" secondItem="J7V-wB-1DF" secondAttribute="top" constant="10" id="9nT-eY-PBa"/>
-                                    <constraint firstAttribute="width" constant="130" id="E1R-v3-Kns"/>
                                     <constraint firstAttribute="trailing" secondItem="kRT-0C-fRg" secondAttribute="trailing" constant="10" id="jka-5e-aLE"/>
                                     <constraint firstAttribute="height" constant="52" id="kdS-TG-aqE"/>
                                     <constraint firstAttribute="bottom" secondItem="kRT-0C-fRg" secondAttribute="bottom" constant="10" id="lBW-LU-Wgx"/>
@@ -81,10 +80,10 @@
                             <constraint firstItem="alI-f8-Va3" firstAttribute="top" secondItem="Ryn-rQ-ccB" secondAttribute="top" id="G8B-fx-ss8"/>
                             <constraint firstItem="J7V-wB-1DF" firstAttribute="top" secondItem="Ryn-rQ-ccB" secondAttribute="top" id="MBI-Tp-HwC"/>
                             <constraint firstItem="q4C-Nn-L68" firstAttribute="top" secondItem="J7V-wB-1DF" secondAttribute="bottom" constant="20" id="R5J-kG-KPE"/>
-                            <constraint firstItem="J7V-wB-1DF" firstAttribute="leading" secondItem="alI-f8-Va3" secondAttribute="trailing" constant="26" id="UlO-oE-QGe"/>
                             <constraint firstItem="alI-f8-Va3" firstAttribute="leading" secondItem="Ryn-rQ-ccB" secondAttribute="leading" constant="20" id="X9D-MR-5Lz"/>
                             <constraint firstItem="Ryn-rQ-ccB" firstAttribute="trailing" secondItem="q4C-Nn-L68" secondAttribute="trailing" id="cTl-fc-mI9"/>
                             <constraint firstItem="J7V-wB-1DF" firstAttribute="trailing" secondItem="Ryn-rQ-ccB" secondAttribute="trailing" id="hxf-cV-Hrx"/>
+                            <constraint firstItem="J7V-wB-1DF" firstAttribute="width" secondItem="jGQ-Je-ewt" secondAttribute="width" multiplier="0.3" id="kjq-bk-u4S"/>
                             <constraint firstItem="Ryn-rQ-ccB" firstAttribute="bottom" secondItem="q4C-Nn-L68" secondAttribute="bottom" id="wQe-dF-eYx"/>
                         </constraints>
                     </view>
@@ -107,11 +106,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screenshot 2021-10-06 at 01.33.01" translatesAutoresizingMaskIntoConstraints="NO" id="eCm-ch-vN4">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main" translatesAutoresizingMaskIntoConstraints="NO" id="eCm-ch-vN4">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="761"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Where are you going?" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="2U2-hL-KQM">
-                                <rect key="frame" x="40" y="108" width="310" height="67.666666666666686"/>
+                                <rect key="frame" x="40" y="128" width="310" height="67.666666666666686"/>
                                 <color key="backgroundColor" systemColor="tertiarySystemFillColor"/>
                                 <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
@@ -120,7 +119,7 @@
                                 </connections>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="89" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="bFZ-c8-I41">
-                                <rect key="frame" x="20" y="175.66666666666669" width="350" height="585.33333333333326"/>
+                                <rect key="frame" x="20" y="195.66666666666669" width="350" height="565.33333333333326"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="a92-UL-WDK" id="9Ea-ad-cQ4"/>
@@ -142,7 +141,7 @@
                             <constraint firstItem="bFZ-c8-I41" firstAttribute="top" secondItem="2U2-hL-KQM" secondAttribute="bottom" id="WZA-sc-ZiU"/>
                             <constraint firstAttribute="trailing" secondItem="eCm-ch-vN4" secondAttribute="trailing" id="WpE-N5-W9B"/>
                             <constraint firstItem="eCm-ch-vN4" firstAttribute="top" secondItem="BE8-2D-KLc" secondAttribute="top" id="cBT-52-HU4"/>
-                            <constraint firstItem="2U2-hL-KQM" firstAttribute="top" secondItem="CHb-vj-niK" secondAttribute="top" constant="20" id="tes-pk-c0j"/>
+                            <constraint firstItem="2U2-hL-KQM" firstAttribute="top" secondItem="CHb-vj-niK" secondAttribute="top" constant="40" id="tes-pk-c0j"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="NgO-RU-wvX"/>
@@ -210,11 +209,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P1z-hY-mKt">
-                                <rect key="frame" x="0.0" y="161" width="390" height="600"/>
+                                <rect key="frame" x="0.0" y="156.33333333333331" width="390" height="604.66666666666674"/>
                                 <color key="backgroundColor" name="SearchBarColor"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="120" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="lNw-Hl-lwo">
-                                <rect key="frame" x="20" y="161" width="350" height="580"/>
+                                <rect key="frame" x="20" y="156.33333333333331" width="350" height="584.66666666666674"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="NNf-Kq-p7G" id="UK3-wG-akg"/>
@@ -222,16 +221,16 @@
                                 </connections>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="iYX-ay-BqG">
-                                <rect key="frame" x="20" y="84" width="350" height="57"/>
+                                <rect key="frame" x="20" y="84" width="350" height="52.333333333333343"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Featured news" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTe-g8-qmg">
-                                        <rect key="frame" x="0.0" y="0.0" width="350" height="35.333333333333336"/>
-                                        <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="30.666666666666668"/>
+                                        <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="26"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="about climate change around the world" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FjK-jM-6W0">
-                                        <rect key="frame" x="0.0" y="40.333333333333329" width="350" height="16.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="35.666666666666671" width="350" height="16.666666666666671"/>
                                         <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -340,11 +339,11 @@
     </scenes>
     <color key="tintColor" systemColor="labelColor"/>
     <resources>
-        <image name="Screenshot 2021-10-06 at 01.33.01" width="764" height="1204"/>
         <image name="airplane" catalog="system" width="128" height="115"/>
         <image name="arrow.up" catalog="system" width="120" height="128"/>
         <image name="list.dash" catalog="system" width="128" height="85"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="main" width="554" height="695"/>
         <image name="newspaper" catalog="system" width="128" height="111"/>
         <namedColor name="Background">
             <color red="0.94900000095367432" green="0.94099998474121094" blue="0.94099998474121094" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

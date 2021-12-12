@@ -106,9 +106,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main" translatesAutoresizingMaskIntoConstraints="NO" id="eCm-ch-vN4">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="761"/>
-                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NcB-0R-ut0">
+                                <rect key="frame" x="0.0" y="88" width="390" height="673"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Where are you going?" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="2U2-hL-KQM">
                                 <rect key="frame" x="40" y="128" width="310" height="67.666666666666686"/>
                                 <color key="backgroundColor" systemColor="tertiarySystemFillColor"/>
@@ -131,21 +132,22 @@
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
                             <constraint firstItem="2U2-hL-KQM" firstAttribute="leading" secondItem="CHb-vj-niK" secondAttribute="leading" constant="40" id="0za-mK-8gu"/>
+                            <constraint firstItem="NcB-0R-ut0" firstAttribute="bottom" secondItem="CHb-vj-niK" secondAttribute="bottom" id="55y-WB-vVK"/>
                             <constraint firstItem="bFZ-c8-I41" firstAttribute="leading" secondItem="CHb-vj-niK" secondAttribute="leading" constant="20" id="AUC-l3-rYq"/>
                             <constraint firstItem="2U2-hL-KQM" firstAttribute="height" secondItem="BE8-2D-KLc" secondAttribute="height" multiplier="0.08" id="Bif-Ez-SWO"/>
-                            <constraint firstItem="CHb-vj-niK" firstAttribute="bottom" secondItem="eCm-ch-vN4" secondAttribute="bottom" id="DsW-2s-lVA"/>
-                            <constraint firstItem="eCm-ch-vN4" firstAttribute="leading" secondItem="CHb-vj-niK" secondAttribute="leading" id="Hqa-cY-eiB"/>
+                            <constraint firstItem="NcB-0R-ut0" firstAttribute="top" secondItem="CHb-vj-niK" secondAttribute="top" id="Hk9-Ev-SjW"/>
                             <constraint firstItem="bFZ-c8-I41" firstAttribute="bottom" secondItem="CHb-vj-niK" secondAttribute="bottom" id="MvW-7e-EH9"/>
                             <constraint firstItem="CHb-vj-niK" firstAttribute="trailing" secondItem="bFZ-c8-I41" secondAttribute="trailing" constant="20" id="NSJ-ro-Hzu"/>
+                            <constraint firstItem="NcB-0R-ut0" firstAttribute="trailing" secondItem="CHb-vj-niK" secondAttribute="trailing" id="PPF-7K-LWk"/>
                             <constraint firstItem="CHb-vj-niK" firstAttribute="trailing" secondItem="2U2-hL-KQM" secondAttribute="trailing" constant="40" id="W5y-bH-cBN"/>
                             <constraint firstItem="bFZ-c8-I41" firstAttribute="top" secondItem="2U2-hL-KQM" secondAttribute="bottom" id="WZA-sc-ZiU"/>
-                            <constraint firstAttribute="trailing" secondItem="eCm-ch-vN4" secondAttribute="trailing" id="WpE-N5-W9B"/>
-                            <constraint firstItem="eCm-ch-vN4" firstAttribute="top" secondItem="BE8-2D-KLc" secondAttribute="top" id="cBT-52-HU4"/>
+                            <constraint firstItem="NcB-0R-ut0" firstAttribute="leading" secondItem="CHb-vj-niK" secondAttribute="leading" id="YtE-t8-6XN"/>
                             <constraint firstItem="2U2-hL-KQM" firstAttribute="top" secondItem="CHb-vj-niK" secondAttribute="top" constant="40" id="tes-pk-c0j"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="NgO-RU-wvX"/>
                     <connections>
+                        <outlet property="backgroundView" destination="NcB-0R-ut0" id="tI8-WG-7t4"/>
                         <outlet property="searchTextField" destination="2U2-hL-KQM" id="0i9-8a-CUy"/>
                         <outlet property="tableView" destination="bFZ-c8-I41" id="Xq7-9O-n1W"/>
                     </connections>
@@ -343,7 +345,6 @@
         <image name="arrow.up" catalog="system" width="120" height="128"/>
         <image name="list.dash" catalog="system" width="128" height="85"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
-        <image name="main" width="554" height="695"/>
         <image name="newspaper" catalog="system" width="128" height="111"/>
         <namedColor name="Background">
             <color red="0.94900000095367432" green="0.94099998474121094" blue="0.94099998474121094" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -353,6 +354,9 @@
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="tertiarySystemFillColor">
             <color red="0.46274509803921571" green="0.46274509803921571" blue="0.50196078431372548" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -46,6 +46,8 @@
 		DA60A08F26DD81F5004143FC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA60A08E26DD81F5004143FC /* Constants.swift */; };
 		DA60A09126DD83A2004143FC /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA60A09026DD83A2004143FC /* NetworkError.swift */; };
 		DA61F37A26FA3D8B0000C251 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA61F37926FA3D8B0000C251 /* UIView+Extension.swift */; };
+		DA83CBEE276617B5000C3C25 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = DA83CBED276617B5000C3C25 /* Realm */; };
+		DA83CBF0276617B5000C3C25 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DA83CBEF276617B5000C3C25 /* RealmSwift */; };
 		DA8BBD79272970A100A95848 /* NVAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8BBD78272970A100A95848 /* NVAlertView.swift */; };
 		DA8BBD7C272977E600A95848 /* NVButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8BBD7A272977E500A95848 /* NVButton.swift */; };
 		DA8BBD7D272977E600A95848 /* NVLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8BBD7B272977E500A95848 /* NVLabel.swift */; };
@@ -59,12 +61,9 @@
 		DAE3E22D270103B700DBEEBA /* VenueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE3E22B270103B700DBEEBA /* VenueCell.swift */; };
 		DAE3E22E270103B700DBEEBA /* VenueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAE3E22C270103B700DBEEBA /* VenueCell.xib */; };
 		DAE50C1226E9471800F67B34 /* PopupImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE50C1126E9471800F67B34 /* PopupImageViewController.swift */; };
-		ECEABB09D634278513C19315 /* Pods_nviro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22740893E88884E37FFC855B /* Pods_nviro.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		22740893E88884E37FFC855B /* Pods_nviro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nviro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9C3351F099FA71799190DB18 /* Pods-nviro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nviro.debug.xcconfig"; path = "Target Support Files/Pods-nviro/Pods-nviro.debug.xcconfig"; sourceTree = "<group>"; };
 		DA04C29F26EAB82B00FDF49B /* SearchDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SearchDetail.storyboard; sourceTree = "<group>"; };
 		DA04C2A726EB00D400FDF49B /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		DA0A81FA26F953ED00BF7684 /* Airports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Airports.swift; sourceTree = "<group>"; };
@@ -119,7 +118,6 @@
 		DAE3E22B270103B700DBEEBA /* VenueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueCell.swift; sourceTree = "<group>"; };
 		DAE3E22C270103B700DBEEBA /* VenueCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VenueCell.xib; sourceTree = "<group>"; };
 		DAE50C1126E9471800F67B34 /* PopupImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupImageViewController.swift; sourceTree = "<group>"; };
-		F6D267ED33D9D4C2B473FCF1 /* Pods-nviro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nviro.release.xcconfig"; path = "Target Support Files/Pods-nviro/Pods-nviro.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,26 +125,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECEABB09D634278513C19315 /* Pods_nviro.framework in Frameworks */,
+				DA83CBF0276617B5000C3C25 /* RealmSwift in Frameworks */,
+				DA83CBEE276617B5000C3C25 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6FB6E546FE38E4DA39B1A632 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				22740893E88884E37FFC855B /* Pods_nviro.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		7D65D1E0092D82745825CD76 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9C3351F099FA71799190DB18 /* Pods-nviro.debug.xcconfig */,
-				F6D267ED33D9D4C2B473FCF1 /* Pods-nviro.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -268,7 +257,6 @@
 				DA60A04126DD3AF2004143FC /* nviro */,
 				DA60A04026DD3AF2004143FC /* Products */,
 				7D65D1E0092D82745825CD76 /* Pods */,
-				6FB6E546FE38E4DA39B1A632 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -388,17 +376,19 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DA60A05626DD3AF4004143FC /* Build configuration list for PBXNativeTarget "nviro" */;
 			buildPhases = (
-				A0C3B422BA318A2FD93F34ED /* [CP] Check Pods Manifest.lock */,
 				DA60A03B26DD3AF2004143FC /* Sources */,
 				DA60A03C26DD3AF2004143FC /* Frameworks */,
 				DA60A03D26DD3AF2004143FC /* Resources */,
-				CA41D0C0AFAA4640581F20BB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = nviro;
+			packageProductDependencies = (
+				DA83CBED276617B5000C3C25 /* Realm */,
+				DA83CBEF276617B5000C3C25 /* RealmSwift */,
+			);
 			productName = nviro;
 			productReference = DA60A03F26DD3AF2004143FC /* nviro.app */;
 			productType = "com.apple.product-type.application";
@@ -427,6 +417,9 @@
 				Base,
 			);
 			mainGroup = DA60A03626DD3AF2004143FC;
+			packageReferences = (
+				DA83CBEC276617B5000C3C25 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+			);
 			productRefGroup = DA60A04026DD3AF2004143FC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -457,51 +450,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		A0C3B422BA318A2FD93F34ED /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-nviro-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CA41D0C0AFAA4640581F20BB /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-nviro/Pods-nviro-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-nviro/Pods-nviro-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DA60A03B26DD3AF2004143FC /* Sources */ = {
@@ -683,14 +631,14 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		DA60A05726DD3AF4004143FC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9C3351F099FA71799190DB18 /* Pods-nviro.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -701,7 +649,10 @@
 				EXCLUDED_ARCHS = "";
 				INFOPLIST_FILE = nviro/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.5.1;
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.normprojects.nviro;
@@ -713,7 +664,6 @@
 		};
 		DA60A05826DD3AF4004143FC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F6D267ED33D9D4C2B473FCF1 /* Pods-nviro.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -724,7 +674,10 @@
 				EXCLUDED_ARCHS = "";
 				INFOPLIST_FILE = nviro/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.5.1;
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.normprojects.nviro;
@@ -756,6 +709,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DA83CBEC276617B5000C3C25 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DA83CBED276617B5000C3C25 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DA83CBEC276617B5000C3C25 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		DA83CBEF276617B5000C3C25 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DA83CBEC276617B5000C3C25 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DA60A03726DD3AF2004143FC /* Project object */;
 }

@@ -24,7 +24,8 @@ class SearchViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchTextField: UITextField!
-
+    @IBOutlet weak var backgroundView: UIView!
+    
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -33,6 +34,11 @@ class SearchViewController: UIViewController {
     }
     
     // MARK: - Helpers
+    fileprivate func setupBackgroundView() {
+        backgroundView.layer.cornerRadius = 30
+        backgroundView.layer.masksToBounds = false
+        backgroundView.backgroundColor = UIColor(named: "Pine")
+    }
 
     fileprivate func setupNavigationBar() {
         let leavesView = UIImageView(image: UIImage(named: "leaves.dark"))
@@ -52,9 +58,9 @@ class SearchViewController: UIViewController {
     }
     
     fileprivate func setupSearchTextField() {
-        self.searchTextField.textColor = UIColor.black
+        self.searchTextField.textColor = UIColor.label
         self.searchTextField.addShadow(xAxis: 0, yAxis: 4, shadowRadius: 8, color: .black, shadowOpacity: 0.12)
-        self.searchTextField.backgroundColor = UIColor.quaternarySystemFill
+        self.searchTextField.backgroundColor = UIColor.secondarySystemBackground
         self.searchTextField.layer.cornerRadius = 20
         self.searchTextField.attributedPlaceholder = NSAttributedString(string: " Where are you going?", attributes: [
             NSAttributedString.Key.foregroundColor : UIColor.darkGray,
@@ -64,6 +70,7 @@ class SearchViewController: UIViewController {
     fileprivate func setupView() {
         setupSearchTextField()
         searchCompleterSetup()
+        setupBackgroundView()
         setupNavigationBar()
         registerTableViewCell()
     }

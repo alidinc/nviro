@@ -1,8 +1,7 @@
 # nviro
 An eco-friendly travel guide app.
 
-![Screenshot 2021-10-27 at 4 21 53 pm](https://user-images.githubusercontent.com/78941775/139097124-5627e51b-2b0e-4a39-a20e-6d2b7eb91609.png)
-
+![c8aY9Jwg jpg-large](https://user-images.githubusercontent.com/78941775/145711176-b94b2842-8940-4086-aabb-3983c3e273da.jpeg)
 
 # Implementation
 
